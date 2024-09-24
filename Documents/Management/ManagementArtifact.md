@@ -45,3 +45,7 @@ The MoSCoW method is a prioritisation technique used in management, business ana
 ## Work Breakdown Structure
 
 ![Work Breakdown Structure](/Documents/Images/Work%20Breakdown%20Document.png)
+
+## KPIs
+
+You can find the KPIs of this project [HERE](https://docs.google.com/spreadsheets/d/13jU5yLu1WAvObVslUR08S9Zf0pqd8HzQEdJiWDzK4Rw/edit?usp=sharing)
