@@ -33,3 +33,11 @@ The RACI Matrix is a management document used to define team roles across 4 cate
 **Accountable**: The one that must sign off (approve) work that the Responsible provides; <br>
 **Consulted**: Those whose opinions are sought, typically subject-matter experts, and with whom there is a two-way communication; <br>
 **Informed**: Those who are kept up-to-date on progress, often only on completion of the task or deliverable, and with whom there is just a one-way communication; <br>
+
+## MoSCoW
+
+The MoSCoW method is a prioritisation technique used in management, business analysis, project management, and software development to reach a common understanding with stakeholders on the importance they place on the delivery of each requirement; it is also known as MoSCoW prioritisation or MoSCoW analysis.
+
+| Must have | Should have | Could have | Will not have |
+| :---: | :---: | :---: | :---: |
+| Frog, Cars, Working Buttons | Sprites | Main Menue, Pause Button, Start Button, Quit Button, River | Levels After 99 |
