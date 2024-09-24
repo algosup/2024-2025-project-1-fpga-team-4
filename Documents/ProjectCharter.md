@@ -26,7 +26,8 @@
 ## Project Scope
 
 | Within Scope | Displaying the map, the player, the enemies and the logic behind them |
-| Out of Scope | Define the electronics |
+| :----------: | :-------------------------------------------------------------------: |
+| Out of Scope | Define the electronics                                                |
 
 ## Milestones
 
