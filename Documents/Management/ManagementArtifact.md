@@ -10,7 +10,7 @@ This document reference the main management documents
 
 ## Project Charter
 
-You can find the Project Charter [HERE](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Management/Documents/ProjectCharter.md)
+You can find the Project Charter [HERE](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Management/Documents/Management/ProjectCharter.md)
 
 ## RACI Matrix
 
