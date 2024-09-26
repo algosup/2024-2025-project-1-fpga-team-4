@@ -17,7 +17,6 @@ Test priorities are differenciated as such:
 
 | Number | One |
 | --- | --- |
-| Test Name | Start the Game |
 | Test Description | Verify that the game starts and that the screen show the game |
 | Requirement(s) | Everything is unplugged |
 | Step(s) for testing | 1. Plug in *the Board*, 2. Plug in and switch the screen on, 3. Plug *the Board* to the screen, 4. Execute the code with *the Board*,  |
@@ -28,7 +27,6 @@ Test priorities are differenciated as such:
 
 | Number | Two |
 | --- | --- |
-| Name | Stop the Game |
 | Test Description | Verify that the game stops and that the screens goes black |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Press all four buttons at the same time |
@@ -39,7 +37,6 @@ Test priorities are differenciated as such:
 
 | Number | Three |
 | --- | --- |
-| Name | Spawn everything |
 | Test Description | Verify that cars and the frog spawn as intended at the start of a levle |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Start the game 2. Wait|
@@ -50,7 +47,6 @@ Test priorities are differenciated as such:
 
 | Number | Four |
 | --- | --- |
-| Name | Frog Up |
 | Test Description | Verify that the frog moves up when the up button is pressed |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Press the up button |
@@ -61,7 +57,6 @@ Test priorities are differenciated as such:
 
 | Number | Five |
 | --- | --- |
-| Name | Frog Down |
 | Test Description | Verify that the frog moves down when the down button is pressed |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Press the down button |
@@ -72,7 +67,6 @@ Test priorities are differenciated as such:
 
 | Number | Six |
 | --- | --- |
-| Name | Frog Left |
 | Test Description | Verify that the frog moves to the left when the left button is pressed |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Press the left button |
@@ -83,7 +77,6 @@ Test priorities are differenciated as such:
 
 | Number | Seven |
 | --- | --- |
-| Name | Frog Right |
 | Test Description | Verify that the frog moves to the right when the right button is pressed |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Press the right button |
@@ -94,7 +87,6 @@ Test priorities are differenciated as such:
 
 | Number | Eight |
 | --- | --- |
-| Name | Frog deceased |
 | Test Description | Verify that the frog "dies" when hit by a car|
 | Requirement(s) | The game is started |
 | Step(s) | 1. Get hit by a car |
@@ -105,7 +97,6 @@ Test priorities are differenciated as such:
 
 | Number | Nine |
 | --- | --- |
-| Name | Frog is walled |
 | Test Description | Verify that the frog cannot move past the edges of the screen|
 | Requirement(s) | The game is started |
 | Step(s) | 1. Move the frog to one of the edges of the screen, 2. Try to go past the wall|
@@ -115,7 +106,6 @@ Test priorities are differenciated as such:
 #### Victory
 | Number | Ten |
 | --- | --- |
-| Name | Victory |
 | Test Description | Verify that when the frog gets to the top of the screen, the level ends |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
@@ -125,19 +115,71 @@ Test priorities are differenciated as such:
 #### Level Counter Incrementation
 | Number | Eleven |
 | --- | --- |
-| Name | Level Counter |
 | Test Description | Verify that the level counter increments when it should |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
 | Expected Result | The level counter increments itself |
 | Priority | 2 |
 
-#### Level Counter Reset
+#### Lives at the start
 | Number | Twelve |
 | --- | --- |
-| Name | Level Counter |
-| Test Description | Verify that the level counter resets when it should |
+| Test Description | Verify that the lives counter starts at 5 |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the level |
+| Expected Result | The player should have five lives |
+| Priority | 1 |
+
+#### Lives decrementation
+| Number | Thirteen |
+| --- | --- |
+| Test Description | Verify that the lives counter starts at 5 |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Get hit by a car |
+| Expected Result | The Player should lose one life |
+| Priority | 1 |
+
+#### Level Counter Reset
+| Number | Fourteen |
+| --- | --- |
+| Test Description | Verify that the level counter resets when it should |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Get hit by a car, 2. repeat until you have zero lives |
 | Expected Result | The level counter resets back to 01 |
-| Priority | 2 |
+| Priority | 1 |
+
+#### No lives
+| Number | Fifteen |
+| --- | --- |
+| Test Description | Verify that the game resets when the number of lives is 0 |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Get hit by a car, 2. repeat until you have zero lives |
+| Expected Result | The player gets five new lives |
+| Priority | 1 |
+
+#### Car movement
+| Number | Sixteen |
+| --- | --- |
+| Test Description | Verify that cars move as intended |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Wait |
+| Expected Result | The Cars should be moving from horizontally across the screen|
+| Priority | 3 |
+
+#### Car despawn
+| Number | Seventeen |
+| --- | --- |
+| Test Description | Verify that cars can despawn |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Wait |
+| Expected Result | Cars should despawn once they reach the edge of the screen|
+| Priority | 3 |
+
+#### Car replacement
+| Number | Eighteen |
+| --- | --- |
+| Test Description | Verify that new cars appear after the first ones leave |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Wait |
+| Expected Result | Cars should appear on a lane soon after the old one despawns|
+| Priority | 3 |
