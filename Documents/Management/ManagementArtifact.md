@@ -40,7 +40,7 @@ The MoSCoW method is a prioritisation technique used in management, business ana
 
 | Must have | Should have | Could have | Will not have |
 | :---: | :---: | :---: | :---: |
-| Frog, Cars, Buttons, Display on Monitor, Levels | Sprites, Lives | Main Menue, Game Over Screen, Pause Button, Start Button, Quit Button, River, Other controller | Levels After 99 |
+| Frog, Cars, Buttons, Display on Monitor, Levels | Sprites, Lives, Quit Button | Main Menue, Game Over Screen, Pause Button, Start Button, River, Other controller | Levels After 99 |
 
 ## Work Breakdown Structure
 
