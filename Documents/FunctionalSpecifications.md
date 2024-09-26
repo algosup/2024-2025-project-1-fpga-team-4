@@ -15,14 +15,20 @@
             - [2. Top Half - The River](#top-half---the-river)
         - [Life system](#life-system)
         - [Score](#score)
-
+    - [III. Designs/Graphic charter](#iii-designsgraphic-charter)
+    - [IV. Use Cases](#iv-use-cases)
+    - [V. Project scope](#v-project-scope)
+    - [VI. Test Plan](#vi-test-plan)
+    - [VII. Success Criteria](#vii-success-criteria)
+    - [VIII. Legal Stuff](#viii-legal-stuff)
+    - [IX. Glossary](#ix-glossary)
 </details>
 
 ---
 
 ## I. Project Overview
 
-The goal of the project is to remake the old retro game "Frogger" using a Go Board from Nandland.
+The goal of the project is to remake the old retro game "Frogger" using a Go Board [^1] from Nandland.
 
 #### Stakeholders
 
@@ -69,7 +75,7 @@ The map of the Frogger game is divided into two main horizontal sections:
 
 
 #### Life system
-The player starts the game with 5 frogs, so five lives. When the frog dies, the player loses on of his five lives and when the lives counter drops to zero the score resets and the game restarts.
+The player starts the game with 5 frogs, so five lives. When the frog dies, the player loses one of his five lives and when the lives counter drops to zero the score resets and the game restarts.
 
 #### Score
 When the player reaches the top of the screen, his score is updated and a point is added to it. 
@@ -77,3 +83,49 @@ When the player reaches the top of the screen, his score is updated and a point 
 The player's goal is to reach the maximum score of 99 points without dying. After reaching the maximum score the game stops and the letters "GG" are displayed on the board.
 
 ---
+
+
+
+## III. Designs/Graphic charter
+
+## IV. Use Cases
+
+## V. Project scope
+
+| In Scope |
+|---|
+|Delivering a clone of Frogger in Verilog[^2]|
+|Go Board must be used to control the frog and display the score
+|The game must have at least a win and a lose condition
+|
+|
+
+
+
+| Out of Scope |
+|---|
+|
+|
+|
+
+
+## VI. Test Plan
+Anything relative to this project's tests can be found in [this document](./TestPlan.md).
+
+
+## VII. Success Criteria
+- The game display every element without any kind of stuttering
+- The player can control the character without latency between the player action and game's reaction using the Go Board
+- The player can progress amongst levels the same way as the original game
+- The game does not return errors on launch
+- The game does not crashes
+- The player can loose and win if conditions are met.
+
+
+## VIII. Legal Stuff
+
+## IX. Glossary
+[^1]: Go-Board: FPGA Development Board For Beginners.
+[^2]: Verilog: a hardware description language (HDL) used to model electronic systems.
+
+
