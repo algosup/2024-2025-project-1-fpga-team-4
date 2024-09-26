@@ -15,3 +15,20 @@ For the First project of the school year we have to recreate the Arcade game **F
 | Victor LEROY | Software Engineer |<img src="https://avatars.githubusercontent.com/u/97166029?v=4" width = "100px" alt="Victor Avatar"> | [Victor's GitHub](https://github.com/Victor-Leroy) | [Victor's Linkedin](https://www.linkedin.com/in/victor-leroy-64baa3229/) |
 | Guillaume DERAMCHI | Software Engineer |<img src="https://avatars.githubusercontent.com/u/145995909?v=4" width = "100px" alt="Jason Avatar"> | [Guillaume's GitHub](https://github.com/Guillaume18100) | [Guillaume's Linkedin](https://www.linkedin.com/in/guillaume-deramchi-a45116293/) |
 | Emilien CHINSY | Quality Assurance | <img src="https://avatars.githubusercontent.com/u/182214919?v=4" width = "100px" alt="Emilien Avatar"> | [Emilien's GitHub](https://github.com/EmilienChinsy) | [Emilien's Linkedin](https://www.linkedin.com/in/jason-grosso-847b39251/) |
+
+## Documents Link
+
+### Specification
+
+- Functional Specification
+- Technical Specification
+
+### Project Management
+
+- Management Artifact
+- Weekly Reports
+
+### Quality Assurance
+
+- Test Plan
+- Test Cases
