@@ -22,6 +22,7 @@ Test priorities are differenciated as such:
 | Step(s) for testing | 1. Plug in *the Board*, 2. Plug in and switch the screen on, 3. Plug *the Board* to the screen, 4. Execute the code with *the Board*,  |
 | Expected Test Result | The game starts |
 | Test Priority | 3 |
+| Tested? | no |
 
 #### Stop the game
 
@@ -32,6 +33,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press all four buttons at the same time |
 | Expected Result | The game stops |
 | Priority | 3 |
+| Tested? | no |
 
 #### Start of level spawn
 
@@ -42,6 +44,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the game 2. Wait|
 | Expected Result | The frog spawns in the bottom middle of the screen, a couple of cars spawn on the road in the middle of the screen |
 | Priority | 3 |
+| Tested? | no |
 
 #### Frog moves up
 
@@ -52,6 +55,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the up button |
 | Expected Result | The frog moves up |
 | Priority | 3 |
+| Tested? | no |
 
 #### Frog moves down
 
@@ -62,6 +66,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the down button |
 | Expected Result | The frog moves down |
 | Priority | 3 |
+| Tested? | no |
 
 #### Frog moves left
 
@@ -72,6 +77,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the left button |
 | Expected Result | The frog moves to the left |
 | Priority | 3 |
+| Tested? | no |
 
 #### Frog moves right
 
@@ -82,6 +88,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the right button |
 | Expected Result | The frog moves to the right |
 | Priority | 3 |
+| Tested? | no |
 
 #### Frog dies to a car
 
@@ -92,6 +99,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Get hit by a car |
 | Expected Result |  The frog should be placed back at the start  |
 | Priority | 3 |
+| Tested? | no |
 
 #### Frog edgemap collision.
 
@@ -102,6 +110,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Move the frog to one of the edges of the screen, 2. Try to go past the wall|
 | Expected Result | The Frog is stopped by the edge of the screen |
 | Priority | 3 |
+| Tested? | no |
 
 #### Victory
 | Number | Ten |
@@ -111,6 +120,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
 | Expected Result | everything despawns, the frog spawns at the bottom middle of the screen and a couple of cars spawn along the roads in the center of the screen. |
 | Priority | 3 |
+| Tested? | no |
 
 #### Level Counter Incrementation
 | Number | Eleven |
@@ -120,6 +130,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
 | Expected Result | The level counter increments itself |
 | Priority | 2 |
+| Tested? | no |
 
 #### Lives at the start
 | Number | Twelve |
@@ -129,6 +140,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the level |
 | Expected Result | The player should have five lives |
 | Priority | 1 |
+| Tested? | no |
 
 #### Lives decrementation
 | Number | Thirteen |
@@ -138,6 +150,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Get hit by a car |
 | Expected Result | The Player should lose one life |
 | Priority | 1 |
+| Tested? | no |
 
 #### Level Counter Reset
 | Number | Fourteen |
@@ -147,6 +160,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Get hit by a car, 2. repeat until you have zero lives |
 | Expected Result | The level counter resets back to 01 |
 | Priority | 1 |
+| Tested? | no |
 
 #### No lives
 | Number | Fifteen |
@@ -156,6 +170,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Get hit by a car, 2. repeat until you have zero lives |
 | Expected Result | The player gets five new lives |
 | Priority | 1 |
+| Tested? | no |
 
 #### Car movement
 | Number | Sixteen |
@@ -165,6 +180,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the game 2. Wait |
 | Expected Result | The Cars should be moving from horizontally across the screen|
 | Priority | 3 |
+| Tested? | no |
 
 #### Car despawn
 | Number | Seventeen |
@@ -174,6 +190,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the game 2. Wait |
 | Expected Result | Cars should despawn once they reach the edge of the screen|
 | Priority | 3 |
+| Tested? | no |
 
 #### Car replacement
 | Number | Eighteen |
@@ -183,3 +200,4 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the game 2. Wait |
 | Expected Result | Cars should appear on a lane soon after the old one despawns|
 | Priority | 3 |
+| Tested? | no |
