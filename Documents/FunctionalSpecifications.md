@@ -84,11 +84,22 @@ The player's goal is to reach the maximum score of 99 points without dying. Afte
 
 ---
 
-
-
 ## III. Designs/Graphic charter
 
+---
+
 ## IV. Use Cases
+
+| Use Case Number | Name | Description | Actor(s) | Pre-Conditions | Flow of Events | Post-Conditions | Exit Criteria | Notes & Issues |
+|---|---|---|---|---|---|---|---|---|
+| N°1 | Start Game | The player starts the game | Player, Game System | The game is installed and launched | -Player presses "Start".<br>-The game system initializes the level.<br>-The frog appears at the starting position at the bottom of the screen.<br>-Game system begins movement of obstacles (cars, logs, etc.) | The player can control the frog; obstacles are in motion.|
+| N°2 | Navigating through the road | The player interact with the game environment | Player, Game System | The game has started, and the player is controlling the frog | -The player presses the switch on the GO-Board to move the frog.<br>-The game system moves the frog in the indicated direction.<br>-The game system checks for collisions between the frog and moving cars/trucks. | The frog moves as directed by player inputs. |
+| N°3 | Finishing a Level | Completing game's objectives | Player, Game System | The player successfully navigates the frog across both the road and the river | -The frog reaches the top of the screen. | The player's score is updated and the frog's postion is reset at the starting position. |
+| N°4 | Dying | The player's charachter loses a life | Player, Game System | The frog has collided with an obstacle or fallen into water | -The frog collides with an obstacle.<br>-The game system detects the collision.<br>-The frog dies, and the game system deducts a life from the player's remaining lives.<br>-The frog respawns at the starting position. | The frog loses a life, and the player either respawns or the game ends. |
+| N°5 | Win the Game | The player successfully reaches the score of 99 | Player, Game System | The player as reached the last level | -The player guides the frog to the end in the last level.<br>-The game system display the letters "GG" on the Go-Board. | The player wins the game and sees a victory screen? |
+| N°6 | Game Over | Ending the game after losing all lives | Player, Game System | The player has no remaining lives | -The game system checks the player's remaining lives.<br>-When the last life is lost, the game transitions to a "Game Over" screen.<br>-The game displays the final score and a prompt to restart or quit the game? | The game ends, and the player sees the final score and game over message?
+
+---
 
 ## V. Project scope
 
@@ -112,6 +123,7 @@ The player's goal is to reach the maximum score of 99 points without dying. Afte
 ## VI. Test Plan
 Anything relative to this project's tests can be found in [this document](./TestPlan.md).
 
+---
 
 ## VII. Success Criteria
 - The game display every element without any kind of stuttering
@@ -121,11 +133,14 @@ Anything relative to this project's tests can be found in [this document](./Test
 - The game does not crashes
 - The player can loose and win if conditions are met.
 
+---
 
 ## VIII. Legal Stuff
 
+---
+
 ## IX. Glossary
 [^1]: Go-Board: FPGA Development Board For Beginners.
-[^2]: Verilog: a hardware description language (HDL) used to model electronic systems.
+[^2]: Verilog: A hardware description language (HDL) used to model electronic systems.
 
 
