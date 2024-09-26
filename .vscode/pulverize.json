@@ -1,0 +1,12 @@
+{
+    "define": [
+        "__SIM__"
+    ],
+    "source": [
+        "**/*.v",
+        "**/*.sv"
+    ],
+    "exclude": [],
+    "lint": {},
+    "lint_exclude": []
+}
