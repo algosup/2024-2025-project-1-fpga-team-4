@@ -25,8 +25,40 @@ This file regroup the weekly reports of each week of the project
 
 ### Difficulties
 
+Difficulties handling the hardware / programming language and writing documents on them.
+
 ### Team Remarks
 
-### Taks for Next Week
+N/A
+
+### Task for Next Week
+
+Jason GROSSO:
+
+- Set up the Gantt Chart
+
+Mathis PASCUCCI:
+
+- Finish the Functional
+
+Clementine CUREL:
+
+- Have a first version of the Technical Specifications ready
+
+Victor LEROY:
+
+- Make the Frog move 1 case by 1 case in every directions
+
+Guillaume DERAMCHI:
+
+- Create a Car that goes from left to right across the screen
+
+Emilien CHINSY:
+
+- Assist Mathis on the Functional
+
+Ian LAURENT:
+
+- Start the User Manual
 
 ---
