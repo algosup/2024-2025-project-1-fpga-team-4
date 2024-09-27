@@ -86,7 +86,7 @@ The player starts the game with 5 frogs, so five lives. When the frog dies, the 
 #### Score
 When the player reaches the top of the screen, his score is updated and a point is added to it. 
 
-The player's goal is to reach the maximum score of 99 points without dying. After reaching the maximum score the game stops and the letters "GG" are displayed on the board.
+The player's goal is to reach the maximum score of 10 points without dying. After reaching the maximum score the game stops and the letters "GG" are displayed on the board.
 
 ---
 
@@ -143,7 +143,7 @@ The frog reaches the top of the screen.
 - **Exit Criteria**: The level resets, or the game ends if no lives remain.
 
 #### Use Case N°5: Win the Game
-- **Description**: The player successfully reaches a score of 99.
+- **Description**: The player successfully reaches a score of 10.
 - **Actor(s)**: Player, Game System
 - **Pre-Conditions**: The player has reached the last level.
 - **Flow of Events**:
@@ -169,16 +169,13 @@ The frog reaches the top of the screen.
 #### 1. Requirements
 
 - ##### Frog Display: 
-The frog shall be drawn as a 1x1 grid on the VGA display (where each grid is 32x32 pixels). 
-The frog shall be white in color. 
+The frog shall be drawn as a 1x1 grid on the VGA display (where each grid is 32x32 pixels). The frog shall be white in color. 
 
 - ##### Car Display: 
-There shall be at least 1 car on the screen at a time. The car shall be drawn as a 1x1 grid. 
-The car shall be white in color. 
+There shall be at least 1 car on the screen at a time. The car shall be drawn as a 1x1 grid. The car shall be white in color. 
 
 - ##### Levels: 
-There shall be at least 1 level in the game, when the Frog reaches the top of the screen the 
-game is complete. 
+There shall be at least 1 level in the game, when the Frog reaches the top of the screen the game is complete. 
 
 #### 2. Objectives 
 
@@ -186,12 +183,10 @@ game is complete.
 The frog shall be drawn as a Sprite that looks like a real frog. The Sprite shall have colors. 
 
 - ##### Cars Display: 
-There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move 
-at different speeds.
+There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move at different speeds.
 
 - ##### Levels: 
-There shall be at least 8 levels in the game, when the level increases the game diƯiculty 
-gets harder (for example, cars speed increase, number of cars increase).
+There shall be at least 10 levels in the game, when the level increases the game difficulty gets harder (for example, cars speed increase, number of cars increase).
 
 ---
 
