@@ -201,3 +201,13 @@ Test priorities are differenciated as such:
 | Expected Result | Cars should appear on a lane soon after the old one despawns|
 | Priority | 3 |
 | Tested? | no |
+
+#### Frog move only one tile
+| Number | Nineteen |
+| --- | --- |
+| Test Description | Verify that the frog only moves one square per button press |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Hold a movement button |
+| Expected Result | The frog should move one tile and stay idle |
+| Priority | 3 |
+| Tested? | no |
