@@ -20,15 +20,19 @@ For the First project of the school year we have to recreate the Arcade game **F
 
 ### Specification
 
-- Functional Specification
+- [Functional Specification](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/FunctionalSpecifications/Documents/FunctionalSpecifications.md)
 - Technical Specification
 
 ### Project Management
 
-- Management Artifact
-- Weekly Reports
+- [Management Artifact](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Management/Documents/Management/ManagementArtifact.md)
+- [Weekly Reports](https://github.com/algosup/2024-2025-project-1-fpga-team-4/tree/Management/Documents/Management/WeeklyReports)
 
 ### Quality Assurance
 
-- Test Plan
-- Test Cases
+- [Test Plan](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/QA/Documents/TestPlan.md)
+- [Test Cases](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/QA/Documents/TestCases.md)
+
+### User Manual
+
+- User Manual
