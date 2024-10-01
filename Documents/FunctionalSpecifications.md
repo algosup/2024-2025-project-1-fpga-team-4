@@ -8,6 +8,7 @@
         - [Stakeholders](#stakeholders)
         - [What is Frogger](#what-is-frogger)
         - [How to play](#how-to-play)
+        - [Project scope](#project-scope)
     - [II. Game Mechanics](#ii-game-mechanics)
         - [Controls Mechanics](#controls-mechanics)
         - [Map and Cars Mechanics](#map-and-cars-mechanics)
@@ -26,11 +27,10 @@
             - [Frog Display:](#frog-display-1)
             - [Cars Display:](#cars-display)
             - [Levels:](#levels-1)
-    - [VI. Project scope](#vi-project-scope)
-    - [VII. Test Plan](#vii-test-plan)
-    - [VIII. Success Criteria](#viii-success-criteria)
-    - [IX. Legal Stuff](#ix-legal-stuff)
-    - [X. Glossary](#x-glossary)
+    - [VI. Test Plan](#vi-test-plan)
+    - [VII. Success Criteria](#vii-success-criteria)
+    - [VIII. Legal](#viii-legal)
+    - [IX. Glossary](#ix-glossary)
 </details>
 
 ---
@@ -61,6 +61,15 @@ Frogger is a 1981 arcade game, developed by Konami and published by Sega, which 
 The goal of the game is to direct five frogs to their homes by dodging traffic on a road.
 The frogs start at the buttom of the screen and the player must guide the frog at the top of the screen, across the opposite lanes of traffic without getting killed by cars.
 
+#### Project scope
+
+| In Scope | Out of Scope |
+|---|---|
+|Delivering a working clone of Frogger using the Go Board|Additional levels beyond level 10|
+|Implementing game logic in Verilog[^2] to run on the Go Board and display on a VGA screen|Multiplayer system|
+|Win and lose conditions|Sound effects or music|
+|Go Board must be used to control the frog and display the score|Advanced Graphics|
+
 ---
 ## II. Game Mechanics
 
@@ -71,7 +80,7 @@ On the bottom of the screen the player must guide the frog between opposing lane
 
 #### Map and Cars Mechanics 
 
-The map of the Frogger game has a main horizontal sections:
+The map of the Frogger game only has a main horizontal sections:
 
 ##### The Road:
 - The bottom part of the screan serves as the starting area for the player.
@@ -79,6 +88,10 @@ The map of the Frogger game has a main horizontal sections:
 - Vehicles include different types of cars and trucks of varying speeds and sizes. They move horizontally from left to right or right to left across the screen.
 
 ##### Cars Mechanics:
+- Cars move horizontally across the screen, either left to right or right to left.
+- Each car have a set speed, which can vary depending on the level or difficulty.
+- The cars continuously respawns to maintain the flow of traffic. 
+- Each car have a defined hitbox that matches its size on the grid.
 
 #### Life system
 The player starts the game with 5 frogs, so five lives. When the frog dies, the player loses one of his five lives and when the lives counter drops to zero the score resets and the game restarts.
@@ -180,7 +193,7 @@ There shall be at least 1 level in the game, when the Frog reaches the top of th
 #### 2. Objectives 
 
 - ##### Frog Display: 
-The frog shall be drawn as a Sprite that looks like a real frog. The Sprite shall have colors. 
+The frog shall be drawn as a Sprite [^4] that looks like a real frog. The Sprite shall have colors. 
 
 - ##### Cars Display: 
 There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move at different speeds.
@@ -190,31 +203,15 @@ There shall be at least 10 levels in the game, when the level increases the game
 
 ---
 
-## VI. Project scope
-
-*Brouillon*
-
-| Must have | Should have | Could have | 
-| :---: | :---: | :---: |
-| Frog, Cars, Buttons, Display on Monitor | Levels | Sprites, Lives | Levels After 99 |
-
-| In Scope | Out of Scope |
-|---|---|
-|Delivering a clone of Frogger in Verilog[^2]|Having Levels After 99|
-|Go Board must be used to control the frog and display the score
-|The game must have at least a win and a lose condition
-|The game must use a VGA display
-
-
-
----
-
-## VII. Test Plan
+## VI. Test Plan
 Anything relative to this project's tests can be found in [this document](./TestPlan.md).
 
 ---
 
-## VIII. Success Criteria
+## VII. Success Criteria
+
+Those are our succes criteria:
+
 - The game display every element without any kind of stuttering
 - The player can control the character without latency between the player action and game's reaction using the Go Board
 - The player can progress amongst levels the same way as the original game
@@ -224,19 +221,25 @@ Anything relative to this project's tests can be found in [this document](./Test
 
 ---
 
-## IX. Legal
+## VIII. Legal
 
+In this project, we are remaking the Frogger game on a Go Board (FPGA[^3]) for educational purposes. As this is a school project, we are not using any of the original game’s assets, names, or code to avoid legal issues. All graphics, sounds, and game logics are original or designed by the team. Here are the key guidelines:
 
-données utilisateur 
-Dans le cadre d'un projet scolaire visant à recréer Frogger sur une board FPGA, tu pourrais être en mesure de le faire en respectant certaines règles :
-Recréer le concept sans copier les assets originaux : Tu peux recréer le gameplay de Frogger (déplacement d'un personnage à travers des obstacles), mais il est préférable de concevoir tes propres graphismes, sons, et animations plutôt que d'utiliser ceux du jeu original.
-Code source : Si tu codes le jeu toi-même en utilisant le FPGA, cela pourrait être considéré comme une nouvelle implémentation inspirée de Frogger, ce qui est généralement permis dans le cadre d'un projet éducatif.
-Respect des droits : Évite de reproduire des noms, logos, ou autres éléments qui sont directement protégés par des droits d'auteur ou de marque. Appeler ton jeu par un autre nom et utiliser des designs originaux serait une bonne approche.
-Documentation du projet : Dans ton rapport ou présentation, explique que le projet est une réinterprétation d’un concept classique et cite les inspirations, mais souligne que tout le code et les éléments graphiques ont été créés par toi.
+ - Intellectual Property: We are not copying any original Frogger assets or elements. Instead, we’re creating our own designs, including the frog, cars, and environment.
+ - Gameplay Inspiration: While the gameplay mechanics are inspired by Frogger, the implementation and design are our own. This ensures that we remain within fair use for educational purposes.
+ - Trademark Avoidance: The name “Frogger” will not be used in the final version of the project. The game will be renamed, and no trademarks from the original game are to be included.
+ - Educational Exemption: This project is non-commercial and solely for educational purposes, which provides some leeway under copyright laws.
+
 ---
 
-## X. Glossary
-[^1]: Go-Board: FPGA Development Board For Beginners.
-[^2]: Verilog: A hardware description language (HDL) used to model electronic systems.
+## IX. Glossary
+
+[^1]: Go-Board: An FPGA development board aimed for beginners, often used for educational projects.
+
+[^2]: Verilog: A hardware description language (HDL) used to model and design digital systems such as integrated circuits.
+
+[^3]: FPGA (Field-Programmable Gate Array): An integrated circuit designed to be configured by the customer after manufacturing. It can be programmed to perform specific tasks using hardware description languages like Verilog.
+
+[^4]: Sprite: A 2D image or animation integrated into a larger scene, often used for characters and objects in video games.
 
 
