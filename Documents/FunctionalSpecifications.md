@@ -12,21 +12,25 @@
     - [II. Game Mechanics](#ii-game-mechanics)
         - [Controls Mechanics](#controls-mechanics)
         - [Map and Cars Mechanics](#map-and-cars-mechanics)
-            - [The Road:](#the-road)
-            - [Cars Mechanics:](#cars-mechanics)
-        - [Life system](#life-system)
+            - [The Map](#the-map)
+            - [Cars Mechanics](#cars-mechanics)
         - [Score](#score)
     - [III. Designs/Graphic charter](#iii-designsgraphic-charter)
     - [IV. Use Cases](#iv-use-cases)
+        - [Use Case N°1: Start Game](#use-case-n1-start-game)
+        - [Use Case N°2: Navigating through the road](#use-case-n2-navigating-through-the-road)
+        - [Use Case N°3: Finishing a Level](#use-case-n3-finishing-a-level)
+        - [Use Case N°4: Win the Game](#use-case-n4-win-the-game)
+        - [Use Case N°5: Game Over](#use-case-n5-game-over)
     - [V. Requirements and Objectives](#v-requirements-and-objectives)
         - [1. Requirements](#1-requirements)
-            - [Frog Display:](#frog-display)
-            - [Car Display:](#car-display)
-            - [Levels:](#levels)
-        - [2. Objectives ](#2-objectives)
-            - [Frog Display:](#frog-display-1)
-            - [Cars Display:](#cars-display)
-            - [Levels:](#levels-1)
+            - [Frog Display](#frog-display-requirements)
+            - [Car Display](#car-display-requirements)
+            - [Levels](#levels-requirements)
+        - [2. Objectives](#2-objectives)
+            - [Frog Display](#frog-display-objectives)
+            - [Cars Display](#car-display-objectives)
+            - [Levels](#levels-objectives)
     - [VI. Test Plan](#vi-test-plan)
     - [VII. Success Criteria](#vii-success-criteria)
     - [VIII. Legal](#viii-legal)
@@ -80,9 +84,7 @@ On the bottom of the screen the player must guide the frog between opposing lane
 
 #### Map and Cars Mechanics 
 
-The map of the Frogger game only has a main horizontal sections:
-
-##### The Road:
+##### The Map:
 - The bottom part of the screan serves as the starting area for the player.
 - This section of the map represents a busy highway filled with multiple lanes of moving vehicles.
 - Vehicles include different types of cars and trucks of varying speeds and sizes. They move horizontally from left to right or right to left across the screen.
@@ -93,9 +95,6 @@ The map of the Frogger game only has a main horizontal sections:
 - The cars continuously respawns to maintain the flow of traffic. 
 - Each car have a defined hitbox that matches its size on the grid.
 
-#### Life system
-The player starts the game with 5 frogs, so five lives. When the frog dies, the player loses one of his five lives and when the lives counter drops to zero the score resets and the game restarts.
-
 #### Score
 When the player reaches the top of the screen, his score is updated and a point is added to it. 
 
@@ -105,7 +104,7 @@ The player's goal is to reach the maximum score of 10 points without dying. Afte
 
 ## III. Designs/Graphic charter
 
-<img src="./Images/Grey-Car.png" alt="Grey-Car" width="100"/><img src="./Images/Orange-car.png" alt="Orange-Car" width="100"/><img src="./Images/Purple-Car.png" alt="Purple-Car" width="100"/>
+<img src="./Images/Grey-Car.png" alt="Grey-Car" width="100"/><img src="./Images/Orange-Car.png" alt="Orange-Car" width="100"/><img src="./Images/Purple-Car.png" alt="Purple-Car" width="100"/>
 
 ---
 
@@ -143,19 +142,8 @@ The frog reaches the top of the screen.
 - **Post-Conditions**: The player's score is updated, and the frog's position  is reset to the starting position.
 - **Exit Criteria**: The player finishes the level, and the game transitions to the next level.
 
-#### Use Case N°4: Dying
-- **Description**: The player's character loses a life.
-- **Actor(s)**: Player, Game System
-- **Pre-Conditions**: The frog has collided with an obstacle or fallen into water.
-- **Flow of Events**:
-    - The frog collides with an obstacle.
-    - The game system detects the collision.
-    - The frog dies, and the game system deducts a life from the player's remaining lives.
-    - The frog respawns at the starting position.
-- **Post-Conditions**: The frog loses a life, and the player either respawns or the game ends.
-- **Exit Criteria**: The level resets, or the game ends if no lives remain.
 
-#### Use Case N°5: Win the Game
+#### Use Case N°4: Win the Game
 - **Description**: The player successfully reaches a score of 10.
 - **Actor(s)**: Player, Game System
 - **Pre-Conditions**: The player has reached the last level.
@@ -165,13 +153,13 @@ The frog reaches the top of the screen.
 - **Post-Conditions**: The player wins the game and sees a victory screen.
 - **Exit Criteria**: The game resets to the initial state.
 
-#### Use Case N°6: Game Over
-- **Description**: Ending the game after losing all lives.
+#### Use Case N°5: Game Over
+- **Description**: Ending the game after dying.
 - **Actor(s)**: Player, Game System
-- **Pre-Conditions**: The player has no remaining lives.
+- **Pre-Conditions**: The player collides with a car.
 - **Flow of Events**:
-    - The game system checks the player's remaining lives.
-    - When the last life is lost, the game transitions to a "Game Over" screen.
+    - The game system detects the collision.
+    - When the frog dies, the game transitions to a "Game Over" screen.
     - The game displays the final score and a prompt to restart or quit the game.
 - **Post-Conditions**: The game ends, and the player sees the final score and game over message.
 - **Exit Criteria**: The game resets to the initial state.
@@ -181,24 +169,24 @@ The frog reaches the top of the screen.
 
 #### 1. Requirements
 
-- ##### Frog Display: 
+- ##### Frog Display {#frog-display-requirements}
 The frog shall be drawn as a 1x1 grid on the VGA display (where each grid is 32x32 pixels). The frog shall be white in color. 
 
-- ##### Car Display: 
+- ##### Car Display {#car-display-requirements}
 There shall be at least 1 car on the screen at a time. The car shall be drawn as a 1x1 grid. The car shall be white in color. 
 
-- ##### Levels: 
+- ##### Levels {#levels-requirements}
 There shall be at least 1 level in the game, when the Frog reaches the top of the screen the game is complete. 
 
 #### 2. Objectives 
 
-- ##### Frog Display: 
+- ##### Frog Display {#frog-display-objectives}
 The frog shall be drawn as a Sprite [^4] that looks like a real frog. The Sprite shall have colors. 
 
-- ##### Cars Display: 
+- ##### Cars Display {#car-display-objectives}
 There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move at different speeds.
 
-- ##### Levels: 
+- ##### Levels {#levels-objectives}
 There shall be at least 10 levels in the game, when the level increases the game difficulty gets harder (for example, cars speed increase, number of cars increase).
 
 ---
