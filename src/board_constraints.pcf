@@ -14,3 +14,14 @@ set_io blue[2] 42
 ## Clock
 
 set_io clk 15
+
+## Switches
+
+set_io switch1 51
+set_io switch2 52
+set_io switch3 53
+set_io switch4 54
+
+## Reset
+
+set_io reset 83
