@@ -58,44 +58,44 @@ The goal of the project is to remake the old retro game "Frogger" using a Go Boa
 
 #### What is Frogger
 
-Frogger is a 1981 arcade game, developed by Konami and published by Sega, which was really popular at its time and was said to be "one of the greatest video game ever made"
+Frogger is an arcade game, developed by Konami and published in 1981 by Sega, which was really popular when it was realsed and was said to be "one of the greatest video game ever made".
 
-#### How to play
+#### How to Play
 
-The goal of the game is to direct five frogs to their homes by dodging traffic on a road.
-The frogs start at the buttom of the screen and the player must guide the frog at the top of the screen, across the opposite lanes of traffic without getting killed by cars.
+The goal of the game is to direct a frog to his home by dodging traffic on a road.
+The frog starts at the bottom of the screen and the player must guide the frog to the top of the screen, across the opposite lanes of traffic without getting killed by cars.
 
-#### Project scope
+#### Project Scope
 
 | In Scope | Out of Scope |
 |---|---|
-|Delivering a working clone of Frogger using the Go Board|Additional levels beyond level 10|
-|Implementing game logic in Verilog[^2] to run on the Go Board and display on a VGA screen|Multiplayer system|
+|Delivering a working game inspired by Frogger using the Go Board|Additional levels beyond level 10|
+|Implementing game logic in Verilog[^2] to run on the Go Board and display on a VGA monitor|Multiplayer system|
 |Win and lose conditions|Sound effects or music|
-|Go Board must be used to control the frog and display the score|Advanced Graphics|
+|Go Board must be used to control the frog and display the score|Advanced graphics|
 
 ---
 ## II. Game Mechanics
 
-#### Controls Mechanics
+#### Controls
 The player controls are four different buttons that are used to navigate the frog, each button causes the frog to hop once in that direction, switch 1 = up, switch 2 = down, switch 3 = left and switch 4 = right. 
 
-On the bottom of the screen the player must guide the frog between opposing lanes of trucks, cars, and other vehicles, to avoid dying.
+On the bottom of the screen the player must guide the frog between opposing lanes of trucks, cars, and buses, to avoid dying.
 
-#### Map and Cars Mechanics 
+#### Map and Vehicules Mechanics 
 
 ##### The Map:
-- The bottom part of the screan serves as the starting area for the player.
+- The bottom part of the screen serves as the starting area for the player.
 - This section of the map represents a busy highway filled with multiple lanes of moving vehicles.
 - Vehicles include different types of cars and trucks of varying speeds and sizes. They move horizontally from left to right or right to left across the screen.
 
-##### Cars Mechanics:
-- Cars move horizontally across the screen, either left to right or right to left.
-- Each car have a set speed, which can vary depending on the level or difficulty.
-- The cars continuously respawns to maintain the flow of traffic. 
-- Each car have a defined hitbox that matches its size on the grid.
+##### Vehicules Mechanics:
+- Vehicules move horizontally across the screen, either left to right or right to left.
+- Each vehicule have a spawnrate [^] and set speed, which can vary depending on the level or difficulty.
+- The vehicules continuously respawns to maintain the flow of traffic. 
+- Each vehicule has a defined hitbox that matches its size on the grid.
 
-#### Score
+#### Scoring System
 When the player reaches the top of the screen, his score is updated and a point is added to it. 
 
 The player's goal is to reach the maximum score of 10 points without dying. After reaching the maximum score the game stops and the letters "GG" are displayed on the board.
@@ -127,21 +127,20 @@ The player's goal is to reach the maximum score of 10 points without dying. Afte
 - **Actor(s)**: Player, Game System
 - **Pre-Conditions**: The game has started, and the player is controlling the frog.
 - **Flow of Events**:
-    - The player presses the switch on the GO-Board to move the frog.
+    - The player presses a switch on the GO-Board to move the frog.
     - The game system moves the frog in the indicated direction.
     - The game system checks for collisions between the frog and moving cars/trucks.
 - **Post-Conditions**: The frog moves as directed by player inputs.
 - **Exit Criteria**: The frog safely crosses the road or collides with an obstacle.
  
 #### Use Case N°3: Finishing a Level
-- **Description**: Completing the game's objectives.
+- **Description**: Completing the game's objective.
 - **Actor(s)**: Player, Game System
-- **Pre-Conditions**: The player successfully navigates the frog across both the road and the river.
+- **Pre-Conditions**: The player successfully navigates the frog across the road.
 - **Flow of Events**:
 The frog reaches the top of the screen.
 - **Post-Conditions**: The player's score is updated, and the frog's position  is reset to the starting position.
 - **Exit Criteria**: The player finishes the level, and the game transitions to the next level.
-
 
 #### Use Case N°4: Win the Game
 - **Description**: The player successfully reaches a score of 10.
@@ -161,7 +160,7 @@ The frog reaches the top of the screen.
     - The game system detects the collision.
     - When the frog dies, the game transitions to a "Game Over" screen.
     - The game displays the final score and a prompt to restart or quit the game.
-- **Post-Conditions**: The game ends, and the player sees the final score and game over message.
+- **Post-Conditions**: The game ends, game over message, final score on the board.
 - **Exit Criteria**: The game resets to the initial state.
 
 ---
