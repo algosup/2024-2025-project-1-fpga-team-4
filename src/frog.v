@@ -45,13 +45,13 @@ module frog (
         end else begin
             // Detect rising edge (press) for each switch
             if (switch2_clean && !switch2_prev && frog_x >= 32) 
-                frog_y <= frog_y + 32; // Move left
+                frog_x <= frog_x - 32; // Move left
             if (switch3_clean && !switch3_prev && frog_x <= (640 - 32)) 
-                frog_y <= frog_y - 32; // Move right
+                frog_x <= frog_x + 32; // Move right
             if (switch1_clean && !switch1_prev && frog_y >= 32) 
-                frog_x <= frog_x - 32; // Move up
+                frog_y <= frog_y - 32; // Move up
             if (switch4_clean && !switch4_prev && frog_y <= (480 - 32)) 
-                frog_x <= frog_x + 32; // Move down
+                frog_y <= frog_y + 32; // Move down
 
             // Update previous switch states
             switch1_prev <= switch1_clean;

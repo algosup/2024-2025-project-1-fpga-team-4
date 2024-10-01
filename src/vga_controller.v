@@ -32,45 +32,43 @@
         assign hsync = (h_counter >= (H_DISPLAY + H_FRONT_PORCH) && h_counter < (H_DISPLAY + H_FRONT_PORCH + H_SYNC_PULSE));
         assign vsync = (v_counter >= (V_DISPLAY + V_FRONT_PORCH) && v_counter < (V_DISPLAY + V_FRONT_PORCH + V_SYNC_PULSE));
 
-        reg [31:0] sprite_mem [0:31];
+        reg [64:0] sprite_mem [0:31];
 
-        // Initial block to hardcode the sprite into memory
+        // Initial block to hardcode the sprite into memory, this sprite is in 64' and every two bits correspond to 1 pixel, that way we can have up to 4 colors, if we make it 96' every three bits will correspond to a pixel, thus giving us 9 colors, this is how we will apply color to the sprites
         initial begin
-            // Hardcoded 32x32 sprite data (each row is 32 bits wide, 1-bit per pixel)
-            sprite_mem[0]  = 32'b00000000000000000000000000000000;
-            sprite_mem[1]  = 32'b00000000000000000000000000000000;
-            sprite_mem[2]  = 32'b00000000000000000000000000000000;
-            sprite_mem[3]  = 32'b00000000000000011100000000000000;
-            sprite_mem[4]  = 32'b00000000000000110100000000000000;
-            sprite_mem[5]  = 32'b00000000000001100110000000000000;
-            sprite_mem[6]  = 32'b00000010000011000011000000000100;
-            sprite_mem[7]  = 32'b00000010000110000001100000000100;
-            sprite_mem[8]  = 32'b00000010000100000000110000000100;
-            sprite_mem[9]  = 32'b00000001001000000000010000000100;
-            sprite_mem[10] = 32'b00000001111000000000010000001000;
-            sprite_mem[11] = 32'b00000000001000000000011111111000;
-            sprite_mem[12] = 32'b00000000011000000000010000000000;
-            sprite_mem[13] = 32'b00000000011000000000010000000000;
-            sprite_mem[14] = 32'b00000000001000000000010000000000;
-            sprite_mem[15] = 32'b00000000000100000000010000000000;
-            sprite_mem[16] = 32'b00000000000110000000110000000000;
-            sprite_mem[17] = 32'b00000000000011000001100000000000;
-            sprite_mem[18] = 32'b00000000000011111111000000000000;
-            sprite_mem[19] = 32'b00000000000010000011000000000000;
-            sprite_mem[20] = 32'b00000000000010000010000000000000;
-            sprite_mem[21] = 32'b00000000000011000010000000000000;
-            sprite_mem[22] = 32'b00001100000010000010000000000000;
-            sprite_mem[23] = 32'b00000111000001000010000000000000;
-            sprite_mem[24] = 32'b00000000111111100100000001110000;
-            sprite_mem[25] = 32'b00000000000000000111111110000000;
-            sprite_mem[26] = 32'b00000000000000000000000000000000;
-            sprite_mem[27] = 32'b00000000000000000000000000000000;
-            sprite_mem[28] = 32'b00000000000000000000000000000000;
-            sprite_mem[29] = 32'b00000000000000000000000000000000;
-            sprite_mem[30] = 32'b00000000000000000000000000000000;
-            sprite_mem[31] = 32'b00000000000000000000000000000000;
+            sprite_mem[0]  = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[1]  = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[2]  = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[3]  = 64'b0000000000000000010101010100000000000000000000000000000000000000;
+            sprite_mem[4]  = 64'b0000000000000001010000000001010000000000000000000000000000000000;
+            sprite_mem[5]  = 64'b0000000000000010010101010100100000000000000000000000000000000000;
+            sprite_mem[6]  = 64'b0000000100000100010101010100010000000000000000000000000000000000;
+            sprite_mem[7]  = 64'b0000000100001000000100000000010000000000000000000000000000000000;
+            sprite_mem[8]  = 64'b0000000100000000000001000000010000000000000000000000000000000000;
+            sprite_mem[9]  = 64'b0000000010010000000001000000010000000000000000000000000000000000;
+            sprite_mem[10] = 64'b0000000111010000000001000000100000000000000000000000000000000000;
+            sprite_mem[11] = 64'b0000000000010000000001111111100000000000000000000000000000000000;
+            sprite_mem[12] = 64'b0000000001010000000001000000000000000000000000000000000000000000;
+            sprite_mem[13] = 64'b0000000001010000000001000000000000000000000000000000000000000000;
+            sprite_mem[14] = 64'b0000000000010000000001000000000000000000000000000000000000000000;
+            sprite_mem[15] = 64'b0000000000001000000001000000000000000000000000000000000000000000;
+            sprite_mem[16] = 64'b0000000000001100000011000000000000000000000000000000000000000000;
+            sprite_mem[17] = 64'b0000000000000110000110000000000000000000000000000000000000000000;
+            sprite_mem[18] = 64'b0000000000000111111110000000000000000000000000000000000000000000;
+            sprite_mem[19] = 64'b0000000000000010001100000000000000000000000000000000000000000000;
+            sprite_mem[20] = 64'b0000000000000010001000000000000000000000000000000000000000000000;
+            sprite_mem[21] = 64'b0000000000000100001000000000000000000000000000000000000000000000;
+            sprite_mem[22] = 64'b0000110000001000001000000000000000000000000000000000000000000000;
+            sprite_mem[23] = 64'b0000011100000100001000000000000000000000000000000000000000000000;
+            sprite_mem[24] = 64'b0000000011111110010000000111000000000000000000000000000000000000;
+            sprite_mem[25] = 64'b0000000000000000011111111000000000000000000000000000000000000000;
+            sprite_mem[26] = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[27] = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[28] = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[29] = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[30] = 64'b0000000000000000000000000000000000000000000000000000000000000000;
+            sprite_mem[31] = 64'b0000000000000000000000000000000000000000000000000000000000000000;
         end
-
         // Check if the current pixel is within the frog's position
         wire in_frog;
         assign in_frog = (h_counter >= frog_x && h_counter < frog_x + FROG_SIZE) &&
@@ -79,24 +77,52 @@
         // Calculate the pixel offset within the frog sprite
         wire [4:0] sprite_x = h_counter - frog_x;
         wire [4:0] sprite_y = v_counter - frog_y;
-        reg sprite_pixel;
+        wire [5:0] sprite_offset = sprite_x * 2;
+        reg [1:0] sprite_pixel;
 
         always @(posedge clk) begin
             if (in_frog) begin
                 // Extract the pixel from the sprite memory (1 bit per pixel)
-                sprite_pixel <= sprite_mem[sprite_y][sprite_x];
+                sprite_pixel <= sprite_mem[sprite_y][sprite_offset +: 2];
             end else begin
-                sprite_pixel <= 0;
+                sprite_pixel <= 2'b00;
             end
+        end
+
+        reg [2:0] color_r, color_g, color_b;
+        // this block lets us choose what color corresponds to what sprite.
+        always @(*) begin
+            case (sprite_pixel)
+                2'b00: begin  // Black (for wheels)
+                    color_r = 3'b000;
+                    color_g = 3'b000;
+                    color_b = 3'b000;
+                end
+                2'b01: begin  // Pink (for car body)
+                    color_r = 3'b111;
+                    color_g = 3'b000;
+                    color_b = 3'b111;
+                end
+                2'b10: begin  // White (for highlights)
+                    color_r = 3'b111;
+                    color_g = 3'b111;
+                    color_b = 3'b111;
+                end
+                2'b11: begin  // Unused or another color
+                    color_r = 3'b000;
+                    color_g = 3'b111;
+                    color_b = 3'b000;
+                end
+            endcase
         end
         
         // RGB output signals
         assign red = (h_counter < H_DISPLAY && v_counter < V_DISPLAY) ? 
-                    ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : 3'b000) : 3'b000;
+                    ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : (sprite_pixel) ? color_r : 3'b000) : 3'b000;
         assign green = (h_counter < H_DISPLAY && v_counter < V_DISPLAY) ? 
-                    ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : (sprite_pixel)? 3'd111 : 3'b000) : 3'b000;
+                    ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0 ) ? 3'b111 : (sprite_pixel) ? color_g : 3'd000) : 3'b000;
         assign blue = (h_counter < H_DISPLAY && v_counter < V_DISPLAY) ? 
-                    ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : 3'b000) : 3'b000;
+                    ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : (sprite_pixel) ? color_b : 3'b000) : 3'b000;
 
         // Horizontal counter
         always @(posedge clk) begin
