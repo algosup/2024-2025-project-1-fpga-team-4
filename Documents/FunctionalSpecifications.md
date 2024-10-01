@@ -24,13 +24,13 @@
         - [Use Case N°5: Game Over](#use-case-n5-game-over)
     - [V. Requirements and Objectives](#v-requirements-and-objectives)
         - [1. Requirements](#1-requirements)
-            - [Frog Display](#frog-display-requirements)
-            - [Car Display](#car-display-requirements)
-            - [Levels](#levels-requirements)
+            - [Frog Display Requirements](#frog-display-requirements)
+            - [Car Display Requirements](#car-display-requirements)
+            - [Levels Requirements](#levels-requirements)
         - [2. Objectives](#2-objectives)
-            - [Frog Display](#frog-display-objectives)
-            - [Cars Display](#car-display-objectives)
-            - [Levels](#levels-objectives)
+            - [Frog Display Objectives](#frog-display-objectives)
+            - [Car Display Objectives](#car-display-objectives)
+            - [Levels Objectives](#levels-objectives)
     - [VI. Test Plan](#vi-test-plan)
     - [VII. Success Criteria](#vii-success-criteria)
     - [VIII. Legal](#viii-legal)
@@ -169,24 +169,24 @@ The frog reaches the top of the screen.
 
 #### 1. Requirements
 
-- ##### Frog Display {#frog-display-requirements}
+- ##### Frog Display Requirements 
 The frog shall be drawn as a 1x1 grid on the VGA display (where each grid is 32x32 pixels). The frog shall be white in color. 
 
-- ##### Car Display {#car-display-requirements}
+- ##### Car Display Requirements
 There shall be at least 1 car on the screen at a time. The car shall be drawn as a 1x1 grid. The car shall be white in color. 
 
-- ##### Levels {#levels-requirements}
+- ##### Levels Requirements
 There shall be at least 1 level in the game, when the Frog reaches the top of the screen the game is complete. 
 
 #### 2. Objectives 
 
-- ##### Frog Display {#frog-display-objectives}
+- ##### Frog Display Objectives
 The frog shall be drawn as a Sprite [^4] that looks like a real frog. The Sprite shall have colors. 
 
-- ##### Cars Display {#car-display-objectives}
+- ##### Car Display Objectives
 There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move at different speeds.
 
-- ##### Levels {#levels-objectives}
+- ##### Levels Objectives
 There shall be at least 10 levels in the game, when the level increases the game difficulty gets harder (for example, cars speed increase, number of cars increase).
 
 ---
