@@ -8,7 +8,7 @@
 
 | Team n°| Project Manager | Email                    |
 | :----: | :-------------: | :----------------------: |
-| 7      | Jason GROSSO    | [jason.grosso@algosup.com](jason.grosso@algosup.com)    |
+| 4      | Jason GROSSO    | [jason.grosso@algosup.com](jason.grosso@algosup.com)    |
 
 | Start Date | End Date |
 | :--------: | :------: |
