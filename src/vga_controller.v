@@ -19,7 +19,7 @@ module vga_controller (
     localparam V_DISPLAY = 480;
     localparam V_FRONT_PORCH = 10;
     localparam V_SYNC_PULSE = 2;
-    localparam V_BACK_PORCH = 33;
+    localparam V_BACK_PORCH = 33; 
     localparam V_TOTAL = V_DISPLAY + V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH;
 
     localparam GRID_SIZE = 32;
