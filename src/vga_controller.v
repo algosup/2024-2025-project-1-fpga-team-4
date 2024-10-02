@@ -23,7 +23,6 @@ module vga_controller (
     localparam V_TOTAL = V_DISPLAY + V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH;
 
     localparam GRID_SIZE = 32;
-    localparam FROG_SIZE = 32;  // Assuming frog occupies one grid square (32x32)
 
     reg [9:0] h_counter = 0;
     reg [9:0] v_counter = 0;
@@ -32,18 +31,28 @@ module vga_controller (
     assign hsync = (h_counter >= (H_DISPLAY + H_FRONT_PORCH) && h_counter < (H_DISPLAY + H_FRONT_PORCH + H_SYNC_PULSE));
     assign vsync = (v_counter >= (V_DISPLAY + V_FRONT_PORCH) && v_counter < (V_DISPLAY + V_FRONT_PORCH + V_SYNC_PULSE));
 
-    // Check if the current pixel is within the frog's position
+    // Instantiate the frog renderer module
+    wire [2:0] frog_r, frog_g, frog_b;
     wire in_frog;
-    assign in_frog = (h_counter >= frog_x && h_counter < frog_x + FROG_SIZE) &&
-                     (v_counter >= frog_y && v_counter < frog_y + FROG_SIZE);
+    
+    frog_renderer frog (
+        .clk(clk),
+        .h_counter(h_counter),
+        .v_counter(v_counter),
+        .frog_x(frog_x),
+        .frog_y(frog_y),    
+        .color_r(frog_r),
+        .color_g(frog_g),
+        .color_b(frog_b)
+    );
 
     // RGB output signals
     assign red = (h_counter < H_DISPLAY && v_counter < V_DISPLAY) ? 
-                 ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0 || in_frog) ? 3'b111 : 3'b000) : 3'b000;
+                 ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : frog_r) : 3'b000;
     assign green = (h_counter < H_DISPLAY && v_counter < V_DISPLAY) ? 
-                   ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0 || in_frog) ? 3'b111 : 3'b000) : 3'b000;
+                   ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : frog_g) : 3'b000;
     assign blue = (h_counter < H_DISPLAY && v_counter < V_DISPLAY) ? 
-                  ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0 || in_frog) ? 3'b111 : 3'b000) : 3'b000;
+                  ((h_counter % GRID_SIZE == 0 || v_counter % GRID_SIZE == 0) ? 3'b111 : frog_b) : 3'b000;
 
     // Horizontal counter
     always @(posedge clk) begin
