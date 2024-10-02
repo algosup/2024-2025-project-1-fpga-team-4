@@ -35,11 +35,20 @@ This test plan is for the recreation of the Frogger game coded on the *Nandland 
     - **Number of Cars** there can only be one car per lane
     - **Car Specifications** The cars can go at differents speeds and can be of different sizes, they could become faster or bigger in later levels.
     - **Level Counter Behavior** The level counter should increase by one every time the frog reaches the top of the screen. It should also go back down to zero if the player dies
-    - **Level Counter Maximum** Once the player wins level 99, the screen and the display on the *Nanland Go Board* should show "GG". After any input from the player, the game should be reset to level 00.
+    - **Level Counter Maximum** Once the player wins level 10, the screen and the display on the *Nanland Go Board* should show "GG". After any input from the player, the game should be reset to level 00.
     - *From here on out it's unsure if these features will be added*
     - **Pause button pressed** When the pause button is pressed, the cars should stop moving, the positions need to be retained, any eventual music should stopped and the movement buttons should be disabled. If the game was already paused, the cars should start moving again, the music should resume and the movement buttons should function again. 
 
-3. ***Test deliverables***
+3. ***Test Environnment***
+    3.1 **Hardware**
+        Everything will be tested using the *Nanland Go-Board* and an Acer 24.5" monitor. 
+    3.2 **Software**
+        We will be using VSCode with a Verilog extension to code and test. Everything will be documented on github.
+    3.3 **Simulation**
+        To test the code, we will need to run simulations, we will be using: [EDA Playground](https://edaplayground.com)
+
+
+4. ***Test deliverables***
 
     1. **test-cases**
         Every test will be recorded in the Test-Cases.md documents. Each test will have a name, a description, an expected behavior and the steps necessary for the testing.

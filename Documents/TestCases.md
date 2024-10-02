@@ -39,7 +39,7 @@ Test priorities are differenciated as such:
 
 | Number | Three |
 | --- | --- |
-| Test Description | Verify that cars and the frog spawn as intended at the start of a levle |
+| Test Description | Verify that cars and the frog spawn as intended at the start of a level |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Start the game 2. Wait|
 | Expected Result | The frog spawns in the bottom middle of the screen, a couple of cars spawn on the road in the middle of the screen |
@@ -132,48 +132,18 @@ Test priorities are differenciated as such:
 | Priority | 2 |
 | Tested? | no |
 
-#### Lives at the start
-| Number | Twelve |
-| --- | --- |
-| Test Description | Verify that the lives counter starts at 5 |
-| Requirement(s) | The game is started |
-| Step(s) | 1. Start the level |
-| Expected Result | The player should have five lives |
-| Priority | 1 |
-| Tested? | no |
-
-#### Lives decrementation
-| Number | Thirteen |
-| --- | --- |
-| Test Description | Verify that the lives counter starts at 5 |
-| Requirement(s) | The game is started |
-| Step(s) | 1. Get hit by a car |
-| Expected Result | The Player should lose one life |
-| Priority | 1 |
-| Tested? | no |
-
 #### Level Counter Reset
-| Number | Fourteen |
+| Number | Twelve |
 | --- | --- |
 | Test Description | Verify that the level counter resets when it should |
 | Requirement(s) | The game is started |
-| Step(s) | 1. Get hit by a car, 2. repeat until you have zero lives |
+| Step(s) | 1. Get hit by a car|
 | Expected Result | The level counter resets back to 01 |
 | Priority | 1 |
 | Tested? | no |
 
-#### No lives
-| Number | Fifteen |
-| --- | --- |
-| Test Description | Verify that the game resets when the number of lives is 0 |
-| Requirement(s) | The game is started |
-| Step(s) | 1. Get hit by a car, 2. repeat until you have zero lives |
-| Expected Result | The player gets five new lives |
-| Priority | 1 |
-| Tested? | no |
-
 #### Car movement
-| Number | Sixteen |
+| Number | Thirteen |
 | --- | --- |
 | Test Description | Verify that cars move as intended |
 | Requirement(s) | The game is started |
@@ -183,7 +153,7 @@ Test priorities are differenciated as such:
 | Tested? | no |
 
 #### Car despawn
-| Number | Seventeen |
+| Number | Fourteen |
 | --- | --- |
 | Test Description | Verify that cars can despawn |
 | Requirement(s) | The game is started |
@@ -193,7 +163,7 @@ Test priorities are differenciated as such:
 | Tested? | no |
 
 #### Car replacement
-| Number | Eighteen |
+| Number | Fifteen |
 | --- | --- |
 | Test Description | Verify that new cars appear after the first ones leave |
 | Requirement(s) | The game is started |
@@ -203,7 +173,7 @@ Test priorities are differenciated as such:
 | Tested? | no |
 
 #### Frog move only one tile
-| Number | Nineteen |
+| Number | Sixteen |
 | --- | --- |
 | Test Description | Verify that the frog only moves one square per button press |
 | Requirement(s) | The game is started |
