@@ -14,14 +14,14 @@ For the First project of the school year we have to recreate the Arcade game **F
 | Ian LAURENT | Technical Writer | <img src="https://avatars.githubusercontent.com/u/146005340?v=4" width = "100px" alt="Ian Avatar"> | [Ian's GitHub](https://github.com/Ianlaur) | [Ian's Linkedin](https://www.linkedin.com/in/ian-h-laurent/) |
 | Victor LEROY | Software Engineer |<img src="https://avatars.githubusercontent.com/u/97166029?v=4" width = "100px" alt="Victor Avatar"> | [Victor's GitHub](https://github.com/Victor-Leroy) | [Victor's Linkedin](https://www.linkedin.com/in/victor-leroy-64baa3229/) |
 | Guillaume DERAMCHI | Software Engineer |<img src="https://avatars.githubusercontent.com/u/145995909?v=4" width = "100px" alt="Jason Avatar"> | [Guillaume's GitHub](https://github.com/Guillaume18100) | [Guillaume's Linkedin](https://www.linkedin.com/in/guillaume-deramchi-a45116293/) |
-| Emilien CHINSY | Quality Assurance | <img src="https://avatars.githubusercontent.com/u/182214919?v=4" width = "100px" alt="Emilien Avatar"> | [Emilien's GitHub](https://github.com/EmilienChinsy) | [Emilien's Linkedin](https://www.linkedin.com/in/jason-grosso-847b39251/) |
+| Emilien CHINSY | Quality Assurance | <img src="https://avatars.githubusercontent.com/u/182214919?v=4" width = "100px" alt="Emilien Avatar"> | [Emilien's GitHub](https://github.com/EmilienChinsy) | [Emilien's Linkedin](https://www.linkedin.com/in/emilien-chinsy-5a794632b/) |
 
 ## Documents Link
 
 ### Specification
 
-- [Functional Specification](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/FunctionalSpecifications/Documents/FunctionalSpecifications.md)
-- Technical Specification
+- [Functional Specification](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Documents/Documents/FunctionalSpecifications.md)
+- [Technical Specification](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Documents/Documents/TechnicalSpecifications.md)
 
 ### Project Management
 
@@ -30,9 +30,9 @@ For the First project of the school year we have to recreate the Arcade game **F
 
 ### Quality Assurance
 
-- [Test Plan](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/QA/Documents/TestPlan.md)
+- [Test Plan](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Documents/Documents/TestPlan.md)
 - [Test Cases](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/QA/Documents/TestCases.md)
 
 ### User Manual
 
-- User Manual
+- [User Manual](https://github.com/algosup/2024-2025-project-1-fpga-team-4/tree/Documents/Documents/UserManual/UserManualAssets)
