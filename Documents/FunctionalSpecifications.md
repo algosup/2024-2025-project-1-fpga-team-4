@@ -10,11 +10,11 @@
         - [How to play](#how-to-play)
         - [Project scope](#project-scope)
     - [II. Game Mechanics](#ii-game-mechanics)
-        - [Controls Mechanics](#controls-mechanics)
-        - [Map and Cars Mechanics](#map-and-cars-mechanics)
+        - [Controls](#controls)
+        - [Map and Vehicules Mechanics](#map-and-vehicules-mechanics)
             - [The Map](#the-map)
-            - [Cars Mechanics](#cars-mechanics)
-        - [Score](#score)
+            - [Vehicules Mechanics](#vehicules-mechanics)
+        - [Scoring System](#scoring-system)
     - [III. Designs/Graphic charter](#iii-designsgraphic-charter)
     - [IV. Use Cases](#iv-use-cases)
         - [Use Case N°1: Start Game](#use-case-n1-start-game)
@@ -33,15 +33,16 @@
             - [Levels Objectives](#levels-objectives)
     - [VI. Test Plan](#vi-test-plan)
     - [VII. Success Criteria](#vii-success-criteria)
-    - [VIII. Legal](#viii-legal)
-    - [IX. Glossary](#ix-glossary)
+    - [VIII. Difficulty Evolution Breakdown](#viii-difficulty-evolution-breakdown)
+    - [IX. Legal](#ix-legal)
+    - [X. Glossary](#x-glossary)
 </details>
 
 ---
 
 ## I. Project Overview
 
-The goal of the project is to remake the old retro game "Frogger" using a Go Board [^1] from Nandland.
+The goal of the project is to remake the old retro game "Frogger" using a Go Board[^1] from Nandland.
 
 #### Stakeholders
 
@@ -91,9 +92,13 @@ On the bottom of the screen the player must guide the frog between opposing lane
 
 ##### Vehicules Mechanics:
 - Vehicules move horizontally across the screen, either left to right or right to left.
-- Each vehicule have a spawnrate [^] and set speed, which can vary depending on the level or difficulty.
+- Each vehicule have a spawnrate[^3] and set speed, which can vary depending on the level or difficulty.
 - The vehicules continuously respawns to maintain the flow of traffic. 
 - Each vehicule has a defined hitbox that matches its size on the grid.
+- Vehicules types:
+    - Cars : They can be either slow or fast (2 - 3 boxes per second) and take up 1 grid space.
+    - Buses : They are slow (1 boxes per second), taking up 2 grid spaces.
+    - Trucks : They are fast (2 boxes per second), taking up 3 grid spaces.
 
 #### Scoring System
 When the player reaches the top of the screen, his score is updated and a point is added to it. 
@@ -180,7 +185,7 @@ There shall be at least 1 level in the game, when the Frog reaches the top of th
 #### 2. Objectives 
 
 - ##### Frog Display Objectives
-The frog shall be drawn as a Sprite [^4] that looks like a real frog. The Sprite shall have colors. 
+The frog shall be drawn as a Sprite[^4] that looks like a real frog. The Sprite shall have colors. 
 
 - ##### Car Display Objectives
 There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move at different speeds.
@@ -208,9 +213,37 @@ Those are our succes criteria:
 
 ---
 
-## VIII. Legal
+## VIII. Difficulty Evolution Breakdown
 
-In this project, we are remaking the Frogger game on a Go Board (FPGA[^3]) for educational purposes. As this is a school project, we are not using any of the original game’s assets, names, or code to avoid legal issues. All graphics, sounds, and game logics are original or designed by the team. Here are the key guidelines:
+| Level Number | Number of Vehicle per Level |
+|:---|:---:|
+|1| 12 |
+|2| 12 |
+|3| 12 |
+|4| 22 |
+|5| 19 |
+|6| 16 |
+|7| 22 |
+|8| 22 | 
+|9| 36 |
+|10| 46 |
+
+#### Vehicle Types per Level
+
+| **Type of Vehicle** | **Level 1** | **Level 2** | **Level 3** | **Level 4** | **Level 5** | **Level 6** | **Level 7** | **Level 8** | **Level 9** | **Level 10** |
+|:-------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
+| **Car**| ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| **Bus**| ❌ | ✔️ | ❌ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ | ✔️ |
+| **Truck**| ❌ | ❌ | ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
+
+
+You can find the detailled layout of the levels [HERE](https://docs.google.com/spreadsheets/d/192H_l_FA7qSmk4Z7lmOYOKX7erZ45zHxe5udNauicEI/edit?usp=sharing)
+
+---
+
+## IX. Legal
+
+In this project, we are remaking the Frogger game on a Go Board (FPGA[^5]) for educational purposes. As this is a school project, we are not using any of the original game’s assets, names, or code to avoid legal issues. All graphics, sounds, and game logics are original or designed by the team. Here are the key guidelines:
 
  - Intellectual Property: We are not copying any original Frogger assets or elements. Instead, we’re creating our own designs, including the frog, cars, and environment.
  - Gameplay Inspiration: While the gameplay mechanics are inspired by Frogger, the implementation and design are our own. This ensures that we remain within fair use for educational purposes.
@@ -219,14 +252,14 @@ In this project, we are remaking the Frogger game on a Go Board (FPGA[^3]) for e
 
 ---
 
-## IX. Glossary
+## X. Glossary
 
 [^1]: Go-Board: An FPGA development board aimed for beginners, often used for educational projects.
 
 [^2]: Verilog: A hardware description language (HDL) used to model and design digital systems such as integrated circuits.
 
-[^3]: FPGA (Field-Programmable Gate Array): An integrated circuit designed to be configured by the customer after manufacturing. It can be programmed to perform specific tasks using hardware description languages like Verilog.
+[^3]: Spawnrate: Refers to the frequency at which new entities (such as characters, items, enemies, or obstacles) appear in a game or simulation.
 
 [^4]: Sprite: A 2D image or animation integrated into a larger scene, often used for characters and objects in video games.
 
-
+[^5]: FPGA (Field-Programmable Gate Array): An integrated circuit designed to be configured by the customer after manufacturing. It can be programmed to perform specific tasks using hardware description languages like Verilog.
