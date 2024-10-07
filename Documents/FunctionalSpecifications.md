@@ -113,10 +113,30 @@ The player's goal is to reach the maximum score of 10 points without dying. Afte
 <img src="./Images/Grey-Car.png" alt="Grey-Car" width="100"/><img src="./Images/Orange-Car.png" alt="Orange-Car" width="100"/><img src="./Images/Purple-Car.png" alt="Purple-Car" width="100"/>
 
 #### Bus Designs:
+<img src="./Images/Blue-Bus-Front.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Blue-Bus-Middle.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Blue-Bus-Back.png" alt="Grey-Car" width="100"/>
+
+---
+
+<img src="./Images/Green-Bus-Front.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Green-Bus-Middle.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Green-Bus-Back.png" alt="Grey-Car" width="100"/>
+
+---
+
+<img src="./Images/Red-Bus-Front.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Red-Bus-Middle.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Red-Bus-Back.png" alt="Grey-Car" width="100"/>
+
+---
 
 #### Truck Designs:
 
 #### Frog Designs:
+
+<img src="./Images/Frog.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Frog-dead.png" alt="Grey-Car" width="100"/>
 ---
 
 ## IV. Use Cases
