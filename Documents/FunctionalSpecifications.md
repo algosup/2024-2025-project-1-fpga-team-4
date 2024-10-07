@@ -237,7 +237,7 @@ Those are our succes criteria:
 | **Truck**| ❌ | ❌ | ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
 
 
-You can find the detailled layout of the levels [HERE](https://docs.google.com/spreadsheets/d/192H_l_FA7qSmk4Z7lmOYOKX7erZ45zHxe5udNauicEI/edit?usp=sharing)
+you can find the detailled layout of the levels [HERE](https://docs.google.com/spreadsheets/d/192H_l_FA7qSmk4Z7lmOYOKX7erZ45zHxe5udNauicEI/edit?usp=sharing)
 
 ---
 
