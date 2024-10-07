@@ -109,8 +109,14 @@ The player's goal is to reach the maximum score of 10 points without dying. Afte
 
 ## III. Designs/Graphic charter
 
+#### Car Designs:
 <img src="./Images/Grey-Car.png" alt="Grey-Car" width="100"/><img src="./Images/Orange-Car.png" alt="Orange-Car" width="100"/><img src="./Images/Purple-Car.png" alt="Purple-Car" width="100"/>
 
+#### Bus Designs:
+
+#### Truck Designs:
+
+#### Frog Designs:
 ---
 
 ## IV. Use Cases
