@@ -16,6 +16,10 @@
             - [Vehicules Mechanics](#vehicules-mechanics)
         - [Scoring System](#scoring-system)
     - [III. Designs/Graphic charter](#iii-designsgraphic-charter)
+        - [Car Designs](#car-designs)
+        - [Bus Designs](#bus-designs)
+        - [Truck Designs](#truck-designs)
+        - [Frog Designs](#frog-designs)
     - [IV. Use Cases](#iv-use-cases)
         - [Use Case N°1: Start Game](#use-case-n1-start-game)
         - [Use Case N°2: Navigating through the road](#use-case-n2-navigating-through-the-road)
@@ -112,31 +116,31 @@ The player's goal is to reach the maximum score of 10 points without dying. Afte
 #### Car Designs:
 <img src="./Images/Grey-Car.png" alt="Grey-Car" width="100"/><img src="./Images/Orange-Car.png" alt="Orange-Car" width="100"/><img src="./Images/Purple-Car.png" alt="Purple-Car" width="100"/>
 
+---
+
 #### Bus Designs:
-<img src="./Images/Blue-Bus-Front.png" alt="Grey-Car" width="100"/>
-<img src="./Images/Blue-Bus-Middle.png" alt="Grey-Car" width="100"/>
-<img src="./Images/Blue-Bus-Back.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Blue-Bus-Front.png" alt="Blue-Bus-Front" width="100"/><img src="./Images/Blue-Bus-Back.png" alt="Blue-Bus-Back" width="100"/>
 
 ---
 
-<img src="./Images/Green-Bus-Front.png" alt="Grey-Car" width="100"/>
-<img src="./Images/Green-Bus-Middle.png" alt="Grey-Car" width="100"/>
-<img src="./Images/Green-Bus-Back.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Green-Bus-Front.png" alt="Green-Bus-Front" width="100"/><img src="./Images/Green-Bus-Back.png" alt="Green-Bus-Back" width="100"/>
 
 ---
 
-<img src="./Images/Red-Bus-Front.png" alt="Grey-Car" width="100"/>
-<img src="./Images/Red-Bus-Middle.png" alt="Grey-Car" width="100"/>
-<img src="./Images/Red-Bus-Back.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Red-Bus-Front.png" alt="Red-Bus-Front" width="100"/><img src="./Images/Red-Bus-Back.png" alt="Red-Bus-Back" width="100"/>
 
 ---
 
 #### Truck Designs:
+<img src="./Images/Truck-Front.png" alt="Truck-Front" width="100"/><img src="./Images/Truck-Middle.png" alt="Truck-Middle" width="100"/><img src="./Images/Truck-Back.png" alt="Truck-Back" width="100"/>
+
+---
 
 #### Frog Designs:
 
-<img src="./Images/Frog.png" alt="Grey-Car" width="100"/>
-<img src="./Images/Frog-dead.png" alt="Grey-Car" width="100"/>
+<img src="./Images/Frog-Back.png" alt="Frog-Back" width="100"/><img src="./Images/Frog-Back-Jump.png" alt="Frog-Back-Jump" width="100"/>
+<img src="./Images/Frog-Front.png" alt="Frog-Front" width="100"/><img src="./Images/Frog-Front-Jump.png" alt="Frog-Front-Jump" width="100"/>
+
 ---
 
 ## IV. Use Cases
@@ -243,16 +247,16 @@ Those are our succes criteria:
 
 | Level Number | Number of Vehicle per Level |
 |:---|:---:|
-|1| 12 |
-|2| 12 |
-|3| 12 |
-|4| 22 |
-|5| 19 |
-|6| 16 |
-|7| 22 |
-|8| 22 | 
-|9| 36 |
-|10| 46 |
+|1| 3 |
+|2| 3 |
+|3| 3 |
+|4| 4 |
+|5| 4 |
+|6| 5 |
+|7| 12 |
+|8| 12 | 
+|9| 14 |
+|10| 12 |
 
 #### Vehicle Types per Level
 
