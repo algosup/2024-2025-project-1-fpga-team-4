@@ -22,22 +22,20 @@ This test plan is for the recreation of the Frogger game coded on the *Nandland 
     **Basic fuctionnalities/smoke test**
     - **Go-Board/screen detection** The Go-Board should detect and be able to interact with the screen
     - **Game Start** The game should launch
-    - **Game Exit** The game should be able to close when prompted
+    - **Game Reset** The game should be able to close when prompted
     - **Go-Board input detection** The Go-Board should be able to detect if we are clicking it's buttons
     - **Frog Spawn** Every time a level starts, the frog should spawn in the bottom middle of the screen. Every time a level ends, the frog should despawn.
-    - **Cars Spawn** Every time a level starts, some cars should randomly spawn in the center of the screen, facing sideways. There should be at most one per lane and not every lane should be filled. Every time a level ends, cars should despawn.
+    - **Cars Spawn** Every time a level starts, some cars should spawn as indicated in the Functional specifications. Every time a level ends, cars should despawn.
 \
     **Game mechanics**
     - **Frog Movement** Every time a button is pressed on the *Nanland Go Board*, the frog should move in the corresponding direction.
     - **Car Movement** Cars are supposed to move horizontally from one side of the screen to the other.
-    - **Frog/Car Collisions** The frog needs to "die" if hit by a car, this death will result in a reset of the level counter and eventual difficulty curve.
-    - **Frog/Goal Collision** The level needs to end if the frog touches the goal. In that case, the level counter should be increased by one, the frog should be placed back at it's starting point and the new level could be made harder
-    - **Number of Cars** there can only be one car per lane
+    - **Frog/Car Collisions** The frog needs to "die" if hit by a car, this death will result in a reset of the level counter and difficulty curve.
+    - **Frog/Goal Collision** The level needs to end if the frog touches the goal. In that case, the level counter should be increased by one, the frog should be placed back at it's starting point and the new level will be harder
+    - **Number of Cars** there can be no more than 16 cars in total
     - **Car Specifications** The cars can go at differents speeds and can be of different sizes, they could become faster or bigger in later levels.
     - **Level Counter Behavior** The level counter should increase by one every time the frog reaches the top of the screen. It should also go back down to zero if the player dies
     - **Level Counter Maximum** Once the player wins level 10, the screen and the display on the *Nanland Go Board* should show "GG". After any input from the player, the game should be reset to level 00.
-    - *From here on out it's unsure if these features will be added*
-    - **Pause button pressed** When the pause button is pressed, the cars should stop moving, the positions need to be retained, any eventual music should stopped and the movement buttons should be disabled. If the game was already paused, the cars should start moving again, the music should resume and the movement buttons should function again. 
 
 3. ***Test Environnment***
     3.1 **Hardware**
@@ -51,7 +49,7 @@ This test plan is for the recreation of the Frogger game coded on the *Nandland 
 4. ***Test deliverables***
 
     1. **test-cases**
-        Every test will be recorded in the Test-Cases.md documents. Each test will have a name, a description, an expected behavior and the steps necessary for the testing.
+        Every test will be recorded in the [TestCases.md](TestCases.md). document. Each test will have a name, a description, an expected behavior and the steps necessary for the testing.
         Except for the first test case in which the way to start the game is detailed, we will assume that, for the rests of the tests, the game is already started unless the opposite is specified.
     2. **Bug reports**
         If a bug or something similar is detected during testing a bug report will be written and sent to the software developpers. We will then work on fixing the bug.
