@@ -22,6 +22,6 @@ set_io switch2 52
 set_io switch3 53
 set_io switch4 54
 
-## Reset
+## leds
 
-set_io reset 83
+set_io led 56
