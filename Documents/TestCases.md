@@ -15,12 +15,12 @@ Test priorities are differenciated as such:
 
 #### Start the game
 
-| Number | One |
+| Number | One |    
 | --- | --- |
 | Test Description | Verify that the game starts and that the screen show the game |
 | Requirement(s) | Everything is unplugged |
 | Step(s) for testing | 1. Plug in *the Board*, 2. Plug in and switch the screen on, 3. Plug *the Board* to the screen, 4. Execute the code with *the Board*,  |
-| Expected Test Result | The game starts |
+| Expected Test Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. The level counter is set to 1 |
 | Test Priority | 3 |
 | Tested? | no |
 
@@ -31,24 +31,13 @@ Test priorities are differenciated as such:
 | Test Description | Verify that the game stops and that the screens goes black |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Press all four buttons at the same time |
-| Expected Result | The game stops |
-| Priority | 3 |
-| Tested? | no |
-
-#### Start of level spawn
-
-| Number | Three |
-| --- | --- |
-| Test Description | Verify that cars and the frog spawn as intended at the start of a level |
-| Requirement(s) | The game is started |
-| Step(s) | 1. Start the game 2. Wait|
-| Expected Result | The frog spawns in the bottom middle of the screen, a couple of cars spawn on the road in the middle of the screen |
+| Expected Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
 | Tested? | no |
 
 #### Frog moves up
 
-| Number | Four |
+| Number | Three |
 | --- | --- |
 | Test Description | Verify that the frog moves up when the up button is pressed |
 | Requirement(s) | The game is started |
@@ -59,7 +48,7 @@ Test priorities are differenciated as such:
 
 #### Frog moves down
 
-| Number | Five |
+| Number | Four |
 | --- | --- |
 | Test Description | Verify that the frog moves down when the down button is pressed |
 | Requirement(s) | The game is started |
@@ -70,7 +59,7 @@ Test priorities are differenciated as such:
 
 #### Frog moves left
 
-| Number | Six |
+| Number | Five |
 | --- | --- |
 | Test Description | Verify that the frog moves to the left when the left button is pressed |
 | Requirement(s) | The game is started |
@@ -81,7 +70,7 @@ Test priorities are differenciated as such:
 
 #### Frog moves right
 
-| Number | Seven |
+| Number | Six |
 | --- | --- |
 | Test Description | Verify that the frog moves to the right when the right button is pressed |
 | Requirement(s) | The game is started |
@@ -92,53 +81,63 @@ Test priorities are differenciated as such:
 
 #### Frog dies to a car
 
-| Number | Eight |
+| Number | Seven |
 | --- | --- |
 | Test Description | Verify that the frog "dies" when hit by a car|
 | Requirement(s) | The game is started |
 | Step(s) | 1. Get hit by a car |
-| Expected Result |  The frog should be placed back at the start  |
+| Expected Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
 | Tested? | no |
 
 #### Frog edgemap collision.
 
-| Number | Nine |
+| Number | Eight |
 | --- | --- |
 | Test Description | Verify that the frog cannot move past the edges of the screen|
 | Requirement(s) | The game is started |
-| Step(s) | 1. Move the frog to one of the edges of the screen, 2. Try to go past the wall|
-| Expected Result | The Frog is stopped by the edge of the screen |
+| Step(s) | 1. Move the frog to the bottom, left or right edge of the screen, 2. Try to go past the wall|
+| Expected Result | The Frog is stopped by the edge of the screen and doesn't move |
 | Priority | 3 |
 | Tested? | no |
 
 #### Victory
-| Number | Ten |
+| Number | Nine |
 | --- | --- |
 | Test Description | Verify that when the frog gets to the top of the screen, the level ends |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
-| Expected Result | everything despawns, the frog spawns at the bottom middle of the screen and a couple of cars spawn along the roads in the center of the screen. |
+| Expected Result | The game system initializes the next level (if it was level 1 we go to level 2 for example). The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
 | Tested? | no |
 
 #### Level Counter Incrementation
-| Number | Eleven |
+| Number | Ten |
 | --- | --- |
 | Test Description | Verify that the level counter increments when it should |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
-| Expected Result | The level counter increments itself |
+| Expected Result | The level counter is incremented by 1 |
 | Priority | 2 |
 | Tested? | no |
 
-#### Level Counter Reset
-| Number | Twelve |
+#### Level Counter Reset on death
+| Number | Eleven |
 | --- | --- |
 | Test Description | Verify that the level counter resets when it should |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Get hit by a car|
-| Expected Result | The level counter resets back to 01 |
+| Expected Result | The level counter resets back to 1 |
+| Priority | 1 |
+| Tested? | no |
+
+#### Level Counter Reset on button combination pressed
+| Number | Twelve |
+| --- | --- |
+| Test Description | Verify that the level counter resets when it should |
+| Requirement(s) | The game is started |
+| Step(s) | 1. press all four buttons at the same time. |
+| Expected Result | The level counter resets back to 1 |
 | Priority | 1 |
 | Tested? | no |
 
@@ -148,32 +147,22 @@ Test priorities are differenciated as such:
 | Test Description | Verify that cars move as intended |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Start the game 2. Wait |
-| Expected Result | The Cars should be moving from horizontally across the screen|
+| Expected Result | The Cars should be moving  horizontally across the screen|
 | Priority | 3 |
 | Tested? | no |
 
-#### Car despawn
+#### Car gets to the edge
 | Number | Fourteen |
 | --- | --- |
 | Test Description | Verify that cars can despawn |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Start the game 2. Wait |
-| Expected Result | Cars should despawn once they reach the edge of the screen|
-| Priority | 3 |
-| Tested? | no |
-
-#### Car replacement
-| Number | Fifteen |
-| --- | --- |
-| Test Description | Verify that new cars appear after the first ones leave |
-| Requirement(s) | The game is started |
-| Step(s) | 1. Start the game 2. Wait |
-| Expected Result | Cars should appear on a lane soon after the old one despawns|
+| Expected Result | Cars should despawn once they reach the edge of the screen and spawn back on the other side.|
 | Priority | 3 |
 | Tested? | no |
 
 #### Frog move only one tile
-| Number | Sixteen |
+| Number | Fifteen |
 | --- | --- |
 | Test Description | Verify that the frog only moves one square per button press |
 | Requirement(s) | The game is started |
