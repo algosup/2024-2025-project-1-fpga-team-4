@@ -81,6 +81,7 @@ While the game logic uses a 20x15 grid[^6] for movement calculations, the grid i
     - **Rows 6-8**: Left to right.
     - **Rows 9-11**: Right to left.
     - **Rows 12-14**: Left to right.
+    - **To be updated**
 - **Vehicle sizes**:
     - **Car**: Occupies a 1x1 grid cell.
     - **Bus**: Occupies 2x1 grid cells.
@@ -164,7 +165,7 @@ Debouncing is set to 10 milliseconds to ensure clean signal detection. The game 
 - **Level scaling**: Increment the number of cars and their speed with each new level.
 - **Speed increase**: Adjust car speed based on the current level.
 
-**Speed table**
+**Speed table** - **To be updated**
 
 | Levels | **Car speed** | **Bus speed** | **Truck speed** |
 | ------ | ------------- | ------------- | --------------- |
@@ -179,7 +180,7 @@ Debouncing is set to 10 milliseconds to ensure clean signal detection. The game 
 | 9      | 4 cells/s     | 3 cells/s     | 3 cells/s       |
 | 10     | 4 cells/s     | 3 cells/s     | 3 cells/s       |
 
-**Spacing table**
+**Spacing table** - **To be updated**
 
 |Spacing|1|2|3|4|5|6|7|8|9|10|
 |-------|-|-|-|-|-|-|-|-|-|--|
