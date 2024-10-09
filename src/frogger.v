@@ -68,7 +68,7 @@ module frogger (
         .frog_x2(frog_x2),
         .frog_y2(frog_y2),
         .death_collision(death_collision),
-        .win_collision(win_collision),
+        .win_collision(win_collision)
     );
 
     assign reset=(death_collision | win_collision | (switch1 && switch2 && switch3 && switch4));
