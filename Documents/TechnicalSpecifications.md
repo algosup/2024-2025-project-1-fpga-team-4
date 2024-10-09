@@ -48,18 +48,18 @@ The Go Board FPGA acts as the central processing unit, managing game logic, inpu
     - VGA display (640x480) for game visuals.
     - 7-segment display for level indication.
 
-See the [system architecture diagram of the Go Board](./Images/Go_Board_V1.pdf) for more details.
+See the [system architecture diagram of the Go Board](./Images/Go_Board_V1.pdf)[^11] for more details.
 
 ## 3. Modules and Components
 
-While the game logic uses a 20x15 grid for movement calculations, the grid itself may not be displayed to the player in the final version, focusing instead on showing only the frog and vehicle sprites.
+While the game logic uses a 20x15 grid[^6] for movement calculations, the grid itself may not be displayed to the player in the final version, focusing instead on showing only the frog and vehicle sprites[^8].
 
 <img src="./Images/ModuleInteractionDiagram.png" style="height:500px">
 
 ### 3.1 VGA Controller
 - **Description**: Handles the VGA display, operating at a resolution of 640x480, with 512 color combinations.
 - **Grid layout**: Uses a 20x15 grid of cells, where each cell is 32x32 pixels.
-- **Sprite memory**: Stores frog and vehicle sprites in Block RAM.
+- **Sprite memory**: Stores frog and vehicle sprites in Block RAM[^1].
 - **Input**: Receives sprite data from Block RAM and control signals for rendering.
 - **Output**: Generates VGA signals to render the frog and vehicles on the screen.
 
@@ -68,7 +68,7 @@ While the game logic uses a 20x15 grid for movement calculations, the grid itsel
 ### 3.2 Frog Movement Logic
 - **Description**: Controls frog movement based on button presses, allowing the frog to navigate the grid.
 - **Grid-based movement**: The frog moves one grid space at a time. It initially appears at the bottom center of the grid (X: 11, Y: 15) at the start of each level.
-- **Debouncing**: Implements debouncing to ensure that button presses are registered only once per press.
+- **Debouncing**: Implements debouncing[^4] to ensure that button presses are registered only once per press.
 - **Boundaries**: The frog cannot move outside the 20x15 grid.
 - **Input**: Receives debounced button press signals for movement.
 - **Output**: Updates the frog's position in grid coordinates and sends control signals to the VGA controller to render the new position.
@@ -90,7 +90,7 @@ While the game logic uses a 20x15 grid for movement calculations, the grid itsel
 - **Output**: Updates the positions of the vehicles on the grid and sends rendering information to the VGA controller.
 
 ### 3.4 Collision Detection
-- **Description**: Checks for collisions between the frog and vehicles, or detects when the frog reaches the top row.
+- **Description**: Checks for collisions[^7] between the frog and vehicles, or detects when the frog reaches the top row.
 - **Collision with vehicles**: If the frog's position matches a vehicle's grid position, the level is reset.
 - **Top row detection**: If the frog reaches the top row, the level is incremented, and difficulty is increased.
 - **Input**: Receives the frog's position and the positions of obstacles (vehicles).
@@ -118,7 +118,7 @@ While the game logic uses a 20x15 grid for movement calculations, the grid itsel
 - **Memory optimization**: To optimize memory usage, sprite data is stored in compressed formats where applicable, minimizing the use of Block RAM. Only necessary frames are loaded into Block RAM during active gameplay to prevent overuse of resources.
 
 - **Future enhancements**:
-    - Animated sprites will be implemented by cycling through preloaded frames of animation for both the frog (hopping) and the vehicles (moving wheels). These frames will be controlled using additional Flip-Flops and LUTs to manage timing and transitions.
+    - Animated sprites will be implemented by cycling through preloaded frames of animation for both the frog (hopping) and the vehicles (moving wheels). These frames will be controlled using additional Flip-Flops and LUTs[^3] to manage timing and transitions.
 
 Verilog code
 
@@ -169,7 +169,7 @@ Debouncing is set to 10 milliseconds to ensure clean signal detection. The game 
 | Levels | **Car speed** | **Bus speed** | **Truck speed** |
 | ------ | ------------- | ------------- | --------------- |
 | 1      | 2 cell/s      | None          | None            |
-| 2      | 3 cell/s      | None          | None            |
+| 2      | None          | None          | None            |
 | 3      | 3 cells/s     | 1 cell/s      | None            |
 | 4      | 3 cells/s     | 1 cell/s      | None            |
 | 5      | 3 cells/s     | 2 cells/s     | 2 cell/s        |
@@ -247,17 +247,17 @@ For a detailed testing plan, refer to the [Test Plan](./TestPlan.md).
 
 # Footnotes
 
-[^1]: **Block RAM (BRAM)**: A dedicated memory block within FPGAs used to store large data, such as sprites for video games.
-[^2]: **Flip-Flops (FF)**: Digital circuits used in FPGAs for storing binary data.
-[^3]: **Look-Up Tables (LUTs)**: Perform boolean functions within FPGAs.
-[^4]: **Debouncing**: Ensures clean signal generation for button presses.
-[^5]: **VGA Controller**: Manages visual data output to a VGA display.
-[^6]: **Grid-based Movement**: Movement based on a fixed grid structure.
-[^7]: **Collision Detection**: Determines if two game objects occupy the same grid space.
-[^8]: **Sprite**: A 2D image used for game characters or objects.
-[^9]: **Game Clock**: Manages timing for game events.
-[^10]: **7-Segment Display**: Displays decimal numerals using seven segments.
-[^11]: **System Architecture**: The structured framework defining system components.
-[^12]: **Reset Mechanism**: Clears the game state and returns to initial conditions.
-[^13]: **Level Management**: Tracks player progression through game levels.
-[^14]: **VGA Palette (3-bit Color)**: Supports a 512-color palette with 3-bit depth per color channel.
+[^1]: Block RAM (BRAM): A dedicated memory block within FPGAs used to store large data, such as sprites for video games.
+[^2]: Flip-Flops (FF): Digital circuits used in FPGAs for storing binary data.
+[^3]: Look-Up Tables (LUTs): Perform boolean functions within FPGAs.
+[^4]: Debouncing: Ensures clean signal generation for button presses.
+[^5]: VGA Controller: Manages visual data output to a VGA display.
+[^6]: Grid-based Movement: Movement based on a fixed grid structure.
+[^7]: Collision Detection: Determines if two game objects occupy the same grid space.
+[^8]: Sprite: A 2D image used for game characters or objects.
+[^9]: Game Clock: Manages timing for game events.
+[^10]: 7-Segment Display: Displays decimal numerals using seven segments.
+[^11]: System Architecture: The structured framework defining system components.
+[^12]: Reset Mechanism: Clears the game state and returns to initial conditions.
+[^13]: Level Management: Tracks player progression through game levels.
+[^14]: VGA Palette (3-bit Color): Supports a 512-color palette with 3-bit depth per color channel.
