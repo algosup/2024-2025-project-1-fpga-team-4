@@ -9,9 +9,9 @@ module collisions (
 
 localparam frog_size=32;
 
-wire overlap_x = (frog_x<frog_x2+frog_size) && (frog_x2<frog_x+frog_size);
-wire overlap_y = (frog_y<frog_y2+1) && (frog_y2<frog_y+1);
-wire overlap_top= (frog_y<1);
+wire overlap_x = (frog_x==frog_x2) && (frog_x2==frog_x);
+wire overlap_y = (frog_y==frog_y2) && (frog_y2==frog_y);
+wire overlap_top= (frog_y==0);
 
 assign death_collision = (overlap_x && overlap_y);
 

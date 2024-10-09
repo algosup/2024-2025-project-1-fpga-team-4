@@ -10,8 +10,11 @@ module frogger (
     output wire [2:0] green,  // VGA green output
     output wire [2:0] blue,   // VGA blue output
     output wire hsync,        // VGA horizontal sync
-    output wire vsync         // VGA vertical sync
+    output wire vsync,        // VGA vertical sync
+    output reg [6:0] o_Segment2,
 );
+
+    reg [6:0] current_level = 0;
 
     // Internal registers for frog's position
     wire [9:0] frog_x;
@@ -21,6 +24,7 @@ module frogger (
     wire death_collision;
     wire win_collision;
     wire reset;
+    wire win;
 
 
     // Instantiate the frog module
@@ -71,7 +75,19 @@ module frogger (
         .win_collision(win_collision)
     );
 
-    assign reset=(death_collision | win_collision | (switch1 && switch2 && switch3 && switch4));
+    always @(posedge win)begin
+        current_level <= current_level + 1;
+        if (current_level > 8)begin
+            current_level <= 0;
+        end
+    end
+
+    display_numbers first_number(
+        .current(current_level),
+        .o_Segment(o_Segment2));
+
+    assign win=(win_collision);
+    assign reset=(death_collision | (switch1 && switch2 && switch3 && switch4));
 
 
 endmodule
