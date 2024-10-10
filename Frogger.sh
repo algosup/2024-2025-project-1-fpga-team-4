@@ -16,18 +16,18 @@ install_homebrew() {
 }
 
 # Check if Git is installed, install if not
-if ! command -v git &> /dev/null; then
-    echo "Git is not installed. Installing Git..."
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        install_homebrew
-        brew install git
-    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        sudo apt update && sudo apt install -y git || sudo yum install -y git
-    else
-        echo "Unsupported OS. Please install Git manually."
-        exit 1
-    fi
-fi
+# if ! command -v git &> /dev/null; then
+#     echo "Git is not installed. Installing Git..."
+#     if [[ "$OSTYPE" == "darwin"* ]]; then
+#         install_homebrew
+#         brew install git
+#     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#         sudo apt update && sudo apt install -y git || sudo yum install -y git
+#     else
+#         echo "Unsupported OS. Please install Git manually."
+#         exit 1
+#     fi
+# fi
 
 # Check if Python 3.10 or higher is installed, install if not
 if ! command -v python3 &> /dev/null || [[ $(python3 --version | cut -d " " -f 2) < "3.10" ]]; then
