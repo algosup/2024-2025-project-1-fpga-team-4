@@ -1,7 +1,7 @@
 module car (
     input wire clk,
     input wire reset,
-    input wire direction,     // 0 = left to right, 1 = right to left
+    input wire [1:0]direction,     // 0 = left to right, 1 = right to left
     output reg [9:0] car_x,
     output reg [9:0] car_y,
     input wire [9:0] start_x, // Initial x position
@@ -14,7 +14,7 @@ module car (
 
     assign move_clk = (speed_counter == 500000);  // Adjust for speed
 
-    always @(posedge clk or posedge reset) begin
+    always @(posedge clk) begin
         if (reset) begin
             car_x <= start_x;
         end else begin

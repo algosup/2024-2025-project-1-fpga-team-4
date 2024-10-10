@@ -21,7 +21,6 @@ module frog (
     debounce_switch db3 (.clk(clk), .i_Switch(switch3), .o_Switch(switch3_clean));
     debounce_switch db4 (.clk(clk), .i_Switch(switch4), .o_Switch(switch4_clean));
 
-
     // Registers to store the previous state of the switch (for edge detection)
     reg switch1_prev, switch2_prev, switch3_prev, switch4_prev;
 
@@ -32,16 +31,16 @@ module frog (
     end
 
     // Movement logic with edge detection
-    always @(posedge clk or posedge reset) begin
+    always @(posedge clk) begin
         if (reset) begin
             // Reset to the center of the bottom row
             frog_x <= 320;
             frog_y <= 448;
             // Reset previous switch states
-            switch1_prev <= 0;
-            switch2_prev <= 0;
-            switch3_prev <= 0;
-            switch4_prev <= 0;
+            switch1_prev <= switch1_clean;
+            switch2_prev <= switch2_clean;
+            switch3_prev <= switch3_clean;
+            switch4_prev <= switch4_clean;
         end else begin
             // Detect rising edge (press) for each switch
             if (switch3_clean && !switch3_prev && frog_y >= 32) 
