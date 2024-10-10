@@ -78,7 +78,7 @@ fi
 # Check if Apio is installed, install if not
 if ! command -v apio &> /dev/null; then
     echo "Apio is not installed. Installing Apio..."
-    pip3 install -U apio
+    python3 install -U apio
     if [ $? -ne 0 ]; then
         echo "Failed to install Apio. Make sure pip is working correctly."
         exit 1
@@ -107,7 +107,7 @@ cd src
 # Check if apio.ini exists; if not, initialize it
 if [ ! -f "apio.ini" ]; then
     echo "Creating apio.ini file with the specified board."
-    apio init -b "go-board"  # Replace "go-board" with the actual board name if different
+    apio init -b "go-board" # Replace "go-board" with the actual board name if different
     if [ $? -ne 0 ]; then
         echo "Failed to create apio.ini. Please check the board name and try again."
         exit 1
