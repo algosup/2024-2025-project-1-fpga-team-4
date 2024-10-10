@@ -96,33 +96,6 @@ module vga_controller (
         if ((h_counter >= car_x1 && h_counter < car_x1 + CAR_SIZE) && (v_counter >= car_y1 && v_counter < car_y1 + CAR_SIZE)) begin
             red = 3'b111;
         end
-        if ((h_counter >= car_x2 && h_counter < car_x2 + CAR_SIZE) && (v_counter >= car_y2 && v_counter < car_y2 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x3 && h_counter < car_x3 + CAR_SIZE) && (v_counter >= car_y3 && v_counter < car_y3 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x4 && h_counter < car_x4 + CAR_SIZE) && (v_counter >= car_y4 && v_counter < car_y4 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x5 && h_counter < car_x5 + CAR_SIZE) && (v_counter >= car_y5 && v_counter < car_y5 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x6 && h_counter < car_x6 + CAR_SIZE) && (v_counter >= car_y6 && v_counter < car_y6 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x7 && h_counter < car_x7 + CAR_SIZE) && (v_counter >= car_y7 && v_counter < car_y7 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x8 && h_counter < car_x8 + CAR_SIZE) && (v_counter >= car_y8 && v_counter < car_y8 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x9 && h_counter < car_x9 + CAR_SIZE) && (v_counter >= car_y9 && v_counter < car_y9 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if ((h_counter >= car_x10 && h_counter < car_x10 + CAR_SIZE) && (v_counter >= car_y10 && v_counter < car_y10 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
     end
 
 endmodule
