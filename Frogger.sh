@@ -1,5 +1,25 @@
 #!/bin/bash
 
+# Function to accept the Xcode license
+accept_xcode_license() {
+    echo "Checking for Xcode license..."
+    if /usr/bin/xcodebuild -license status &> /dev/null; then
+        echo "Xcode license has already been accepted."
+    else
+        echo "You have not agreed to the Xcode license. Accepting the Xcode license..."
+        sudo xcodebuild -license accept
+        if [ $? -ne 0 ]; then
+            echo "Failed to accept the Xcode license. Please run 'sudo xcodebuild -license' manually and accept the terms."
+            exit 1
+        fi
+    fi
+}
+
+# Check if running on macOS and accept the Xcode license if needed
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    accept_xcode_license
+fi
+
 # Function to install Homebrew on macOS if not present
 install_homebrew() {
     echo "Checking for Homebrew..."
@@ -16,18 +36,18 @@ install_homebrew() {
 }
 
 # Check if Git is installed, install if not
-# if ! command -v git &> /dev/null; then
-#     echo "Git is not installed. Installing Git..."
-#     if [[ "$OSTYPE" == "darwin"* ]]; then
-#         install_homebrew
-#         brew install git
-#     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-#         sudo apt update && sudo apt install -y git || sudo yum install -y git
-#     else
-#         echo "Unsupported OS. Please install Git manually."
-#         exit 1
-#     fi
-# fi
+if ! command -v git &> /dev/null; then
+    echo "Git is not installed. Installing Git..."
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        install_homebrew
+        brew install git
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        sudo apt update && sudo apt install -y git || sudo yum install -y git
+    else
+        echo "Unsupported OS. Please install Git manually."
+        exit 1
+    fi
+fi
 
 # Check if Python 3.10 or higher is installed, install if not
 if ! command -v python3 &> /dev/null || [[ $(python3 --version | cut -d " " -f 2) < "3.10" ]]; then
