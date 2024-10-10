@@ -22,7 +22,7 @@ module frogger (
     wire win;
 
     // Instantiate the frog movement controller
-    frog frog_inst (
+    frog frog_instance (
         .clk(clk),
         .reset(reset),
         .switch1(switch1),
