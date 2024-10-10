@@ -149,6 +149,7 @@ fi
 
 # Upload the code to the Go Board
 echo "Uploading code to the Go Board..."
+apio install oss-cad-suite
 apio upload
 if [ $? -ne 0 ]; then
     echo "Upload failed. Make sure the FPGA board is connected and try again."
