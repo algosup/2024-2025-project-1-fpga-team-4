@@ -18,10 +18,10 @@ For the First project of the school year we have to recreate the Arcade game **F
 
 ## Documents Link
 
-### Specification
+### Specifications
 
-- [Functional Specification](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Documents/Documents/FunctionalSpecifications.md)
-- [Technical Specification](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Documents/Documents/TechnicalSpecifications.md)
+- [Functional Specifications](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Documents/Documents/FunctionalSpecifications.md)
+- [Technical Specifications](https://github.com/algosup/2024-2025-project-1-fpga-team-4/blob/Documents/Documents/TechnicalSpecifications.md)
 
 ### Project Management
 
