@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Function to check if Python is installed
+check_python_installed() {
+    echo "Checking if Python is installed..."
+    if command -v python3 &> /dev/null; then
+        echo "Python is installed."
+    else
+        echo "Python is not installed. Installing Python..."
+        install_python
+    fi
+}
+
 # Function to accept the Xcode license
 accept_xcode_license() {
     echo "Checking for Xcode license..."
@@ -35,6 +46,31 @@ install_homebrew() {
     fi
 }
 
+# Function to install Python 3.10 or higher
+install_python() {
+    echo "Installing Python 3.10 or higher..."
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        install_homebrew
+        brew install python
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        if command -v apt &> /dev/null; then
+            sudo apt update && sudo apt install -y python3.10 python3.10-venv python3.10-dev
+            sudo ln -sf /usr/bin/python3.10 /usr/bin/python3
+        elif command -v yum &> /dev/null; then
+            sudo yum install -y python3
+        else
+            echo "Unsupported package manager. Please install Python manually."
+            exit 1
+        fi
+    else
+        echo "Unsupported OS. Please install Python manually."
+        exit 1
+    fi
+}
+
+# Check if Python is installed
+check_python_installed
+
 # Check if Git is installed, install if not
 if ! command -v git &> /dev/null; then
     echo "Git is not installed. Installing Git..."
@@ -49,19 +85,8 @@ if ! command -v git &> /dev/null; then
     fi
 fi
 
-# Check if Python 3.10 or higher is installed, install if not
-if ! command -v python3 &> /dev/null || [[ $(python3 --version | cut -d " " -f 2) < "3.10" ]]; then
-    echo "Python 3.10 or higher is not installed. Installing Python..."
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        install_homebrew
-        brew install python
-    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        sudo apt update && sudo apt install -y python3 python3-pip || sudo yum install -y python3 python3-pip
-    else
-        echo "Unsupported OS. Please install Python manually."
-        exit 1
-    fi
-fi
+# Add the user-specific Python bin directory to PATH if Apio is installed there
+export PATH="$PATH:$(python3 -m site --user-base)/bin"
 
 # Check if pip is installed, install if not
 if ! command -v pip3 &> /dev/null; then
@@ -75,10 +100,18 @@ if ! command -v pip3 &> /dev/null; then
     rm get-pip.py
 fi
 
+# Upgrade pip to the latest version
+echo "Upgrading pip..."
+python3 -m pip install --upgrade pip
+if [ $? -ne 0 ]; then
+    echo "Failed to upgrade pip. Please try manually."
+    exit 1
+fi
+
 # Check if Apio is installed, install if not
 if ! command -v apio &> /dev/null; then
     echo "Apio is not installed. Installing Apio..."
-    python3 install -U apio
+    pip3 install --user -U apio
     if [ $? -ne 0 ]; then
         echo "Failed to install Apio. Make sure pip is working correctly."
         exit 1
