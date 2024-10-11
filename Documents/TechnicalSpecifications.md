@@ -188,12 +188,12 @@ While the game logic uses a 20x15 grid[^6] for movement calculations, the grid i
 
 | **Current state** | **Event**                       | **Next state**      | **Action**                              |
 |-------------------|---------------------------------|---------------------|----------------------------------------|
-| Playing            | Collision detected              | Game Over           | Reset frog position, display "GG"      |
-| Playing            | Frog reaches top (Level < 10)   | Level Progression   | Increment level, increase difficulty   |
-| Level Progression  | Level reaches 10                | Game Over           | Display "GG" on screen and 7-segment   |
-| Game Over          | Reset button pressed            | Playing             | Restart game from level 1              |
+| Playing            | Collision detected             | Game Over           | Reset frog position, display "GG"      |
+| Playing            | Frog reaches top (Level < 8)   | Level Progression   | Increment level, increase difficulty   |
+| Level Progression  | Level reaches 8                | Game Over           | Display "GG" on screen and 7-segment   |
+| Game Over          | Reset button pressed           | Playing             | Restart game from level 1              |
 
-- **Level scaling**: The game features 10 levels, with increasing difficulty as the player progresses. Each level adjusts the number of vehicles, their types, and speeds.
+- **Level scaling**: The game features 8 levels, with increasing difficulty as the player progresses. Each level adjusts the number of vehicles, their types, and speeds.
 
 ### Speed table
 
@@ -207,36 +207,36 @@ While the game logic uses a 20x15 grid[^6] for movement calculations, the grid i
 | 6      | 3.5 cells/s   | 2 cells/s     | 2 cells/s       |
 | 7      | 3.5 cells/s   | 2.5 cells/s   | 2.5 cells/s     |
 | 8      | 4 cells/s     | 2.5 cells/s   | 3 cells/s       |
-| 9      | 4 cells/s     | 3 cells/s     | 3 cells/s       |
-| 10     | 4.5 cells/s   | 3.5 cells/s   | 3.5 cells/s     |
+<!-- | 9      | 4 cells/s     | 3 cells/s     | 3 cells/s       |
+| 10     | 4.5 cells/s   | 3.5 cells/s   | 3.5 cells/s     | -->
 
 ### Spacing table
 
-| **Levels** | 1   | 2   | 3   | 4   | 5   | 6   | 7    | 8    | 9   | 10   |
-|------------|-----|-----|-----|-----|-----|-----|------|------|-----|------|
-| Car        | 5   | 4-6 | 3-5 | 2-5 | 4-6 | 5   | 5-6  | 5-7  | 2-5 | 3-6  |
-| Bus        | -   | 4   | -   | 4   | 4   | 5   | 3-5  | 3-6  | 3-4 | 3-5  |
-| Truck      | -   | -   | 3   | -   | 4   | 3-5 | 3-5  | 3-6  | 4-5 | 3-6  |
+| **Levels** | 1   | 2   | 3   | 4   | 5   | 6   | 7    | 8    |
+|------------|-----|-----|-----|-----|-----|-----|------|------|
+| Car        | 5   | 4-6 | 3-5 | 2-5 | 4-6 | 5   | 5-6  | 5-7  |
+| Bus        | -   | 4   | -   | 4   | 4   | 5   | 3-5  | 3-6  |
+| Truck      | -   | -   | 3   | -   | 4   | 3-5 | 3-5  | 3-6  |
 
 For more details about the spacing, the [design of the levels is available here](https://docs.google.com/spreadsheets/d/192H_l_FA7qSmk4Z7lmOYOKX7erZ45zHxe5udNauicEI/edit?gid=0#gid=0). It will show you the levels on the grid.
 
-- **Score tracking**: Players earn points by progressing through levels, with each level completed adding 100 points to the score. The score is displayed on a pair of 7-segment displays. When level 10 is reached and completed, the score will stop increasing, and a "GG" (Good Game) message will be shown on the screen and 7-segment displays.
+- **Score tracking**: Players earn points by progressing through levels, with each level completed adding 1 level to the score. The score is displayed on a pair of 7-segment displays. When level 8 is reached and completed, the score will stop increasing, and a "GG" (Good Game) message will be shown on the screen and 7-segment displays.
 
 | **Event**                       | **Score Change** |
 |---------------------------------|------------------|
 | Frog reaches the top of the level | +1             |
-| Level 10 completed              | Display "GG"     |
+| Level 8 completed              | Display "GG"     |
 | Collision detected (Game Over)  | No change        |
 | Game reset                      | Score reset to 0 |
 
-- **Game progression**: Upon reaching level 10, the game will display "GG" on the VGA screen and the 7-segment display to indicate game completion.
+- **Game progression**: Upon reaching level 8, the game will display "GG" on the VGA screen and the 7-segment display to indicate game completion.
 
 - **Event handling**: Game events such as level completion and collisions trigger state transitions. The state machine prioritizes actions to maintain consistent game flow.
 
 | **Event**                       | **Trigger**                       | **Game action**                           |
 |---------------------------------|-----------------------------------|-------------------------------------------|
-| Frog reaches top (Levels 1-9)   | Frog at top row                   | Increment level, reset frog, add score    |
-| Frog reaches top (Level 10)     | Frog at top row                   | Display "GG" on screen and 7-segment      |
+| Frog reaches top (Levels 1-7)   | Frog at top row                   | Increment level, reset frog, add score    |
+| Frog reaches top (Level 8)     | Frog at top row                   | Display "GG" on screen and 7-segment      |
 | Collision detected              | Frog position matches vehicle     | Trigger Game Over, reset frog             |
 | Reset button pressed            | All directional buttons pressed   | Restart game from level 1                 |
 
@@ -279,8 +279,8 @@ For more details about the spacing, the [design of the levels is available here]
   - **Double buffering**: Utilized to reduce flicker and ensure smooth transitions on the display.
 
 - **7-Segment display**:
-  - **Score display**: Shows the player's score by displaying the current level number multiplied by 100 (e.g., Level 3 displays "300").
-  - **Game completion indicator**: Displays "GG" on reaching level 10, signaling game completion.
+  - **Score display**: Shows the player's score by displaying the current level number plus 1 (e.g., Level 3 displays "3").
+  - **Game completion indicator**: Displays "GG" on reaching level 8, signaling game completion.
 
 - **Event handling**:
   - **Input mapping**: Button inputs are mapped directly to frog movements and game state changes.
@@ -304,7 +304,7 @@ For more details about the spacing, the [design of the levels is available here]
   - **Logic elements**: LUTs and Flip-Flops usage is estimated to be 40-60% of the FPGA's resources. Developers must ensure the implementation remains within these limits to avoid resource overflows.
 
 - **Game state management**:
-  - **Score display**: The 7-segment display can only show numerical scores up to 990 (maximum score of Level 10). Non-numerical indicators like "GG" are limited to simple letters.
+  - **Score display**: The 7-segment display can only show numerical scores up to 8. Non-numerical indicators like "GG" are limited to simple letters.
 
 - **Performance considerations**:
   - **Frame rate**: The game operates at a fixed refresh rate of 60 Hz. Frame rate drops may occur if resource utilization approaches the FPGA's limits.
@@ -317,7 +317,7 @@ For more details about the spacing, the [design of the levels is available here]
   - **Waveform analysis**: Perform waveform analysis to check timing, signal transitions, and ensure correct operation of game logic.
 
 - **On-board testing**:
-  - **Functional tests**: Test gameplay functionality, including frog movement, collision detection, level progression, and VGA output, across all 10 levels.
+  - **Functional tests**: Test gameplay functionality, including frog movement, collision detection, level progression, and VGA output, across all 8 levels.
   - **Stress tests**: Increase the number of vehicles and speed settings to check for performance issues such as frame drops or input lag.
   - **Boundary tests**: Verify that the frog cannot move outside the grid boundaries and that all game resets function as expected.
 
