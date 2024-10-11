@@ -4,6 +4,7 @@ module frogger (
     input wire switch2,   // Move down
     input wire switch3,   // Move left
     input wire switch4,   // Move right
+    output wire [6:0] o_Segment2,
     output wire [2:0] red,
     output wire [2:0] green,
     output wire [2:0] blue,
@@ -11,18 +12,16 @@ module frogger (
     output wire vsync
 );
 
-<<<<<<< Updated upstream
-=======
     reg [3:0] current_level = 0;
->>>>>>> Stashed changes
     wire [9:0] frog_x;
     wire [9:0] frog_y;
     wire death_collision;
     wire win_collision;
     wire reset;
+    wire win;
 
     // Instantiate the frog movement controller
-    frog frog_inst (
+    frog frog_instance (
         .clk(clk),
         .reset(reset),
         .switch1(switch1),
@@ -81,24 +80,26 @@ module frogger (
         .win_collision(win_collision)
     );
 
-<<<<<<< Updated upstream
-    assign reset=(death_collision | win_collision | (switch1 && switch2 && switch3 && switch4));
-=======
     // Instantiate cars with different speeds and lengths per level
-    car car_0 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_0), .car_y(car_y_0), .start_x(0), .start_y(96), .speed(20), .length(1));
-    car car_1 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_1), .car_y(car_y_1), .start_x(80), .start_y(128), .speed(25), .length(2));
-    car car_2 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_2), .car_y(car_y_2), .start_x(160), .start_y(160), .speed(30), .length(3));
-    car car_3 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_3), .car_y(car_y_3), .start_x(240), .start_y(192), .speed(35), .length(2));
-    car car_4 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_4), .car_y(car_y_4), .start_x(320), .start_y(224), .speed(40), .length(1));
-    car car_5 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_5), .car_y(car_y_5), .start_x(400), .start_y(256), .speed(45), .length(3));
-    car car_6 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_6), .car_y(car_y_6), .start_x(480), .start_y(288), .speed(50), .length(2));
-    car car_7 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_7), .car_y(car_y_7), .start_x(560), .start_y(320), .speed(55), .length(1));
+    car car_7 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_7), .car_y(car_y_7), .start_x(0), .start_y(96), .speed(6), .length(1));
+    car car_6 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_6), .car_y(car_y_6), .start_x(0), .start_y(128), .speed(6), .length(2));
+    car car_5 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_5), .car_y(car_y_5), .start_x(0), .start_y(160), .speed(5), .length(3));
+    car car_4 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_4), .car_y(car_y_4), .start_x(0), .start_y(192), .speed(5), .length(1));
+    car car_3 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_3), .car_y(car_y_3), .start_x(0), .start_y(224), .speed(5), .length(2));
+    car car_2 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_2), .car_y(car_y_2), .start_x(0), .start_y(256), .speed(4), .length(3));
+    car car_1 (.clk(clk), .reset(reset), .direction(1), .car_x(car_x_1), .car_y(car_y_1), .start_x(0), .start_y(288), .speed(3), .length(2));
+    car car_0 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_0), .car_y(car_y_0), .start_x(0), .start_y(320), .speed(2), .length(1));
 
     // Increment level on win
-    always @(posedge win) begin
-        current_level <= current_level + 1;
-        if (current_level > 8) begin
-            current_level <= 0;
+    always @(posedge clk) begin
+        if (win_collision && !win_flag) begin
+            win_flag <= 1;
+            current_level <= current_level + 1;
+            if (current_level > 8) begin
+                current_level <= 0;
+            end
+        end else if (!win_collision) begin
+            win_flag <= 0;
         end
     end
 
@@ -109,6 +110,5 @@ module frogger (
 
     assign win = (win_collision);
     assign reset = (death_collision | win_collision | (switch1 && switch2 && switch3 && switch4));
->>>>>>> Stashed changes
 
 endmodule

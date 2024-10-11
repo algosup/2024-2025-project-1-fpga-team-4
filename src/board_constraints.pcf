@@ -10,14 +10,18 @@ set_io green[2] 33
 set_io blue[0] 28
 set_io blue[1] 41
 set_io blue[2] 42
-
 ## Clock
-
 set_io clk 15
-
 ## Switches
-
 set_io switch1 51
 set_io switch2 52
 set_io switch3 53
 set_io switch4 54
+## 7 segment displays
+set_io o_Segment2[0] 100
+set_io o_Segment2[1] 99
+set_io o_Segment2[2] 97
+set_io o_Segment2[3] 95
+set_io o_Segment2[4] 94
+set_io o_Segment2[5] 8
+set_io o_Segment2[6] 96
