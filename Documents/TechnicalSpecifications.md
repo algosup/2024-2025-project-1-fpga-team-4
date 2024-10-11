@@ -220,7 +220,7 @@ While the game logic uses a 20x15 grid[^6] for movement calculations, the grid i
 
 For more details about the spacing, the [design of the levels is available here](https://docs.google.com/spreadsheets/d/192H_l_FA7qSmk4Z7lmOYOKX7erZ45zHxe5udNauicEI/edit?gid=0#gid=0). It will show you the levels on the grid.
 
-- **Score tracking**: Players earn points by progressing through levels, with each level completed adding 1 level to the score. The score is displayed on a pair of 7-segment displays. When level 8 is reached and completed, the score will stop increasing, and a "GG" (Good Game) message will be shown on the screen and 7-segment displays.
+- **Score tracking**: Players progressing through levels, with each level completed adding 1 to the score. The score is displayed on a pair of 7-segment displays. When level 8 is reached and completed, the score will stop increasing, and a "GG" (Good Game) message will be shown on the screen and 7-segment displays.
 
 | **Event**                       | **Score Change** |
 |---------------------------------|------------------|
