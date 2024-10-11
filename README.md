@@ -71,6 +71,7 @@ To run the Frogger project, ensure you have the following materials:
      ./LinuxFrogger.sh
      ```
    - For Windows:
+  
      Double click on the file.
 
 ### Scripts availability
