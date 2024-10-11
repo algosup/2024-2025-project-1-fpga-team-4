@@ -2,8 +2,23 @@ module vga_controller (
     input wire clk,
     input wire [9:0] frog_x,  // Frog's horizontal position
     input wire [9:0] frog_y,  // Frog's vertical position
-    input wire [9:0] car_x1,  // Car positions
-    input wire [9:0] car_y1,
+    input wire [9:0] car_x_0,  // Car positions
+    input wire [9:0] car_y_0,
+    input wire [9:0] car_x_1,
+    input wire [9:0] car_y_1,
+    input wire [9:0] car_x_2,
+    input wire [9:0] car_y_2,
+    input wire [9:0] car_x_3,
+    input wire [9:0] car_y_3,
+    input wire [9:0] car_x_4,
+    input wire [9:0] car_y_4,
+    input wire [9:0] car_x_5,
+    input wire [9:0] car_y_5,
+    input wire [9:0] car_x_6,
+    input wire [9:0] car_y_6,
+    input wire [9:0] car_x_7,
+    input wire [9:0] car_y_7,
+    input wire [3:0] current_level, // Current game level
     output reg [2:0] red,    // VGA red output
     output reg [2:0] green,  // VGA green output
     output reg [2:0] blue,   // VGA blue output
@@ -67,8 +82,29 @@ module vga_controller (
             blue = frog_b;
         end
 
-        // Draw cars
-        if ((h_counter >= car_x1 && h_counter < car_x1 + CAR_SIZE) && (v_counter >= car_y1 && v_counter < car_y1 + CAR_SIZE)) begin
+        // Hardcoded car speeds and positions based on current level
+        if (current_level > 0 && (h_counter >= car_x_0 && h_counter < car_x_0 + CAR_SIZE) && (v_counter >= car_y_0 && v_counter < car_y_0 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 1 && (h_counter >= car_x_1 && h_counter < car_x_1 + CAR_SIZE) && (v_counter >= car_y_1 && v_counter < car_y_1 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 2 && (h_counter >= car_x_2 && h_counter < car_x_2 + CAR_SIZE) && (v_counter >= car_y_2 && v_counter < car_y_2 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 3 && (h_counter >= car_x_3 && h_counter < car_x_3 + CAR_SIZE) && (v_counter >= car_y_3 && v_counter < car_y_3 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 4 && (h_counter >= car_x_4 && h_counter < car_x_4 + CAR_SIZE) && (v_counter >= car_y_4 && v_counter < car_y_4 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 5 && (h_counter >= car_x_5 && h_counter < car_x_5 + CAR_SIZE) && (v_counter >= car_y_5 && v_counter < car_y_5 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 6 && (h_counter >= car_x_6 && h_counter < car_x_6 + CAR_SIZE) && (v_counter >= car_y_6 && v_counter < car_y_6 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 7 && (h_counter >= car_x_7 && h_counter < car_x_7 + CAR_SIZE) && (v_counter >= car_y_7 && v_counter < car_y_7 + CAR_SIZE)) begin
             red = 3'b111;
         end
     end

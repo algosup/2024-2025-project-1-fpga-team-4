@@ -1,33 +1,35 @@
 module car (
     input wire clk,
     input wire reset,
-    input wire [1:0]direction,     // 0 = left to right, 1 = right to left
+    input wire [1:0] direction,     // 0 = left to right, 1 = right to left
     output reg [9:0] car_x,
     output reg [9:0] car_y,
     input wire [9:0] start_x, // Initial x position
-    input wire [9:0] start_y  // Initial y position
+    input wire [9:0] start_y, // Initial y position
+    input wire [5:0] speed,   // Speed of the car
+    input wire [1:0] length   // Length of the car
 );
 
     localparam H_DISPLAY = 640;
     reg [19:0] speed_counter = 0;
     wire move_clk;
 
-    assign move_clk = (speed_counter == 500000);  // Adjust for speed
+    assign move_clk = (speed_counter == 500000 / speed);  // Adjust for speed
 
     always @(posedge clk) begin
         if (reset) begin
             car_x <= start_x;
         end else begin
-            if (speed_counter == 500000) begin
+            if (speed_counter == 500000 / speed) begin
                 speed_counter <= 0;
                 if (direction == 0) begin
                     if (car_x < H_DISPLAY)
-                        car_x <= car_x + 1;
+                        car_x <= car_x + length;
                     else
                         car_x <= 0;
                 end else begin
                     if (car_x > 0)
-                        car_x <= car_x - 1;
+                        car_x <= car_x - length;
                     else
                         car_x <= H_DISPLAY;
                 end
