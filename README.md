@@ -71,9 +71,7 @@ To run the Frogger project, ensure you have the following materials:
      ./LinuxFrogger.sh
      ```
    - For Windows:
-     ```bash
-     WindowsFrogger.bat
-     ```
+     Double click on the file.
 
 ### Scripts availability
 All setup scripts for macOS, Windows, and Linux are available in the **Releases** section of this repository. Make sure to download the correct script for your operating system.
