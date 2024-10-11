@@ -74,7 +74,7 @@ The frog starts at the bottom of the screen and the player must guide the frog t
 
 | In Scope | Out of Scope |
 |---|---|
-|Delivering a working game inspired by Frogger using the Go Board|Additional levels beyond level 10|
+|Delivering a working game inspired by Frogger using the Go Board|Additional levels beyond level 8|
 |Implementing game logic in Verilog[^2] to run on the Go Board and display on a VGA monitor|Multiplayer system|
 |Win and lose conditions|Sound effects or music|
 |Go Board must be used to control the frog and display the score|Advanced graphics|
@@ -221,7 +221,7 @@ The frog shall be drawn as a Sprite[^4] that looks like a real frog. The Sprite 
 There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move at different speeds.
 
 - ##### Levels Objectives
-There shall be at least 10 levels in the game, when the level increases the game difficulty gets harder (for example, cars speed increase, number of cars increase).
+There shall be at least 8 levels in the game, when the level increases the game difficulty gets harder (for example, cars speed increase, number of cars increase).
 
 ---
 
@@ -247,24 +247,23 @@ Those are our succes criteria:
 
 | Level Number | Number of Vehicle per Level |
 |:---|:---:|
-|1| 3 |
-|2| 3 |
-|3| 3 |
-|4| 4 |
-|5| 4 |
-|6| 5 |
+|1| 6 |
+|2| 6 |
+|3| 6 |
+|4| 6 |
+|5| 7 |
+|6| 7 |
 |7| 12 |
 |8| 12 | 
-|9| 14 |
-|10| 12 |
+
 
 #### Vehicle Types per Level
 
-| **Type of Vehicle** | **Level 1** | **Level 2** | **Level 3** | **Level 4** | **Level 5** | **Level 6** | **Level 7** | **Level 8** | **Level 9** | **Level 10** |
-|:-------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-| **Car**| ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| **Bus**| ❌ | ✔️ | ❌ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ | ✔️ |
-| **Truck**| ❌ | ❌ | ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
+| **Type of Vehicle** | **Level 1** | **Level 2** | **Level 3** | **Level 4** | **Level 5** | **Level 6** | **Level 7** | **Level 8** |
+|:-------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
+| **Car**| ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | 
+| **Bus**| ❌ | ✔️ | ❌ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ |
+| **Truck**| ❌ | ❌ | ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ |
 
 
 you can find the detailled layout of the levels [HERE](https://docs.google.com/spreadsheets/d/192H_l_FA7qSmk4Z7lmOYOKX7erZ45zHxe5udNauicEI/edit?usp=sharing)
