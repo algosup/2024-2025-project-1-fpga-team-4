@@ -5,6 +5,7 @@ module frogger (
     input wire switch3,   // Move left
     input wire switch4,   // Move right
     output wire [6:0] o_Segment2,
+    output wire [6:0] o_Segment1,
     output wire [2:0] red,
     output wire [2:0] green,
     output wire [2:0] blue,
@@ -60,7 +61,14 @@ module frogger (
 
     always @(posedge win)begin
         current_level <= current_level + 1;
-        if (current_level > 8)begin
+        if (current_level < 7) begin
+            o_Segment1 = 7'b1111111;
+        end
+        else if (current_level == 7) begin
+            o_Segment1 = 7'b1000010;
+        end
+        else if (current_level == 8)begin
+            o_Segment1 = 7'b1111111;
             current_level <= 0;
         end
     end
@@ -68,6 +76,7 @@ module frogger (
     display_numbers first_number(
         .current(current_level),
         .o_Segment(o_Segment2));
+
 
     assign win=(win_collision);
     assign reset=(death_collision | win_collision | (switch1 && switch2 && switch3 && switch4));

@@ -23,6 +23,13 @@ set_io switch3 53
 set_io switch4 54
 
 ## 7 segment displays
+set_io o_Segment1[0] 3
+set_io o_Segment1[1] 4
+set_io o_Segment1[2] 93
+set_io o_Segment1[3] 91
+set_io o_Segment1[4] 90
+set_io o_Segment1[5] 1
+set_io o_Segment1[6] 2
 
 set_io o_Segment2[0] 100
 set_io o_Segment2[1] 99
@@ -31,3 +38,4 @@ set_io o_Segment2[3] 95
 set_io o_Segment2[4] 94
 set_io o_Segment2[5] 8
 set_io o_Segment2[6] 96
+
