@@ -140,7 +140,7 @@ cd src
 # Check if apio.ini exists; if not, initialize it
 if [ ! -f "apio.ini" ]; then
     echo "Creating apio.ini file with the specified board."
-    apio init -b "go-board" # Replace "go-board" with the actual board name if different
+    apio init -b "go-board"
     if [ $? -ne 0 ]; then
         echo "Failed to create apio.ini. Please check the board name and try again."
         exit 1

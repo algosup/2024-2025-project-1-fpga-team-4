@@ -82,7 +82,7 @@ install_apio() {
 
 # Function to pause and give instructions for manual tasks
 pause_for_manual_task() {
-    # echo -e "\n*** Manual Step Required: $1 ***"
+    echo -e "\n*** Manual Step Required: $1 ***"
     echo "Once you have completed the step, press Enter to continue..."
     read -p ""
 }
@@ -208,10 +208,24 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
 
     # Step 1: Check if Python 3.9 or higher is installed, ask the user to install manually if not
     echo "Checking if Python 3.9 or higher is installed..."
-    if ! command -v python3 &> /dev/null || [[ $(python3 --version | cut -d " " -f 2) < "3.9" ]]; then
-        echo "Please install Python (3.9 or higher) manually from https://www.python.org/ and then rerun the script."
-        pause_for_manual_task "Press Enter to exit."
+    if command -v python3 &> /dev/null; then
+        PYTHON_VERSION=$(python3 --version | cut -d " " -f 2)
+        PYTHON_MAJOR=$(echo "$PYTHON_VERSION" | cut -d "." -f 1)
+        PYTHON_MINOR=$(echo "$PYTHON_VERSION" | cut -d "." -f 2)
+
+        if [[ "$PYTHON_MAJOR" -eq 3 && "$PYTHON_MINOR" -ge 9 ]] || [[ "$PYTHON_MAJOR" -gt 3 ]]; then
+            echo "Python 3.9 or higher is installed (version: $PYTHON_VERSION)."
+        else
+            echo "Python version is lower than 3.9 (version: $PYTHON_VERSION)."
+            pause_for_manual_task "Please install Python 3.9 or higher from https://www.python.org/ and rerun the script. Press Enter to exit."
+            exit 1
+        fi
+    else
+        echo "Python 3 is not installed."
+        pause_for_manual_task "Please install Python 3.9 or higher from https://www.python.org/ and rerun the script. Press Enter to exit."
+        exit 1
     fi
+
 
     # Step 2: Install Apio
     install_apio_windows
