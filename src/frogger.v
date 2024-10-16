@@ -15,6 +15,7 @@ module frogger (
     reg [3:0] current_level = 0;
     wire [9:0] frog_x;
     wire [9:0] frog_y;
+    wire [1:0] frog_direction;
     wire death_collision;
     wire win_collision;
     wire reset;
@@ -29,7 +30,8 @@ module frogger (
         .switch3(switch3),
         .switch4(switch4),
         .frog_x(frog_x),
-        .frog_y(frog_y)
+        .frog_y(frog_y),
+        .frog_direction(frog_direction)
     );
 
     // Instantiate the VGA controller
@@ -46,6 +48,7 @@ module frogger (
         .clk(clk),
         .frog_x(frog_x),      // Pass frog's horizontal position
         .frog_y(frog_y),      // Pass frog's vertical position
+        .frog_direction(frog_direction),
         .car_x_0(car_x_0),    // Car positions
         .car_y_0(car_y_0),
         .car_x_1(car_x_1),

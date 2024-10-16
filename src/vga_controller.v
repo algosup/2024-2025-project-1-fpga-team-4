@@ -2,6 +2,7 @@ module vga_controller (
     input wire clk,
     input wire [9:0] frog_x,  // Frog's horizontal position
     input wire [9:0] frog_y,  // Frog's vertical position
+    input wire [1:0] frog_direction, // Frog's direction
     input wire [9:0] car_x_0,  // Car positions
     input wire [9:0] car_y_0,
     input wire [9:0] car_x_1,
@@ -48,6 +49,7 @@ module vga_controller (
         .v_counter(v_counter),
         .frog_x(frog_x),
         .frog_y(frog_y),
+        .direction(frog_direction),  // Added direction input
         .in_frog(frog_in_sprite),
         .color_r(frog_r),
         .color_g(frog_g),
