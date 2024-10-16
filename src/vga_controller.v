@@ -103,12 +103,6 @@ module vga_controller (
         if (current_level > 5 && (h_counter >= car_x_5 && h_counter < car_x_5 + CAR_SIZE) && (v_counter >= car_y_5 && v_counter < car_y_5 + CAR_SIZE)) begin
             red = 3'b111;
         end
-        if (current_level > 6 && (h_counter >= car_x_6 && h_counter < car_x_6 + CAR_SIZE) && (v_counter >= car_y_6 && v_counter < car_y_6 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
-        if (current_level > 7 && (h_counter >= car_x_7 && h_counter < car_x_7 + CAR_SIZE) && (v_counter >= car_y_7 && v_counter < car_y_7 + CAR_SIZE)) begin
-            red = 3'b111;
-        end
     end
 
 endmodule

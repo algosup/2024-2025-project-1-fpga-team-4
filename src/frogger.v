@@ -5,6 +5,7 @@ module frogger (
     input wire switch3,   // Move left
     input wire switch4,   // Move right
     output wire [6:0] o_Segment2,
+    output wire [6:0] o_Segment1,
     output wire [2:0] red,
     output wire [2:0] green,
     output wire [2:0] blue,
@@ -79,6 +80,8 @@ module frogger (
         .frog_y(frog_y),
         .car_x1(car_x_0),
         .car_y1(car_y_0),
+        .car_x2(car_x_1),
+        .car_y2(car_y_1),
         .death_collision(death_collision),
         .win_collision(win_collision)
     );
@@ -94,15 +97,16 @@ module frogger (
     car car_0 (.clk(clk), .reset(reset), .direction(0), .car_x(car_x_0), .car_y(car_y_0), .start_x(0), .start_y(320), .speed(2), .length(1));
 
     // Increment level on win
-    always @(posedge clk) begin
-        if (win_collision && !win_flag) begin
-            win_flag <= 1;
-            current_level <= current_level + 1;
-            if (current_level > 8) begin
-                current_level <= 0;
-            end
-        end else if (!win_collision) begin
-            win_flag <= 0;
+    always @(posedge win)begin
+        current_level <= current_level + 1;
+        if (current_level < 8) begin
+            o_Segment1 = 7'b1111111;
+        end
+        else if (current_level == 8) begin
+            o_Segment1 = 7'b1000010;
+        end
+        else if (current_level == 9)begin
+            current_level <= 0;
         end
     end
 

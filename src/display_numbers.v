@@ -12,7 +12,7 @@ always @(*)begin
     6: o_Segment= 7'b0000010; // 6
     7: o_Segment= 7'b1111000; // 7
     8: o_Segment= 7'b0000000; // 8
-    9: o_Segment= 7'b0010000; // 9
+    9: o_Segment= 7'b1000010; // 9
     default: o_Segment= 7'b1000000; //  0
     endcase
 end
