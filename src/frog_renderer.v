@@ -13,173 +13,51 @@ module frog_renderer (
 
     localparam FROG_SIZE = 32;  // Frog size is 32x32 pixels
 
-    // Frog sprite memory (32x32 binary sprite for each direction)
-    reg [31:0] frog_sprite[0:127];  // 128 rows to store all four directions
+    // Frog sprite memory stored in block RAM
+    (* ram_style = "block" *) reg [31:0] icestorm_ram [0:127];
 
     // Initialize the frog sprites (binary representation for each direction)
     initial begin
-        // Original sprite for UP
-        frog_sprite[0]  = 32'b01111000000000000000000000011110;
-        frog_sprite[1]  = 32'b01111000000000000000000000011110;
-        frog_sprite[2]  = 32'b11111000000000000000000000011111;
-        frog_sprite[3]  = 32'b11111000000000000000000000011111;
-        frog_sprite[4]  = 32'b01111000111111111111111100011110;
-        frog_sprite[5]  = 32'b01111000111000111100011100011110;
-        frog_sprite[6]  = 32'b01111000111000111100011100011110;
-        frog_sprite[7]  = 32'b01111000111000111100011100011110;
-        frog_sprite[8]  = 32'b01111000111111111111111100011110;
-        frog_sprite[9]  = 32'b01111000111111111111111100011110;
-        frog_sprite[10] = 32'b01111111111111111111111111111110;
-        frog_sprite[11] = 32'b01111111111111111111111111111110;
-        frog_sprite[12] = 32'b00000000111111111111111100000000;
-        frog_sprite[13] = 32'b00000000111111111111111100000000;
-        frog_sprite[14] = 32'b00000000111111111111111100000000;
-        frog_sprite[15] = 32'b00000000111111111111111100000000;
-        frog_sprite[16] = 32'b00000000111111111111111100000000;
-        frog_sprite[17] = 32'b00000000111111111111111100000000;
-        frog_sprite[18] = 32'b00000000111111111111111100000000;
-        frog_sprite[19] = 32'b00000000111111111111111100000000;
-        frog_sprite[20] = 32'b00000000111111111111111100000000;
-        frog_sprite[21] = 32'b01111111111111111111111111111110;
-        frog_sprite[22] = 32'b01111111111111111111111111111110;
-        frog_sprite[23] = 32'b01111000111111111111111100011110;
-        frog_sprite[24] = 32'b01111000111111111111111100011110;
-        frog_sprite[25] = 32'b01111000111111111111111100011110;
-        frog_sprite[26] = 32'b01111000000000000000000000011110;
-        frog_sprite[27] = 32'b01111000000000000000000000011110;
-        frog_sprite[28] = 32'b11111000000000000000000000011111;
-        frog_sprite[29] = 32'b11111000000000000000000000011111;
-        frog_sprite[30] = 32'b01111000000000000000000000011110;
-        frog_sprite[31] = 32'b01111000000000000000000000011110;
-        
-        // Sprite for LEFT
-        frog_sprite[32] = 32'b00110000000000000000000000001100;
-        frog_sprite[33] = 32'b11111111110000000000001111111111;
-        frog_sprite[34] = 32'b11111111110000000000001111111111;
-        frog_sprite[35] = 32'b11111111110000000000001111111111;
-        frog_sprite[36] = 32'b11111111110000000000001111111111;
-        frog_sprite[37] = 32'b00000001110000000000001110000000;
-        frog_sprite[38] = 32'b00000001110000000000001110000000;
-        frog_sprite[39] = 32'b00000001110000000000001110000000;
-        frog_sprite[40] = 32'b00001111111111111111111111110000;
-        frog_sprite[41] = 32'b00001111111111111111111111110000;
-        frog_sprite[42] = 32'b00001111111111111111111111110000;
-        frog_sprite[43] = 32'b00001111111111111111111100010000;
-        frog_sprite[44] = 32'b00001111111111111111111100010000;
-        frog_sprite[45] = 32'b00001111111111111111111100010000;
-        frog_sprite[46] = 32'b00001111111111111111111111110000;
-        frog_sprite[47] = 32'b00001111111111111111111111110000;
-        frog_sprite[48] = 32'b00001111111111111111111111110000;
-        frog_sprite[49] = 32'b00001111111111111111111111110000;
-        frog_sprite[50] = 32'b00001111111111111111111100010000;
-        frog_sprite[51] = 32'b00001111111111111111111100010000;
-        frog_sprite[52] = 32'b00001111111111111111111100010000;
-        frog_sprite[53] = 32'b00001111111111111111111111110000;
-        frog_sprite[54] = 32'b00001111111111111111111111110000;
-        frog_sprite[55] = 32'b00001111111111111111111111110000;
-        frog_sprite[56] = 32'b00000001110000000000001110000000;
-        frog_sprite[57] = 32'b00000001110000000000001110000000;
-        frog_sprite[58] = 32'b00000001110000000000001110000000;
-        frog_sprite[59] = 32'b11111111110000000000001111111111;
-        frog_sprite[60] = 32'b11111111110000000000001111111111;
-        frog_sprite[61] = 32'b11111111110000000000001111111111;
-        frog_sprite[62] = 32'b11111111110000000000001111111111;
-        frog_sprite[63] = 32'b00110000000000000000000000001100;
-        
-        // Sprite for RIGHT (mirror image of LEFT)
-        frog_sprite[64] = 32'b00110000000000000000000000001100;
-        frog_sprite[65] = 32'b11111111110000000000001111111111;
-        frog_sprite[66] = 32'b11111111110000000000001111111111;
-        frog_sprite[67] = 32'b11111111110000000000001111111111;
-        frog_sprite[68] = 32'b11111111110000000000001111111111;
-        frog_sprite[69] = 32'b00000001110000000000001110000000;
-        frog_sprite[70] = 32'b00000001110000000000001110000000;
-        frog_sprite[71] = 32'b00000001110000000000001110000000;
-        frog_sprite[72] = 32'b00001111111111111111111111110000;
-        frog_sprite[73] = 32'b00001111111111111111111111110000;
-        frog_sprite[74] = 32'b00001111111111111111111111110000;
-        frog_sprite[75] = 32'b00001000111111111111111111110000;
-        frog_sprite[76] = 32'b00001000111111111111111111110000;
-        frog_sprite[77] = 32'b00001000111111111111111111110000;
-        frog_sprite[78] = 32'b00001111111111111111111111110000;
-        frog_sprite[79] = 32'b00001111111111111111111111110000;
-        frog_sprite[80] = 32'b00001111111111111111111111110000;
-        frog_sprite[81] = 32'b00001111111111111111111111110000;
-        frog_sprite[82] = 32'b00001000111111111111111111110000;
-        frog_sprite[83] = 32'b00001000111111111111111111110000;
-        frog_sprite[84] = 32'b00001000111111111111111111110000;
-        frog_sprite[85] = 32'b00001111111111111111111111110000;
-        frog_sprite[86] = 32'b00001111111111111111111111110000;
-        frog_sprite[87] = 32'b00001111111111111111111111110000;
-        frog_sprite[88] = 32'b00000001110000000000001110000000;
-        frog_sprite[89] = 32'b00000001110000000000001110000000;
-        frog_sprite[90] = 32'b00000001110000000000001110000000;
-        frog_sprite[91] = 32'b11111111110000000000001111111111;
-        frog_sprite[92] = 32'b11111111110000000000001111111111;
-        frog_sprite[93] = 32'b11111111110000000000001111111111;
-        frog_sprite[94] = 32'b11111111110000000000001111111111;
-        frog_sprite[95] = 32'b00110000000000000000000000001100;
-        
-        // Sprite for DOWN
-        frog_sprite[96]  = 32'b01111000000000000000000000011110;
-        frog_sprite[97]  = 32'b01111000000000000000000000011110;
-        frog_sprite[98]  = 32'b11111000000000000000000000011111;
-        frog_sprite[99]  = 32'b11111000000000000000000000011111;
-        frog_sprite[100] = 32'b01111000111111111111111100011110;
-        frog_sprite[101] = 32'b01111000111111111111111100011110;
-        frog_sprite[102] = 32'b01111000111111111111111100011110;
-        frog_sprite[103] = 32'b01111000111111111111111100011110;
-        frog_sprite[104] = 32'b01111000111111111111111100011110;
-        frog_sprite[105] = 32'b01111000111111111111111100011110;
-        frog_sprite[106] = 32'b01111111111111111111111111111110;
-        frog_sprite[107] = 32'b01111111111111111111111111111110;
-        frog_sprite[108] = 32'b00000000111111111111111100000000;
-        frog_sprite[109] = 32'b00000000111111111111111100000000;
-        frog_sprite[110] = 32'b00000000111111111111111100000000;
-        frog_sprite[111] = 32'b00000000111111111111111100000000;
-        frog_sprite[112] = 32'b00000000111111111111111100000000;
-        frog_sprite[113] = 32'b00000000111111111111111100000000;
-        frog_sprite[114] = 32'b00000000111111111111111100000000;
-        frog_sprite[115] = 32'b00000000111111111111111100000000;
-        frog_sprite[116] = 32'b00000000111111111111111100000000;
-        frog_sprite[117] = 32'b01111111111111111111111111111110;
-        frog_sprite[118] = 32'b01111111111000111100011111111110;
-        frog_sprite[119] = 32'b01111000111000111100011100011110;
-        frog_sprite[120] = 32'b01111000111000111100011100011110;
-        frog_sprite[121] = 32'b01111000111111111111111100011110;
-        frog_sprite[122] = 32'b01111000000000000000000000011110;
-        frog_sprite[123] = 32'b01111000000000000000000000011110;
-        frog_sprite[124] = 32'b11111000000000000000000000011111;
-        frog_sprite[125] = 32'b11111000000000000000000000011111;
-        frog_sprite[126] = 32'b01111000000000000000000000011110;
-        frog_sprite[127] = 32'b01111000000000000000000000011110;
+        // Load sprite data into block RAM
+        $readmemh("frog_sprites.hex", icestorm_ram);
+    end
+
+    // Registers to hold sprite data output
+    reg [31:0] sprite_data;
+    wire [6:0] sprite_index;
+
+    // Calculate the pixel offset within the frog sprite
+    wire [4:0] sprite_x = h_counter - frog_x;
+    wire [4:0] sprite_y = v_counter - frog_y;
+    assign sprite_index = (direction * 32) + sprite_y;  // Adjust index based on direction
+
+    // Read sprite data from block RAM synchronously
+    always @(posedge clk) begin
+        sprite_data <= icestorm_ram[sprite_index];
     end
 
     // Check if the current pixel is within the frog's position
-    assign in_frog = (h_counter >= frog_x && h_counter < frog_x + FROG_SIZE) &&
-                     (v_counter >= frog_y && v_counter < frog_y + FROG_SIZE);
-
-    // Calculate the pixel offset within the frog sprite
-    wire [4:0] sprite_x = h_counter - frog_x;  //
-        wire [4:0] sprite_y = v_counter - frog_y;
-    wire [6:0] sprite_index = (direction * 32) + sprite_y;  // Adjust index based on direction
+    always @(*) begin
+        in_frog = (h_counter >= frog_x && h_counter < frog_x + FROG_SIZE) &&
+                  (v_counter >= frog_y && v_counter < frog_y + FROG_SIZE);
+    end
 
     // Set color based on sprite pixel value
     always @(*) begin
         if (in_frog) begin
-            if (frog_sprite[sprite_index][sprite_x] == 1'b1) begin
-                color_r <= 3'b000;  // Green frog
-                color_g <= 3'b111;
-                color_b <= 3'b000;
+            if (sprite_data[sprite_x] == 1'b1) begin
+                color_r = 3'b000;  // Green frog
+                color_g = 3'b111;
+                color_b = 3'b000;
             end else begin
-                color_r <= 3'b000;  // Black background
-                color_g <= 3'b000;
-                color_b <= 3'b000;
+                color_r = 3'b000;  // Black background
+                color_g = 3'b000;
+                color_b = 3'b000;
             end
         end else begin
-            color_r <= 3'b000;
-            color_g <= 3'b000;
-            color_b <= 3'b000;
+            color_r = 3'b000;
+            color_g = 3'b000;
+            color_b = 3'b000;
         end
     end
 
