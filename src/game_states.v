@@ -18,12 +18,6 @@ module game_states (
     localparam GAME_OVER = 2'b10;
     localparam WINNING_SCREEN = 2'b11;
 
-    // Initialize the current state to RESET and current level to 0
-    initial begin
-        current_state = RESET;
-        current_level = 0;
-    end
-
     // State transition logic
     always @(posedge clk or posedge reset) begin
         if (reset || (switch1 && switch2 && switch3 && switch4)) begin
@@ -32,29 +26,23 @@ module game_states (
         end else begin
             case (current_state)
                 RESET: begin
-                    // Reset logic here
                     current_state <= LEVEL_INCREMENT;
                 end
                 LEVEL_INCREMENT: begin
-                    // Level increment logic here
                     if (level_complete) begin
-                        if (current_level < 8) begin
-                            current_level <= current_level + 1;
-                        end
+                        current_level <= (current_level < 8) ? (current_level + 1) : current_level;
                         current_state <= WINNING_SCREEN;
                     end else if (game_over_signal) begin
                         current_state <= GAME_OVER;
                     end
                 end
                 GAME_OVER: begin
-                    // Game over logic here
                     if (reset || (switch1 && switch2 && switch3 && switch4)) begin
                         current_state <= RESET;
                         current_level <= 0;
                     end
                 end
                 WINNING_SCREEN: begin
-                    // Winning screen logic here
                     if (reset || (switch1 && switch2 && switch3 && switch4)) begin
                         current_state <= RESET;
                     end

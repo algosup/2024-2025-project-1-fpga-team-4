@@ -29,7 +29,7 @@ module frog_renderer (
     // Calculate the pixel offset within the frog sprite
     wire [4:0] sprite_x = h_counter - frog_x;
     wire [4:0] sprite_y = v_counter - frog_y;
-    assign sprite_index = (direction * 32) + sprite_y;  // Adjust index based on direction
+    assign sprite_index = (direction << 5) + sprite_y;  // Use shift for efficient multiplication
 
     // Read sprite data from block RAM synchronously
     always @(posedge clk) begin
@@ -44,18 +44,12 @@ module frog_renderer (
 
     // Set color based on sprite pixel value
     always @(*) begin
-        if (in_frog) begin
-            if (sprite_data[sprite_x] == 1'b1) begin
-                color_r = 3'b000;  // Green frog
-                color_g = 3'b111;
-                color_b = 3'b000;
-            end else begin
-                color_r = 3'b000;  // Black background
-                color_g = 3'b000;
-                color_b = 3'b000;
-            end
+        if (in_frog && sprite_data[sprite_x]) begin
+            color_r = 3'b000;  // Green frog
+            color_g = 3'b111;
+            color_b = 3'b000;
         end else begin
-            color_r = 3'b000;
+            color_r = 3'b000;  // Black background
             color_g = 3'b000;
             color_b = 3'b000;
         end

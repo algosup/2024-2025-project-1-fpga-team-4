@@ -3,8 +3,8 @@ module debounce_switch (
     input wire i_Switch,
     output reg o_Switch
 );
-    parameter COUNTER_WIDTH = 20;
-    parameter DEBOUNCE_DELAY = 1000000;
+    parameter COUNTER_WIDTH = 16;  // Reduced width to save memory
+    parameter DEBOUNCE_DELAY = 50000; // Adjusted debounce delay for new counter width
     reg [COUNTER_WIDTH-1:0] counter = 0;
     reg state = 0;
 
