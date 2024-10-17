@@ -208,8 +208,8 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
 
     # Step 1: Check if Python 3.9 or higher is installed, ask the user to install manually if not
     echo "Checking if Python 3.9 or higher is installed..."
-    if command -v python3 &> /dev/null; then
-        PYTHON_VERSION=$(python3 --version | cut -d " " -f 2)
+    if command -v python &> /dev/null; then
+        PYTHON_VERSION=$(python --version | cut -d " " -f 2)
         PYTHON_MAJOR=$(echo "$PYTHON_VERSION" | cut -d "." -f 1)
         PYTHON_MINOR=$(echo "$PYTHON_VERSION" | cut -d "." -f 2)
 
