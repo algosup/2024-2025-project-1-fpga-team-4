@@ -6,8 +6,8 @@ Test priorities are differenciated as such:
 | Number | Priority |
 | --- | --- |
 | 1 | Low (If we can't test it on time, it's fine) |
-| 2| Medium (Important but not critical) |
-| 3| High (Critical, Should be tested ASAP) |
+| 2 | Medium (Important but not critical) |
+| 3 | High (Critical, Should be tested ASAP) |
 
 (From here on out, *Nanland Go Board* will be shortened to *board* or *the board*)
 
@@ -22,7 +22,7 @@ Test priorities are differenciated as such:
 | Step(s) for testing | 1. Plug in *the Board*, 2. Plug in and switch the screen on, 3. Plug *the Board* to the screen, 4. Execute the code with *the Board*,  |
 | Expected Test Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. The level counter is set to 1 |
 | Test Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Stop the game
 
@@ -33,7 +33,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press all four buttons at the same time |
 | Expected Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
-| Tested? | no |
+| Done? | no (Issue #15) |
 
 #### Frog moves up
 
@@ -44,7 +44,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the up button |
 | Expected Result | The frog moves up |
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Frog moves down
 
@@ -55,7 +55,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the down button |
 | Expected Result | The frog moves down |
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Frog moves left
 
@@ -66,7 +66,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the left button |
 | Expected Result | The frog moves to the left |
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Frog moves right
 
@@ -77,7 +77,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press the right button |
 | Expected Result | The frog moves to the right |
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Frog dies to a car
 
@@ -88,7 +88,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Get hit by a car |
 | Expected Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
-| Tested? | no |
+| Done? | no (Issue #14) |
 
 #### Frog edgemap collision.
 
@@ -99,7 +99,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Move the frog to the bottom, left or right edge of the screen, 2. Try to go past the wall|
 | Expected Result | The Frog is stopped by the edge of the screen and doesn't move |
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Victory
 | Number | Nine |
@@ -109,7 +109,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
 | Expected Result | The game system initializes the next level (if it was level 1 we go to level 2 for example). The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Level Counter Incrementation
 | Number | Ten |
@@ -119,7 +119,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Successfully bring the frog to the top of the screen without getting hit by a car |
 | Expected Result | The level counter is incremented by 1 |
 | Priority | 2 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Level Counter Reset on death
 | Number | Eleven |
@@ -129,7 +129,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Get hit by a car|
 | Expected Result | The level counter resets back to 1 |
 | Priority | 1 |
-| Tested? | no |
+| Done? | no (Issue #14) |
 
 #### Level Counter Reset on button combination pressed
 | Number | Twelve |
@@ -139,7 +139,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. press all four buttons at the same time. |
 | Expected Result | The level counter resets back to 1 |
 | Priority | 1 |
-| Tested? | no |
+| Done? | no (Issue #14) |
 
 #### Car movement
 | Number | Thirteen |
@@ -149,7 +149,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the game 2. Wait |
 | Expected Result | The Cars should be moving  horizontally across the screen|
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Car gets to the edge
 | Number | Fourteen |
@@ -159,7 +159,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the game 2. Wait |
 | Expected Result | Cars should despawn once they reach the edge of the screen and spawn back on the other side.|
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |
 
 #### Frog move only one tile
 | Number | Fifteen |
@@ -169,4 +169,4 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Start the game 2. Hold a movement button |
 | Expected Result | The frog should move one tile and stay idle |
 | Priority | 3 |
-| Tested? | yes |
+| Done? | yes |

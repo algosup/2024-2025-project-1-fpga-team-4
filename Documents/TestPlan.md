@@ -10,11 +10,10 @@ We will test to make sure that the game runs as expected thanks to this testing.
     | **FPGA** | A Field-programmable gate array (FPGA) Is a type of internal circuit that can be reprogrammed after manufacturing. | [Wikipedia](https://en.wikipedia.org/wiki/Field-programmable_gate_array) |
     | **Verilog** | A programming language used for hardware to model electronic systems,  | [Wikipedia](https://en.wikipedia.org/wiki/Verilog) |
     | **Frogger** | Frogger is an old game where a frog has to cross the road while avoiding the cars | [Wikipedia](https://en.wikipedia.org/wiki/Frogger) |
-    | After that is stuff I copy pasted so is subject to change | I'm not sure all of them will be useful| [Source](https://www.youtube.com/watch?v=uKeKuaJ4nlw) |
     | **GitHub** | A web-based version control and collaboration platform for software developers. | [Wikipedia](https://en.wikipedia.org/wiki/GitHub) |
-    | **GitHub Actions** | A CI/CD tool that allows us to run tests automatically after various actions on the repository and avoid errors on the dev or main branch. | [GitHub](https://docs.github.com/en/actions) |
     | **GitHub Issues** | A tool that allows us to create and manage issues and assign them to team members. | [GitHub](https://docs.github.com/en/issues) |
     | **Visual Studio Code** | A free source-code editor made by Microsoft for Windows, Linux, and macOS. | [Wikipedia](https://en.wikipedia.org/wiki/Visual_Studio_Code) |
+    | **Smoke test** | A smoke test is a test which checks basic functionalities | [Wikipedia](https://en.wikipedia.org/wiki/Smoke_testing_(software)) |
 2. ***Testing***
 \
     2.1 **Scope**
