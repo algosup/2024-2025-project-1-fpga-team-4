@@ -104,7 +104,7 @@ install_apio_windows() {
 install_apio_drivers_windows() {
     echo "Installing Apio drivers for FTDI..."
     apio install -a
-    pause_for_manual_task "Please follow the instructions and press Enter to continue."
+    # pause_for_manual_task "Please follow the instructions and press Enter to continue."
     apio drivers --ftdi-enable
     if [ $? -ne 0 ]; then
         echo "Failed to enable FTDI drivers. Please try manually."
