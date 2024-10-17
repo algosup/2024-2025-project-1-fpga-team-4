@@ -221,8 +221,8 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
     if is_admin; then
         echo "Proceeding as Administrator."
     else
-        echo "Please rerun the script as Administrator or provide the necessary permissions."
-        pause_for_manual_task "Press Enter to continue without admin privileges."
+        pause_for_manual_task "Rerun the script as Administrator"
+        exit 1
     fi
 
     # Step 1: Check if Python 3.9 or higher is installed, ask the user to install manually if not
