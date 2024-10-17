@@ -104,11 +104,23 @@ install_apio_windows() {
 install_apio_drivers_windows() {
     echo "Installing Apio drivers for FTDI..."
     apio install -a
-    # pause_for_manual_task "Please follow the instructions and press Enter to continue."
+    pause_for_manual_task "A screen is going to appear, once you click enter. \n In the dropdown, select Dual RS232-HS (Interface 0). \n In the driver, after the arrow, select libusbK. "
     apio drivers --ftdi-enable
     if [ $? -ne 0 ]; then
         echo "Failed to enable FTDI drivers. Please try manually."
         
+    fi
+}
+
+# Function to check if the script is running with admin privileges on Windows
+is_admin() {
+    net session > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        echo "This script is not running as Administrator."
+        return 1
+    else
+        echo "This script is running with Administrator privileges."
+        return 0
     fi
 }
 
@@ -206,6 +218,13 @@ elif [[ "$OS_TYPE" == "Darwin" ]]; then
 elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
     echo "You are running on Windows."
 
+    if is_admin; then
+        echo "Proceeding as Administrator."
+    else
+        echo "Please rerun the script as Administrator or provide the necessary permissions."
+        pause_for_manual_task "Press Enter to continue without admin privileges."
+    fi
+
     # Step 1: Check if Python 3.9 or higher is installed, ask the user to install manually if not
     echo "Checking if Python 3.9 or higher is installed..."
     if command -v python &> /dev/null; then
@@ -231,7 +250,7 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
     install_apio_windows
 
     # Step 3: Pause for manual instructions
-    pause_for_manual_task "Please plug in the Go Board to your computer. Press Enter to continue."
+    pause_for_manual_task "Please plug in the Go Board to your computer."
 
     # Step 4: Install Apio drivers and enable FTDI drivers
     install_apio_drivers_windows
