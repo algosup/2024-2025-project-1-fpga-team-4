@@ -11,9 +11,9 @@
         - [Project scope](#project-scope)
     - [II. Game Mechanics](#ii-game-mechanics)
         - [Controls](#controls)
-        - [Map and Vehicules Mechanics](#map-and-vehicules-mechanics)
+        - [Map and Vehicles Mechanics](#map-and-vehicles-mechanics)
             - [The Map](#the-map)
-            - [Vehicules Mechanics](#vehicules-mechanics)
+            - [Vehicles Mechanics](#vehicles-mechanics)
         - [Scoring System](#scoring-system)
     - [III. Designs/Graphic charter](#iii-designsgraphic-charter)
         - [Car Designs](#car-designs)
@@ -46,11 +46,11 @@
 
 ## I. Project Overview
 
-The goal of the project is to remake the old retro game "Frogger" using a Go Board[^1] from Nandland.
+The goal of the project is to remake the retro game "Frogger" using a Go Board[^1] from Nandland.
 
 #### Stakeholders
 
-| Stakeholder                             | Role & Tasks             |
+| Stakeholders                             | Role             |
 |-----------------------------------------|--------------------------|
 |ALGOSUP                                  | Client                   |
 |Jason	GROSSO	                          |Project Manager           |
@@ -63,12 +63,12 @@ The goal of the project is to remake the old retro game "Frogger" using a Go Boa
 
 #### What is Frogger
 
-Frogger is an arcade game, developed by Konami and published in 1981 by Sega, which was really popular when it was realsed and was said to be "one of the greatest video game ever made".
+Frogger is an arcade game, developed by Konami and published in 1981 by Sega, which was really popular when it was released and was said to be "one of the greatest video game ever made".
 
 #### How to Play
 
-The goal of the game is to direct a frog to his home by dodging traffic on a road.
-The frog starts at the bottom of the screen and the player must guide the frog to the top of the screen, across the opposite lanes of traffic without getting killed by cars.
+The goal of the game is to direct a frog to it's home by dodging traffic on a road.
+The frog starts at the bottom of the screen and the player must guide the frog to the top of the screen, without getting killed by cars.
 
 #### Project Scope
 
@@ -83,23 +83,23 @@ The frog starts at the bottom of the screen and the player must guide the frog t
 ## II. Game Mechanics
 
 #### Controls
-The player controls are four different buttons that are used to navigate the frog, each button causes the frog to hop once in that direction, switch 1 = up, switch 2 = down, switch 3 = left and switch 4 = right. 
+The player controls the frog using the four different buttons on the board, each button causes the frog to hop once in that direction, switch 1 = up, switch 2 = down, switch 3 = left and switch 4 = right. 
 
-On the bottom of the screen the player must guide the frog between opposing lanes of trucks, cars, and buses, to avoid dying.
+Starting at the bottom of the screen, the player must guide the frog between opposing lanes of trucks, cars, buses, and avoid dying.
 
-#### Map and Vehicules Mechanics 
+#### Map and Vehicles Mechanics 
 
 ##### The Map:
 - The bottom part of the screen serves as the starting area for the player.
-- This section of the map represents a busy highway filled with multiple lanes of moving vehicles.
+- The center of the map represents a busy highway filled with multiple lanes of moving vehicles.
 - Vehicles include different types of cars and trucks of varying speeds and sizes. They move horizontally from left to right or right to left across the screen.
 
-##### Vehicules Mechanics:
-- Vehicules move horizontally across the screen, either left to right or right to left.
-- Each vehicule have a spawnrate[^3] and set speed, which can vary depending on the level or difficulty.
-- The vehicules continuously respawns to maintain the flow of traffic. 
-- Each vehicule has a defined hitbox that matches its size on the grid.
-- Vehicules types:
+##### Vehicles Mechanics:
+- Vehicles move horizontally across the screen, either from left to right or right to left.
+- Each vehicle has a spawnrate[^3] and set speed, which can vary depending on the level or difficulty.
+- The vehicles continuously respawn to maintain the flow of traffic. 
+- Each vehicle has a defined hitbox that matches its size on the grid.
+- Vehicles types:
     - Cars : They can be either slow or fast (2 - 3 boxes per second) and take up 1 grid space.
     - Buses : They are slow (1 boxes per second), taking up 2 grid spaces.
     - Trucks : They are fast (2 boxes per second), taking up 3 grid spaces.
@@ -107,7 +107,7 @@ On the bottom of the screen the player must guide the frog between opposing lane
 #### Scoring System
 When the player reaches the top of the screen, his score is updated and a point is added to it. 
 
-The player's goal is to reach the maximum score of 10 points without dying. After reaching the maximum score the game stops and the letters "GG" are displayed on the board.
+The player's goal is to reach the maximum score of 8 points without dying. After reaching the maximum score the game stops and the letters "GG" are displayed on the board.
 
 ---
 
@@ -157,7 +157,7 @@ The player's goal is to reach the maximum score of 10 points without dying. Afte
 - **Post-Conditions**: The player can control the frog; obstacles are in motion.
 - **Exit Criteria**: The game is now playable.
 
-#### Use Case N°2: Navigating through the road
+#### Use Case N°2: Navigate through the road
 - **Description**: The player interacts with the game environment.
 - **Actor(s)**: Player, Game System
 - **Pre-Conditions**: The game has started, and the player is controlling the frog.
@@ -165,10 +165,10 @@ The player's goal is to reach the maximum score of 10 points without dying. Afte
     - The player presses a switch on the GO-Board to move the frog.
     - The game system moves the frog in the indicated direction.
     - The game system checks for collisions between the frog and moving cars/trucks.
-- **Post-Conditions**: The frog moves as directed by player inputs.
+- **Post-Conditions**: The frog moves as directed by player input.
 - **Exit Criteria**: The frog safely crosses the road or collides with an obstacle.
  
-#### Use Case N°3: Finishing a Level
+#### Use Case N°3: Finish a Level
 - **Description**: Completing the game's objective.
 - **Actor(s)**: Player, Game System
 - **Pre-Conditions**: The player successfully navigates the frog across the road.
@@ -178,25 +178,24 @@ The frog reaches the top of the screen.
 - **Exit Criteria**: The player finishes the level, and the game transitions to the next level.
 
 #### Use Case N°4: Win the Game
-- **Description**: The player successfully reaches a score of 10.
+- **Description**: The player successfully reaches a score of 8.
 - **Actor(s)**: Player, Game System
 - **Pre-Conditions**: The player has reached the last level.
 - **Flow of Events**:
     - The player guides the frog to the end in the last level.
     - The game system displays the letters "GG" on the Go-Board.
 - **Post-Conditions**: The player wins the game and sees a victory screen.
-- **Exit Criteria**: The game resets to the initial state.
+- **Exit Criteria**: The game resets to it's initial state.
 
 #### Use Case N°5: Game Over
 - **Description**: Ending the game after dying.
 - **Actor(s)**: Player, Game System
-- **Pre-Conditions**: The player collides with a car.
+- **Pre-Conditions**: The player collides with a car, or all four buttons are pressed at the same time on the go-board.
 - **Flow of Events**:
     - The game system detects the collision.
-    - When the frog dies, the game transitions to a "Game Over" screen.
-    - The game displays the final score and a prompt to restart or quit the game.
+    - When the frog dies, the game displays the final score on the Go-Board.
 - **Post-Conditions**: The game ends, game over message, final score on the board.
-- **Exit Criteria**: The game resets to the initial state.
+- **Exit Criteria**: The game resets to it's initial state.
 
 ---
 ## V. Requirements and Objectives 
@@ -204,12 +203,12 @@ The frog reaches the top of the screen.
 #### 1. Requirements
 
 - ##### Frog Display Requirements 
-The frog shall be drawn as a 1x1 grid on the VGA display (where each grid is 32x32 pixels). The frog shall be white in color. 
+The frog shall be drawn as a 1x1 cell on the VGA display (where each grid is 32x32 pixels). The frog shall be green in color. 
 
 - ##### Car Display Requirements
-There shall be at least 1 car on the screen at a time. The car shall be drawn as a 1x1 grid. The car shall be white in color. 
+There shall be at least 1 car on the screen at a time. The car shall be drawn as a 1x1 cell. The car shall be red in color. 
 
-- ##### Levels Requirements
+- ##### Level Requirements
 There shall be at least 1 level in the game, when the Frog reaches the top of the screen the game is complete. 
 
 #### 2. Objectives 
@@ -220,7 +219,7 @@ The frog shall be drawn as a Sprite[^4] that looks like a real frog. The Sprite 
 - ##### Car Display Objectives
 There shall be up to 16 cars on the screen at a time. The cars shall have the ability to move at different speeds.
 
-- ##### Levels Objectives
+- ##### Level Objectives
 There shall be at least 8 levels in the game, when the level increases the game difficulty gets harder (for example, cars speed increase, number of cars increase).
 
 ---
@@ -232,18 +231,18 @@ Anything relative to this project's tests can be found in [this document](./Test
 
 ## VII. Success Criteria
 
-Those are our succes criteria:
+These are our succes criteria:
 
-- The game display every element without any kind of stuttering
-- The player can control the character without latency between the player action and game's reaction using the Go Board
-- The player can progress amongst levels the same way as the original game
-- The game does not return errors on launch
-- The game does not crashes
-- The player can loose and win if conditions are met.
+- The game displays every element without any kind of stuttering.
+- The player can control the character without latency between the player's action and game's reaction.
+- The player can progress amongst levels the same way as the original game.
+- The game does not return errors on launch.
+- The game does not crash.
+- The player can lose and win if conditions are met.
 
 ---
 
-## VIII. Difficulty Evolution Breakdown
+## VIII. Difficulty Curve Breakdown
 
 | Level Number | Number of Vehicle per Level |
 |:---|:---:|
