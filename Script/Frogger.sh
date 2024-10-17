@@ -236,7 +236,7 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
     # Step 4: Install Apio drivers and enable FTDI drivers
     install_apio_drivers_windows
 
-    pause_for_manual_task "Please follow the user manual. Press Enter to continue."
+    pause_for_manual_task "A screen just appear, please follow the user manual for this next step. Press Enter to continue, once done."
 
     pause_for_manual_task "Please unplug the Go Board and plug it back to your computer. Press Enter to continue."
 
