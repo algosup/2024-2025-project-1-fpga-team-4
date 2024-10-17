@@ -108,6 +108,18 @@ install_apio_drivers_windows() {
     apio drivers --ftdi-enable
     if [ $? -ne 0 ]; then
         echo "Failed to enable FTDI drivers. Please try manually."
+        
+    fi
+}
+
+# Function to check if the script is running with administrator privileges
+is_admin() {
+    net session > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "Running as Administrator."
+    else
+        echo "This script requires administrator privileges. Attempting to restart with elevated permissions..."
+        powershell -Command "Start-Process '$0' -Verb runAs"
         exit 1
     fi
 }
@@ -205,6 +217,9 @@ elif [[ "$OS_TYPE" == "Darwin" ]]; then
 
 elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
     echo "You are running on Windows."
+
+    # Ensure script is run as Administrator
+    is_admin
 
     # Step 1: Check if Python 3.9 or higher is installed, ask the user to install manually if not
     echo "Checking if Python 3.9 or higher is installed..."
