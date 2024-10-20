@@ -31,6 +31,7 @@ module frogger (
     wire [9:0] car_x_5, car_y_5;
     wire [9:0] car_x_6, car_y_6;
     wire [9:0] car_x_7, car_y_7;
+    wire [9:0] car_x_8, car_y_8;
 
     // Instantiate the frog movement controller
     frog frog_instance (
@@ -108,7 +109,7 @@ module frogger (
         .car_x(car_x_0),
         .car_y(car_y_0),
         .start_x(0),
-        .start_y(384),
+        .start_y(352),
         .speed(6),
         .length(1)
     );
@@ -119,7 +120,7 @@ module frogger (
         .car_x(car_x_1),
         .car_y(car_y_1),
         .start_x(0),
-        .start_y(352),
+        .start_y(320),
         .speed(5),
         .length(2)
     );
@@ -130,7 +131,7 @@ module frogger (
         .car_x(car_x_2),
         .car_y(car_y_2),
         .start_x(0),
-        .start_y(320),
+        .start_y(288),
         .speed(5),
         .length(3)
     );
@@ -141,7 +142,7 @@ module frogger (
         .car_x(car_x_3),
         .car_y(car_y_3),
         .start_x(0),
-        .start_y(288),
+        .start_y(220),
         .speed(4),
         .length(1)
     );
@@ -152,7 +153,7 @@ module frogger (
         .car_x(car_x_4),
         .car_y(car_y_4),
         .start_x(0),
-        .start_y(256),
+        .start_y(192),
         .speed(4),
         .length(2)
     );
@@ -163,7 +164,7 @@ module frogger (
         .car_x(car_x_5),
         .car_y(car_y_5),
         .start_x(0),
-        .start_y(224),
+        .start_y(96),
         .speed(3),
         .length(3)
     );
@@ -174,7 +175,7 @@ module frogger (
         .car_x(car_x_6),
         .car_y(car_y_6),
         .start_x(0),
-        .start_y(192),
+        .start_y(64),
         .speed(3),
         .length(1)
     );
@@ -185,7 +186,7 @@ module frogger (
         .car_x(car_x_7),
         .car_y(car_y_7),
         .start_x(0),
-        .start_y(160),
+        .start_y(32),
         .speed(2),
         .length(2)
     );

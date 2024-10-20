@@ -88,19 +88,19 @@ module vga_controller (
         if (current_level > 0 && (h_counter >= car_x_0 && h_counter < car_x_0 + CAR_SIZE) && (v_counter >= car_y_0 && v_counter < car_y_0 + CAR_SIZE)) begin
             red = 3'b111;
         end
-        if (current_level > 1 && (h_counter >= car_x_1 && h_counter < car_x_1 + CAR_SIZE) && (v_counter >= car_y_1 && v_counter < car_y_1 + CAR_SIZE)) begin
+        if (current_level > 0 && (h_counter >= car_x_1 && h_counter < car_x_1 + CAR_SIZE) && (v_counter >= car_y_1 && v_counter < car_y_1 + CAR_SIZE)) begin
             red = 3'b111;
         end
-        if (current_level > 2 && (h_counter >= car_x_2 && h_counter < car_x_2 + CAR_SIZE) && (v_counter >= car_y_2 && v_counter < car_y_2 + CAR_SIZE)) begin
+        if (current_level > 0 && (h_counter >= car_x_2 && h_counter < car_x_2 + CAR_SIZE) && (v_counter >= car_y_2 && v_counter < car_y_2 + CAR_SIZE)) begin
             red = 3'b111;
         end
-        if (current_level > 3 && (h_counter >= car_x_3 && h_counter < car_x_3 + CAR_SIZE) && (v_counter >= car_y_3 && v_counter < car_y_3 + CAR_SIZE)) begin
+        if (current_level > 0 && (h_counter >= car_x_3 && h_counter < car_x_3 + CAR_SIZE) && (v_counter >= car_y_3 && v_counter < car_y_3 + CAR_SIZE)) begin
             red = 3'b111;
         end
-        if (current_level > 4 && (h_counter >= car_x_4 && h_counter < car_x_4 + CAR_SIZE) && (v_counter >= car_y_4 && v_counter < car_y_4 + CAR_SIZE)) begin
+        if (current_level > 0 && (h_counter >= car_x_4 && h_counter < car_x_4 + CAR_SIZE) && (v_counter >= car_y_4 && v_counter < car_y_4 + CAR_SIZE)) begin
             red = 3'b111;
         end
-        if (current_level > 5 && (h_counter >= car_x_5 && h_counter < car_x_5 + CAR_SIZE) && (v_counter >= car_y_5 && v_counter < car_y_5 + CAR_SIZE)) begin
+        if (current_level > 0 && (h_counter >= car_x_5 && h_counter < car_x_5 + CAR_SIZE) && (v_counter >= car_y_5 && v_counter < car_y_5 + CAR_SIZE)) begin
             red = 3'b111;
         end
     end

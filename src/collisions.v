@@ -38,13 +38,14 @@ module collisions (
     // Collision detection for each car based on current level
     wire [7:0] overlaps;
     assign overlaps[0] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_0, car_y_0) : 1'b0;
-    assign overlaps[1] = (current_level > 1) ? overlap(frog_x, frog_y, car_x_1, car_y_1) : 1'b0;
-    assign overlaps[2] = (current_level > 2) ? overlap(frog_x, frog_y, car_x_2, car_y_2) : 1'b0;
-    assign overlaps[3] = (current_level > 3) ? overlap(frog_x, frog_y, car_x_3, car_y_3) : 1'b0;
-    assign overlaps[4] = (current_level > 4) ? overlap(frog_x, frog_y, car_x_4, car_y_4) : 1'b0;
-    assign overlaps[5] = (current_level > 5) ? overlap(frog_x, frog_y, car_x_5, car_y_5) : 1'b0;
-    assign overlaps[6] = (current_level > 6) ? overlap(frog_x, frog_y, car_x_6, car_y_6) : 1'b0;
-    assign overlaps[7] = (current_level > 7) ? overlap(frog_x, frog_y, car_x_7, car_y_7) : 1'b0;
+    assign overlaps[1] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_1, car_y_1) : 1'b0;
+    assign overlaps[2] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_2, car_y_2) : 1'b0;
+    assign overlaps[3] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_3, car_y_3) : 1'b0;
+    assign overlaps[4] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_4, car_y_4) : 1'b0;
+    assign overlaps[5] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_5, car_y_5) : 1'b0;
+    assign overlaps[6] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_6, car_y_6) : 1'b0;
+    assign overlaps[7] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_7, car_y_7) : 1'b0;
+    
 
     wire overlap_top = (frog_y == 0);
 
