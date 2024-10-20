@@ -196,6 +196,9 @@ module frogger (
         if (win) begin
             current_level <= (current_level < 8) ? (current_level + 1) : 0;
         end
+        if (death_collision) begin
+            current_level <= 0;
+        end
     end
 
     display_numbers first_number(
