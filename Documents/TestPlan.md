@@ -69,7 +69,7 @@
     The tests performed will be mostly focused on the gameplay as it is the most important part of the project, a game can be the most beautiful thing ever created, if it's unplayable, its worthless. Features such as sprites and animations will be tested last as they are not instrumental to the project.
 \
     3.2 **Testing strategy**
-    Due to the fact that frogger<sup><a href="#2">[2]</a></sup> is rather simple, we will test the game manually as there will not be too many features we need to test, thus it will not be too time consuming. We will start by running a smoke test<sup><a href="#7">[7]</a></sup> to check basic functionnalities. When it is successful, we will do more in depth tests to see if the rest of the game works as intended.
+    Due to the fact that frogger<sup><a href="#4">[4]</a></sup> is rather simple, we will test the game manually as there will not be too many features we need to test, thus it will not be too time consuming. We will start by running a smoke test<sup><a href="#7">[7]</a></sup> to check basic functionnalities. When it is successful, we will do more in depth tests to see if the rest of the game works as intended.
 \
     3.2.1 **Basic fuctionnalities/smoke<sup><a href="#7">[7]</a></sup> test**
     - **Go-Board/screen detection** The Go-Board should detect and be able to interact with the screen
