@@ -111,7 +111,7 @@ install_apio_windows() {
 install_apio_drivers_windows() {
     echo "Installing Apio drivers for FTDI..."
     apio install -a
-    pause_for_manual_task "A screen is going to appear, once you click enter. \n In the dropdown, select Dual RS232-HS (Interface 0). \n In the driver, after the arrow, select libusbK. \n Click on Reinstall Driver. \n This operation can take a couple of minutes. \n Finally, close the Zadig window."
+    pause_for_manual_task "A screen is going to appear, once you click enter. \n In the dropdown, select Dual RS232-HS (Interface 0). \n In the driver, after the arrow, select libusbK. \n Click on replace the driver. \n This operation can take a couple of minutes."
     apio drivers --ftdi-enable
     if [ $? -ne 0 ]; then
         echo "Failed to enable FTDI drivers. Please try manually."
@@ -236,21 +236,6 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
         exit 1
     fi
 
-    read -p "Have you already run the game before? (Y/N): " user_response
-    if [[ "$user_response" == "Y" ]]; then
-        # Skip to step 7
-        echo "Skipping to step 7: Uploading code to the Go Board..."
-        cd "$REPO_DIR/src" || { echo "Failed to navigate to the project directory."; exit 1; }
-        echo "Uploading code to the Go Board..."
-        apio upload
-        if [ $? -ne 0 ]; then
-            echo "Upload failed. Make sure the FPGA board is connected and try again."
-            exit 1
-        fi
-        echo "Upload completed successfully. Please connect the VGA cable and power the board."
-        exit 0
-    fi
-
     # Step 1: Check if Python 3.9 or higher is installed, ask the user to install manually if not
     echo "Checking if Python 3.9 or higher is installed..."
     if command -v python &> /dev/null; then
@@ -281,7 +266,7 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
     # Step 4: Install Apio drivers and enable FTDI drivers
     install_apio_drivers_windows
 
-    # pause_for_info "A screen just appear, please follow the user manual for this next step. Press Enter to continue, once done."
+    pause_for_info "A screen just appear, please follow the user manual for this next step. Press Enter to continue, once done."
 
     pause_for_manual_task "Please unplug the Go Board and plug it back to your computer. Press Enter to continue."
 
