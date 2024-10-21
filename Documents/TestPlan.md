@@ -28,10 +28,10 @@
     This test plan is for the recreation of the Frogger<sup><a href="#4">[4]</a></sup> game coded on the *Nandland Go Board*<sup><a href="#1">[1]</a></sup>  by team 4 using Verilog<sup><a href="#3">[3]</a></sup>. It will detail the tests done to ensure that the game runs as expected.
 \
     1.2 **Targeted audience**
-    Depending on what audience our game is targeting, it needs to respond to different needs
+    Depending on what audience our game is targeting, it has to respond to different needs
 \
     1.2.1 **Old Players**
-    The most likely people to play a Frogger<sup><a href="#4">[4]</a></sup> recreation are people who played it in their childhood, or hardcore gamers who started with Frogger<sup><a href="#4">[4]</a></sup>. They are looking for a game that plays well, the closer the game is to the original the better it is.
+    The most likely people to play a Frogger<sup><a href="#4">[4]</a></sup> recreation are people who played it in their childhood, or hardcore gamers who started with Frogger<sup><a href="#4">[4]</a></sup>. They are looking for a game that plays well, the closer the game is to the original the better.
 \
     1.2.2 **New Players**
     Maybe the old players will want their children to experience what they did all those years ago, or these new players simply want to see what video games were like back in the day. No matter the reason, new players need a simple and working game.
@@ -96,7 +96,7 @@
         Everything will be tested using the *Nanland Go-Board* and an Acer 24.5" monitor.
 \
     4.2 **Software**
-        We will be using Visual Studi Code<sup><a href="#6">[6]</a></sup> with a Verilog<sup><a href="#3">[3]</a></sup> extension to code and test. Everything will be documented on github<sup><a href="#5">[5]</a></sup>.
+        We will be using Visual Studio Code<sup><a href="#6">[6]</a></sup> with a Verilog<sup><a href="#3">[3]</a></sup> extension to code and test. Everything will be documented on github<sup><a href="#5">[5]</a></sup>.
 \
     4.3 **Simulation**
         To test the code, we will need to run simulations, we will be using: [EDA Playground](https://edaplayground.com)
