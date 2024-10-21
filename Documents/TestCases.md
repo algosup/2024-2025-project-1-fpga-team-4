@@ -170,3 +170,102 @@ Test priorities are differenciated as such:
 | Expected Result | The frog should move one tile and stay idle |
 | Priority | 3 |
 | Done? | yes |
+
+#### Display colors
+
+| Number | Sixteen |
+| --- | --- |
+| Test Description | Checking if the colors display as intended |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Look |
+| Expected Result | The colors are displayed as indicated in the documentation |
+| Priority | 3 |
+| Done? | yes |
+
+#### Display sprites
+
+| Number | Seventeen |
+| --- | --- |
+| Test Description | Checking if the sprites/squares display as intended |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Look |
+| Expected Result | The sprites/squares are displayed as indicated in the documentation |
+| Priority | 3 |
+| Done? | yes |
+
+#### Smooth running
+
+| Number | Eighteen |
+| --- | --- |
+| Test Description | Checking if the game runs smoothly |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Play through the whole game |
+| Expected Result | The game does not lag and the sprites show normally until the end|
+| Priority | 3 |
+| Done? | yes |
+
+#### Smooth running
+
+| Number | Nineteen |
+| --- | --- |
+| Test Description | Checking if the game runs smoothly |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Play through the whole game |
+| Expected Result | The game does not lag and the sprites aren't cut until the end |
+| Priority | 3 |
+| Done? | yes |
+
+#### Frog looks up
+
+| Number | Twenty |
+| --- | --- |
+| Test Description | check if the frog sprite turns |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. press the up button |
+| Expected Result | The frog sprites looks up |
+| Priority | 1 |
+| Done? | yes |
+
+#### Frog looks down
+
+| Number | Twenty-one |
+| --- | --- |
+| Test Description | check if the frog sprite turns |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. press the down button |
+| Expected Result | The frog looks down |
+| Priority | 1 |
+| Done? | yes |
+
+#### Frog looks right
+
+| Number | Twenty-two |
+| --- | --- |
+| Test Description | check if the frog sprite turns |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. press the right button |
+| Expected Result | The frog looks right |
+| Priority | 1 |
+| Done? | yes |
+
+#### Frog looks left
+
+| Number | Twenty-three |
+| --- | --- |
+| Test Description | check if the frog sprite turns |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. press the left button |
+| Expected Result | The frog looks left |
+| Priority | 1 |
+| Done? | yes |
+
+#### Faster cars
+
+| Number | Twenty-four |
+| --- | --- |
+| Test Description | Check if the cars go faster for each level |
+| Requirement(s) | The game is started |
+| Step(s) | 1. Start the game 2. Look at the speed of the cars 3. Win once |
+| Expected Result | The cars should be faster |
+| Priority | 2 |
+| Done? | yes |
