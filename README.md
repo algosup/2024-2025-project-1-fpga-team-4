@@ -47,32 +47,23 @@ To run the Frogger project, ensure you have the following materials:
 1. **Go Board FPGA development board**
 2. **VGA monitor**
 3. **VGA cable**
-4. **Computer with macOS, Windows, or Linux**
+4. **Computer with macOS or Windows**
 
 ### Steps to run the project
 
 1. **Download the setup script**:
-   - Navigate to the **Releases** section of this repository.
-   - Download the appropriate setup script for your operating system (macOS, Windows, or Linux).
+   - Navigate to the **Releases** section of this repository or [click here]([**Releases**](https://github.com/algosup/2024-2025-project-1-fpga-team-4/releases/tag/v.1.0.0)).
+   - Download the the Frogger.sh file, by clicking on it.
 
-2. **Connect the VGA cable**:
-   Ensure the VGA cable is connected from the Go Board to the VGA monitor.
-
-3. **Power on the Go Board**:
-   Turn on the Go Board and watch the game run on the connected monitor.
-
-4. **Run the setup script**:
+2. **Run the setup script**:
    - For macOS:
      ```bash
-     ./MacOSFrogger.sh
-     ```
-   - For Linux:
-     ```bash
-     ./LinuxFrogger.sh
+     ./Frogger.sh
      ```
    - For Windows:
   
-     Double click on the file.
+      Open a terminal as administrator
 
-### Scripts availability
-All setup scripts for macOS, Windows, and Linux are available in the **Releases** section of this repository. Make sure to download the correct script for your operating system.
+      ```bash
+     ./Frogger.sh
+     ```
