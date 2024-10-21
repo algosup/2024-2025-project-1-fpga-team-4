@@ -13,7 +13,7 @@ module frogger (
     output wire vsync
 );
 
-    reg [3:0] current_level = 0;
+    reg [3:0] current_level = 1;
     wire [9:0] frog_x;
     wire [9:0] frog_y;
     wire [1:0] frog_direction;
@@ -258,7 +258,7 @@ module frogger (
             current_level <= (current_level < 8) ? (current_level + 1) : 0;
         end
         if (death_collision) begin
-            current_level <= 0;
+            current_level <= 1;
         end
     end
 
