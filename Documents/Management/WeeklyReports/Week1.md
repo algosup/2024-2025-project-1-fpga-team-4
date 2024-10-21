@@ -2,7 +2,7 @@
 
 23/09 -> 27/09 project hours: 3 halfdays
 
-## Present Team Members
+<h3> Present Team Members </h3>
 
 - Jason GROSSO
 - Mathis PASCUCCI
@@ -11,25 +11,34 @@
 - Guillaume DERAMCHI
 - Emilien CHINSY
 
-## Week Objectives
+<h3> Week Objectives </h3>
 
 - Define our understanding of the Project
 - Define the Project Charter
 - Start the various Documents
 
-## Difficulties
+<h3> Week Accomplishment </h3>
+
+- Defined the Project
+- Defined the Project Charter
+- Functional Specifications started
+- Technical Specifications started
+- Test Plan + Cases started
+
+<h3> Difficulties </h3>
 
 Difficulties handling the hardware / programming language and writing documents on them.
 
-## Team Remarks
+<h3> Team Remarks </h3>
 
 N/A
 
-## Task for Next Week
+<h3> Task for Next Week </h3>
 
 Jason GROSSO:
 
 - Set up the Gantt Chart
+- Update all the Management Documents
 
 Mathis PASCUCCI:
 
@@ -54,5 +63,6 @@ Emilien CHINSY:
 Ian LAURENT:
 
 - Start the User Manual
+- Do the Designs for the Functional
 
 ---
