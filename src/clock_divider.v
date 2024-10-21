@@ -1,25 +1,17 @@
-module clock_divider (
-    input wire clk,       // Input clock signal
-    input wire reset,     // Reset signal
-    input wire [15:0] divide_by, // Division factor for the clock
-    output reg clk_out    // Output divided clock signal
+module ClockDivider #(
+    parameter DIVIDING_FACTOR = 23'd2500000
+)(
+    input wire i_Clk,
+    output reg clk_enable
 );
-
-    reg [15:0] counter = 0;
-
-    // Clock division logic
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    reg [22:0] counter = 0;
+    always @(posedge i_Clk) begin
+        if (counter == DIVIDING_FACTOR) begin
             counter <= 0;
-            clk_out <= 0;
+            clk_enable <= 1;
         end else begin
-            if (counter >= (divide_by - 1)) begin
-                counter <= 0;
-                clk_out <= ~clk_out; // Toggle output clock
-            end else begin
-                counter <= counter + 1;
-            end
+            counter <= counter + 1;
+            clk_enable <= 0;
         end
     end
-
 endmodule

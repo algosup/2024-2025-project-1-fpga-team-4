@@ -18,6 +18,10 @@ module collisions (
     input wire [9:0] car_y_6,
     input wire [9:0] car_x_7,
     input wire [9:0] car_y_7,
+    input wire [9:0] car_x_8,
+    input wire [9:0] car_y_8,
+    input wire [9:0] car_x_9,
+    input wire [9:0] car_y_9,
     output wire death_collision,
     output wire win_collision
 );  
@@ -36,7 +40,7 @@ module collisions (
     endfunction
 
     // Collision detection for each car based on current level
-    wire [7:0] overlaps;
+    wire [9:0] overlaps;
     assign overlaps[0] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_0, car_y_0) : 1'b0;
     assign overlaps[1] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_1, car_y_1) : 1'b0;
     assign overlaps[2] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_2, car_y_2) : 1'b0;
@@ -45,6 +49,8 @@ module collisions (
     assign overlaps[5] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_5, car_y_5) : 1'b0;
     assign overlaps[6] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_6, car_y_6) : 1'b0;
     assign overlaps[7] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_7, car_y_7) : 1'b0;
+    assign overlaps[8] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_8, car_y_8) : 1'b0;
+    assign overlaps[9] = (current_level > 0) ? overlap(frog_x, frog_y, car_x_9, car_y_9) : 1'b0;
     
 
     wire overlap_top = (frog_y == 0);

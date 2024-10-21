@@ -19,6 +19,10 @@ module vga_controller (
     input wire [9:0] car_y_6,
     input wire [9:0] car_x_7,
     input wire [9:0] car_y_7,
+    input wire [9:0] car_x_8,  
+    input wire [9:0] car_y_8,
+    input wire [9:0] car_x_9,
+    input wire [9:0] car_y_9,
     input wire [3:0] current_level, // Current game level
     output reg [2:0] red,    // VGA red output
     output reg [2:0] green,  // VGA green output
@@ -101,6 +105,18 @@ module vga_controller (
             red = 3'b111;
         end
         if (current_level > 0 && (h_counter >= car_x_5 && h_counter < car_x_5 + CAR_SIZE) && (v_counter >= car_y_5 && v_counter < car_y_5 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 0 && (h_counter >= car_x_6 && h_counter < car_x_6 + CAR_SIZE) && (v_counter >= car_y_6 && v_counter < car_y_6 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 0 && (h_counter >= car_x_7 && h_counter < car_x_7 + CAR_SIZE) && (v_counter >= car_y_7 && v_counter < car_y_7 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 0 && (h_counter >= car_x_8 && h_counter < car_x_8 + CAR_SIZE) && (v_counter >= car_y_8 && v_counter < car_y_8 + CAR_SIZE)) begin
+            red = 3'b111;
+        end
+        if (current_level > 0 && (h_counter >= car_x_9 && h_counter < car_x_9 + CAR_SIZE) && (v_counter >= car_y_9 && v_counter < car_y_9 + CAR_SIZE)) begin
             red = 3'b111;
         end
     end
