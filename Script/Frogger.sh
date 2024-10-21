@@ -87,6 +87,13 @@ pause_for_manual_task() {
     read -p ""
 }
 
+# Function to pause and give information for manual tasks
+pause_for_info() {
+    echo -e "\n*** Information: $1 ***"
+    echo "Press Enter to continue..."
+    read -p ""
+}
+
 # Function to install Apio on Windows
 install_apio_windows() {
     echo "Checking if Apio is installed..."
@@ -104,7 +111,7 @@ install_apio_windows() {
 install_apio_drivers_windows() {
     echo "Installing Apio drivers for FTDI..."
     apio install -a
-    pause_for_manual_task "A screen is going to appear, once you click enter. \n In the dropdown, select Dual RS232-HS (Interface 0). \n In the driver, after the arrow, select libusbK. "
+    pause_for_manual_task "A screen is going to appear, once you click enter. \n In the dropdown, select Dual RS232-HS (Interface 0). \n In the driver, after the arrow, select libusbK. \n Click on replace the driver. \n This operation can take a couple of minutes."
     apio drivers --ftdi-enable
     if [ $? -ne 0 ]; then
         echo "Failed to enable FTDI drivers. Please try manually."
@@ -134,9 +141,13 @@ OS_TYPE=$(uname)
 if [[ "$OS_TYPE" == "Linux" ]]; then
     echo "You are running on Linux."
     # Add Linux-specific actions
-
+    pause_for_manual_task "Please execute the script on a macOS or Windows machine."
+    exit 1
+    
 elif [[ "$OS_TYPE" == "Darwin" ]]; then
     echo "You are running on macOS."
+
+    pause_for_manual_task "Plug the Go Board into your computer."
 
     # Step 1: Check and accept the Xcode license
     accept_xcode_license
@@ -255,7 +266,7 @@ elif [[ "$OS_TYPE" == "MINGW64_NT"* || "$OS_TYPE" == "MSYS_NT"* ]]; then
     # Step 4: Install Apio drivers and enable FTDI drivers
     install_apio_drivers_windows
 
-    pause_for_manual_task "A screen just appear, please follow the user manual for this next step. Press Enter to continue, once done."
+    pause_for_info "A screen just appear, please follow the user manual for this next step. Press Enter to continue, once done."
 
     pause_for_manual_task "Please unplug the Go Board and plug it back to your computer. Press Enter to continue."
 
