@@ -188,7 +188,7 @@ elif [[ "$OS_TYPE" == "Darwin" ]]; then
 
     if [ ! -d "$REPO_DIR" ]; then
         echo "Cloning the GitHub repository..."
-        git clone --branch MinimumRequirement "$REPO_URL"
+        git clone "$REPO_URL"
         if [ $? -ne 0 ]; then
             echo "Failed to clone the repository."
             exit 1
