@@ -20,7 +20,7 @@ Test priorities are differenciated as such:
 | Test Description | Verify that the game starts and that the screen show the game |
 | Requirement(s) | Everything is unplugged |
 | Step(s) for testing | 1. Plug in *the Board*, 2. Plug in and switch the screen on, 3. Plug *the Board* to the screen, 4. Execute the code with *the Board*,  |
-| Expected Test Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. The level counter is set to 1 |
+| Expected Test Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. The level counter is set to 0 |
 | Test Priority | 3 |
 | Done? | yes |
 
@@ -33,7 +33,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Press all four buttons at the same time |
 | Expected Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
-| Done? | no (Issue #15) |
+| Done? | Yes |
 
 #### Frog moves up
 
@@ -88,7 +88,7 @@ Test priorities are differenciated as such:
 | Step(s) | 1. Get hit by a car |
 | Expected Result | The game system initializes the first level. The frog appears at the starting position at the bottom of the screen. |
 | Priority | 3 |
-| Done? | no (Issue #14) |
+| Done? | yes |
 
 #### Frog edgemap collision.
 
@@ -127,9 +127,9 @@ Test priorities are differenciated as such:
 | Test Description | Verify that the level counter resets when it should |
 | Requirement(s) | The game is started |
 | Step(s) | 1. Get hit by a car|
-| Expected Result | The level counter resets back to 1 |
+| Expected Result | The level counter resets back to 0 |
 | Priority | 1 |
-| Done? | no (Issue #14) |
+| Done? | yes |
 
 #### Level Counter Reset on button combination pressed
 | Number | Twelve |
@@ -137,9 +137,9 @@ Test priorities are differenciated as such:
 | Test Description | Verify that the level counter resets when it should |
 | Requirement(s) | The game is started |
 | Step(s) | 1. press all four buttons at the same time. |
-| Expected Result | The level counter resets back to 1 |
+| Expected Result | The level counter resets back to 0 |
 | Priority | 1 |
-| Done? | no (Issue #14) |
+| Done? | yes |
 
 #### Car movement
 | Number | Thirteen |
