@@ -35,12 +35,12 @@ For the First project of the school year we have to recreate the Arcade game **F
 
 ### User Manual
 
-- [User Manual](https://github.com/algosup/2024-2025-project-1-fpga-team-4/tree/Documents/Documents/UserManual/UserManualAssets)
+- [User Manual](./Documents/UserManual.pdf)
 
 
 ## How to run the project
 
-This [User Manual](#) (not available at the moment) provides guidance on setting up and running the Frogger project on the Go Board FPGA development board. It covers the required materials, installation steps, gameplay instructions, and troubleshooting tips.
+This [User Manual](./Documents/UserManual.pdf) (not available at the moment) provides guidance on setting up and running the Frogger project on the Go Board FPGA development board. It covers the required materials, installation steps, gameplay instructions, and troubleshooting tips.
 
 ### Required Materials
 To run the Frogger project, ensure you have the following materials:
@@ -53,7 +53,7 @@ To run the Frogger project, ensure you have the following materials:
 ### Steps to run the project
 
 1. **Download the setup script**:
-   - Navigate to the **Releases** section of this repository or [click here]([**Releases**](https://github.com/algosup/2024-2025-project-1-fpga-team-4/releases/tag/v.1.0.0)).
+   - Navigate to the **Releases** section of this repository or [click here](https://github.com/algosup/2024-2025-project-1-fpga-team-4/releases/tag/v.1.1.0).
    - Download the the Frogger.sh file, by clicking on it.
 
 2. **Run the setup script**:
