@@ -48,7 +48,7 @@ To run the Frogger project, ensure you have the following materials:
 1. **Go Board FPGA development board**
 2. **VGA monitor**
 3. **VGA cable**
-4. **Computer with macOS or Windows**
+4. **Computer with macOS(with Xcode) or Windows**
 
 ### Steps to run the project
 
