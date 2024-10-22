@@ -61,6 +61,7 @@ To run the Frogger project, ensure you have the following materials:
      ```bash
      ./Frogger.sh
      ```
+   <!--
    - For Windows:
   
       Open a terminal as administrator
@@ -68,4 +69,4 @@ To run the Frogger project, ensure you have the following materials:
       ```bash
      ./Frogger.sh
      ```
-
+   -->
