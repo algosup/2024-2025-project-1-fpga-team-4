@@ -56,11 +56,11 @@ module frog (
             end
             if (switch4_clean && !switch4_prev && frog_x >= 32) begin
                 frog_x <= frog_x - 32; // Move right (Switch 4)
-                frog_direction <= 2'b01; // Set direction to Right
+                frog_direction <= 2'b10; // Set direction to Right
             end
             if (switch2_clean && !switch2_prev && frog_x <= 607) begin
                 frog_x <= frog_x + 32; // Move down (Switch 2)
-                frog_direction <= 2'b10; // Set direction to Down
+                frog_direction <= 2'b01; // Set direction to Down
             end
 
             // Update previous switch states

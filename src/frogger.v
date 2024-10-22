@@ -32,26 +32,28 @@ module frogger (
     );
 
     // Define car position signals
-    wire [4:0] car_pos_0;
+    wire [5:0] car_pos_0;
     wire [9:0] car_y_0;
-    wire [4:0] car_pos_1;
+    wire [5:0] car_pos_1;
     wire [9:0] car_y_1;
-    wire [4:0] car_pos_2;
+    wire [5:0] car_pos_2;
     wire [9:0] car_y_2;
-    wire [4:0] car_pos_3;
+    wire [5:0] car_pos_3;
     wire [9:0] car_y_3;
-    wire [4:0] car_pos_4;
+    wire [5:0] car_pos_4;
     wire [9:0] car_y_4;
-    wire [4:0] car_pos_5;
+    wire [5:0] car_pos_5;
     wire [9:0] car_y_5;
-    wire [4:0] car_pos_6;
+    wire [5:0] car_pos_6;
     wire [9:0] car_y_6;
-    wire [4:0] car_pos_7;
+    wire [5:0] car_pos_7;
     wire [9:0] car_y_7;
-    wire [4:0] car_pos_8;
+    wire [5:0] car_pos_8;
     wire [9:0] car_y_8;
-    wire [4:0] car_pos_9;
+    wire [5:0] car_pos_9;
     wire [9:0] car_y_9;
+    wire [5:0] car_pos_10;
+    wire [9:0] car_y_10;
 
     // Instantiate the frog movement controller
     frog frog_instance (
@@ -92,6 +94,8 @@ module frogger (
         .car_y_8(car_y_8),
         .car_x_9(car_pos_9 * 32),
         .car_y_9(car_y_9),
+        .car_x_10(car_pos_10 * 32),
+        .car_y_10(car_y_10),
         .current_level(current_level),
         .red(red),
         .green(green),
@@ -124,6 +128,8 @@ module frogger (
         .car_y_8(car_y_8),
         .car_x_9(car_pos_9 * 32),
         .car_y_9(car_y_9),
+        .car_x_10(car_pos_10 * 32),
+        .car_y_10(car_y_10),
         .current_level(current_level),
         .death_collision(death_collision),
         .win_collision(win_collision)
@@ -148,7 +154,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(11 - current_level),
+        .speed(10 - current_level),
         .car_pos(car_pos_1),
         .car_y(car_y_1),
         .start_x(0),
@@ -172,11 +178,11 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(11 - current_level),
+        .speed(13 - current_level),
         .car_pos(car_pos_3),
         .car_y(car_y_3),
         .start_x(0),
-        .start_y(288),
+        .start_y(416),
         .length(1)
     );
     car car_4 (
@@ -220,7 +226,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(9 - current_level),
+        .speed(12 - current_level),
         .car_pos(car_pos_7),
         .car_y(car_y_7),
         .start_x(0),
@@ -244,11 +250,24 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(10 - current_level),
+        .speed(11 - current_level),
         .car_pos(car_pos_9),
         .car_y(car_y_9),
         .start_x(0),
         .start_y(192),
+        .length(1)
+    );
+
+    car car_10 (
+        .clk(clk),
+        .clk_enable(clk_enable),
+        .reset(reset),
+        .direction(1),
+        .speed(14 - current_level),
+        .car_pos(car_pos_10),
+        .car_y(car_y_10),
+        .start_x(0),
+        .start_y(256),
         .length(1)
     );
 
