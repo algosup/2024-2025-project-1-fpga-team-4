@@ -159,7 +159,7 @@ module frogger (
         .car_y(car_y_1),
         .start_x(0),
         .start_y(352),
-        .length(2)
+        .length(1)
     );
     car car_2 (
         .clk(clk),
@@ -171,7 +171,7 @@ module frogger (
         .car_y(car_y_2),
         .start_x(0),
         .start_y(320),
-        .length(3)
+        .length(1)
     );
     car car_3 (
         .clk(clk),
@@ -195,7 +195,7 @@ module frogger (
         .car_y(car_y_4),
         .start_x(0),
         .start_y(128),
-        .length(2)
+        .length(1)
     );
     car car_5 (
         .clk(clk),
@@ -207,7 +207,7 @@ module frogger (
         .car_y(car_y_5),
         .start_x(0),
         .start_y(96),
-        .length(3)
+        .length(1)
     );
     car car_6 (
         .clk(clk),
@@ -231,7 +231,7 @@ module frogger (
         .car_y(car_y_7),
         .start_x(0),
         .start_y(32),
-        .length(2)
+        .length(1)
     );
     car car_8 (
         .clk(clk),
@@ -243,7 +243,7 @@ module frogger (
         .car_y(car_y_8),
         .start_x(0),
         .start_y(224),
-        .length(3)
+        .length(1)
     );
     car car_9 (
         .clk(clk),
