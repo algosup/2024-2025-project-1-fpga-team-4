@@ -274,7 +274,7 @@ module frogger (
     // Increment level on win
     always @(posedge clk) begin
         if (win) begin
-            current_level <= (current_level < 8) ? (current_level + 1) : 0;
+            current_level <= (current_level < 8) ? (current_level + 1) : 1;
         end
         if (death_collision) begin
             current_level <= 1;
