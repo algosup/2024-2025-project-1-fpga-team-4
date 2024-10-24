@@ -20,7 +20,7 @@ module frogger (
     wire death_collision;
     wire win_collision;
     wire win;
-    wire reset = death_collision | win_collision;
+    wire reset = death_collision | win_collision | (switch1 && switch2 && switch3 && switch4);
     wire clk_enable;
 
     // Clock divider instance
@@ -141,7 +141,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(0),
-        .speed(12 - current_level),
+        .speed(11 - current_level),
         .car_pos(car_pos_0),
         .car_y(car_y_0),
         .start_x(0),
@@ -154,7 +154,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(10 - current_level),
+        .speed(9 - current_level),
         .car_pos(car_pos_1),
         .car_y(car_y_1),
         .start_x(0),
@@ -166,7 +166,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(0),
-        .speed(10 - current_level),
+        .speed(9 - current_level),
         .car_pos(car_pos_2),
         .car_y(car_y_2),
         .start_x(0),
@@ -178,7 +178,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(13 - current_level),
+        .speed(12 - current_level),
         .car_pos(car_pos_3),
         .car_y(car_y_3),
         .start_x(0),
@@ -190,7 +190,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(0),
-        .speed(9 - current_level),
+        .speed(8 - current_level),
         .car_pos(car_pos_4),
         .car_y(car_y_4),
         .start_x(0),
@@ -202,7 +202,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(9 - current_level),
+        .speed(8 - current_level),
         .car_pos(car_pos_5),
         .car_y(car_y_5),
         .start_x(0),
@@ -214,7 +214,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(0),
-        .speed(10 - current_level),
+        .speed(9 - current_level),
         .car_pos(car_pos_6),
         .car_y(car_y_6),
         .start_x(0),
@@ -226,7 +226,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(12 - current_level),
+        .speed(11 - current_level),
         .car_pos(car_pos_7),
         .car_y(car_y_7),
         .start_x(0),
@@ -238,7 +238,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(0),
-        .speed(11 - current_level),
+        .speed(10 - current_level),
         .car_pos(car_pos_8),
         .car_y(car_y_8),
         .start_x(0),
@@ -250,7 +250,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(11 - current_level),
+        .speed(10 - current_level),
         .car_pos(car_pos_9),
         .car_y(car_y_9),
         .start_x(0),
@@ -263,7 +263,7 @@ module frogger (
         .clk_enable(clk_enable),
         .reset(reset),
         .direction(1),
-        .speed(14 - current_level),
+        .speed(13 - current_level),
         .car_pos(car_pos_10),
         .car_y(car_y_10),
         .start_x(0),
@@ -276,7 +276,7 @@ module frogger (
         if (win) begin
             current_level <= (current_level < 8) ? (current_level + 1) : 1;
         end
-        if (death_collision) begin
+        if (death_collision | (switch1 && switch2 && switch3 && switch4)) begin
             current_level <= 1;
         end
     end
