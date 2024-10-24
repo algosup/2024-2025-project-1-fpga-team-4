@@ -59,6 +59,7 @@ To run the Frogger project, ensure you have the following materials:
 2. **Run the setup script**:
    - For macOS:
      ```bash
+     chmod u+x Frogger.sh
      ./Frogger.sh
      ```
    <!--
