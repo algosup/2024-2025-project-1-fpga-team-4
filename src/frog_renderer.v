@@ -10,21 +10,46 @@ module frog_renderer (
     output reg [2:0] color_b     // Output blue color
 );
 
-    localparam FROG_SIZE = 8;  // Further reduce the frog size to 8x8
+    localparam FROG_SIZE = 32;  // Further reduce the frog size to 8x8
 
     // Frog sprite memory (8x8 binary sprite)
     reg [7:0] frog_sprite[0:7];
 
     // Initialize the frog sprite (binary representation)
     initial begin
-        frog_sprite[0]  = 8'b00011100;
-        frog_sprite[1]  = 8'b00100010;
-        frog_sprite[2]  = 8'b01000001;
-        frog_sprite[3]  = 8'b10000000;
-        frog_sprite[4]  = 8'b10000000;
-        frog_sprite[5]  = 8'b01000001;
-        frog_sprite[6]  = 8'b00100010;
-        frog_sprite[7]  = 8'b00011100;
+        frog_sprite[0]  = 8'b11111111;
+        frog_sprite[1]  = 8'b11111111;
+        frog_sprite[2]  = 8'b11111111;
+        frog_sprite[3]  = 8'b11111111;
+        frog_sprite[4]  = 8'b11111111;
+        frog_sprite[5]  = 8'b11111111;
+        frog_sprite[6]  = 8'b11111111;
+        frog_sprite[7]  = 8'b11111111;
+        frog_sprite[8]  = 8'b11111111; 
+        frog_sprite[9]  = 8'b11111111;
+        frog_sprite[10] = 8'b11111111;
+        frog_sprite[11] = 8'b11111111;
+        frog_sprite[12] = 8'b11111111;
+        frog_sprite[13] = 8'b11111111;
+        frog_sprite[14] = 8'b11111111;
+        frog_sprite[15] = 8'b11111111;
+        frog_sprite[16] = 8'b11111111;
+        frog_sprite[17] = 8'b11111111;
+        frog_sprite[18] = 8'b11111111;
+        frog_sprite[19] = 8'b11111111;
+        frog_sprite[20] = 8'b11111111;
+        frog_sprite[21] = 8'b11111111;
+        frog_sprite[22] = 8'b11111111;
+        frog_sprite[23] = 8'b11111111;
+        frog_sprite[24] = 8'b11111111;
+        frog_sprite[25] = 8'b11111111;
+        frog_sprite[26] = 8'b11111111;
+        frog_sprite[27] = 8'b11111111;
+        frog_sprite[28] = 8'b11111111;
+        frog_sprite[29] = 8'b11111111;
+        frog_sprite[30] = 8'b11111111;
+        frog_sprite[31] = 8'b11111111;
+
     end
 
     // Check if the current pixel is within the frog's position
@@ -39,9 +64,9 @@ module frog_renderer (
     always @(*) begin
         if (in_frog) begin
             if (frog_sprite[sprite_y][sprite_x] == 1'b1) begin
-                color_r <= 3'b000;  // Green frog
+                color_r <= 3'b111;  // Green frog
                 color_g <= 3'b111;
-                color_b <= 3'b000;
+                color_b <= 3'b111;
             end else begin
                 color_r <= 3'b000;  // Black background
                 color_g <= 3'b000;
